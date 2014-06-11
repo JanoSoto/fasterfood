@@ -1,0 +1,33 @@
+<h1>Listing alerta_obsolescencia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tiempo emision</th>
+      <th>Visualizada</th>
+      <th>Necesidad cubierta</th>
+      <th>Lote</th>
+      <th>Mensaje</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @alerta_obsolescencia.each do |alerta_obsolescencium| %>
+      <tr>
+        <td><%= alerta_obsolescencium.tiempo_emision %></td>
+        <td><%= alerta_obsolescencium.visualizada %></td>
+        <td><%= alerta_obsolescencium.necesidad_cubierta %></td>
+        <td><%= alerta_obsolescencium.lote_id %></td>
+        <td><%= alerta_obsolescencium.mensaje %></td>
+        <td><%= link_to 'Show', alerta_obsolescencium %></td>
+        <td><%= link_to 'Edit', edit_alerta_obsolescencium_path(alerta_obsolescencium) %></td>
+        <td><%= link_to 'Destroy', alerta_obsolescencium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Alerta obsolescencium', new_alerta_obsolescencium_path %>

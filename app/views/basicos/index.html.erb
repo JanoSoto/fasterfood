@@ -1,0 +1,29 @@
+<h1>Listing basicos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Precio</th>
+      <th>Nombre producto</th>
+      <th>En venta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @basicos.each do |basico| %>
+      <tr>
+        <td><%= basico.precio %></td>
+        <td><%= basico.nombre_producto %></td>
+        <td><%= basico.en_venta %></td>
+        <td><%= link_to 'Show', basico %></td>
+        <td><%= link_to 'Edit', edit_basico_path(basico) %></td>
+        <td><%= link_to 'Destroy', basico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Basico', new_basico_path %>

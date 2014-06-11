@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @compuesto.precio %>
+</p>
+
+<p>
+  <strong>Nombre producto:</strong>
+  <%= @compuesto.nombre_producto %>
+</p>
+
+<p>
+  <strong>En venta:</strong>
+  <%= @compuesto.en_venta %>
+</p>
+
+<%= link_to 'Edit', edit_compuesto_path(@compuesto) %> |
+<%= link_to 'Back', compuestos_path %>

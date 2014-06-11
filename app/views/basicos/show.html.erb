@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @basico.precio %>
+</p>
+
+<p>
+  <strong>Nombre producto:</strong>
+  <%= @basico.nombre_producto %>
+</p>
+
+<p>
+  <strong>En venta:</strong>
+  <%= @basico.en_venta %>
+</p>
+
+<%= link_to 'Edit', edit_basico_path(@basico) %> |
+<%= link_to 'Back', basicos_path %>

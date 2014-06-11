@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tiempo_emision: MyString
+  visualizada: false
+  necesidad_cubierta: false
+  lote_id: 1
+  mensaje: MyString
+
+two:
+  tiempo_emision: MyString
+  visualizada: false
+  necesidad_cubierta: false
+  lote_id: 1
+  mensaje: MyString

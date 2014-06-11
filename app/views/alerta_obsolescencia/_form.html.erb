@@ -1,0 +1,37 @@
+<%= form_for(@alerta_obsolescencium) do |f| %>
+  <% if @alerta_obsolescencium.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@alerta_obsolescencium.errors.count, "error") %> prohibited this alerta_obsolescencium from being saved:</h2>
+
+      <ul>
+      <% @alerta_obsolescencium.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tiempo_emision %><br>
+    <%= f.text_field :tiempo_emision %>
+  </div>
+  <div class="field">
+    <%= f.label :visualizada %><br>
+    <%= f.check_box :visualizada %>
+  </div>
+  <div class="field">
+    <%= f.label :necesidad_cubierta %><br>
+    <%= f.check_box :necesidad_cubierta %>
+  </div>
+  <div class="field">
+    <%= f.label :lote_id %><br>
+    <%= f.number_field :lote_id %>
+  </div>
+  <div class="field">
+    <%= f.label :mensaje %><br>
+    <%= f.text_field :mensaje %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

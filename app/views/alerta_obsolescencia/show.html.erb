@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tiempo emision:</strong>
+  <%= @alerta_obsolescencium.tiempo_emision %>
+</p>
+
+<p>
+  <strong>Visualizada:</strong>
+  <%= @alerta_obsolescencium.visualizada %>
+</p>
+
+<p>
+  <strong>Necesidad cubierta:</strong>
+  <%= @alerta_obsolescencium.necesidad_cubierta %>
+</p>
+
+<p>
+  <strong>Lote:</strong>
+  <%= @alerta_obsolescencium.lote_id %>
+</p>
+
+<p>
+  <strong>Mensaje:</strong>
+  <%= @alerta_obsolescencium.mensaje %>
+</p>
+
+<%= link_to 'Edit', edit_alerta_obsolescencium_path(@alerta_obsolescencium) %> |
+<%= link_to 'Back', alerta_obsolescencia_path %>

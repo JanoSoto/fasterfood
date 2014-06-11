@@ -1,0 +1,29 @@
+<%= form_for(@basico) do |f| %>
+  <% if @basico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@basico.errors.count, "error") %> prohibited this basico from being saved:</h2>
+
+      <ul>
+      <% @basico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :precio %><br>
+    <%= f.number_field :precio %>
+  </div>
+  <div class="field">
+    <%= f.label :nombre_producto %><br>
+    <%= f.text_field :nombre_producto %>
+  </div>
+  <div class="field">
+    <%= f.label :en_venta %><br>
+    <%= f.check_box :en_venta %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

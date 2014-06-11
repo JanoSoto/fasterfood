@@ -3,9 +3,9 @@
 one:
   precio: 1
   nombre_producto: MyString
-  en_venta: 
+  en_venta: false
 
 two:
   precio: 1
   nombre_producto: MyString
-  en_venta: 
+  en_venta: false
