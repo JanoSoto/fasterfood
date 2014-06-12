@@ -1,19 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Precio:</strong>
-  <%= @compuesto.precio %>
-</p>
-
-<p>
-  <strong>Nombre producto:</strong>
-  <%= @compuesto.nombre_producto %>
-</p>
-
-<p>
-  <strong>En venta:</strong>
+<div class="jumbotron">
+  <h1><%= @compuesto.nombre_producto %></h1>
+  <p>Precio: <%= @compuesto.precio %></p>
+  <p><a href="<%= url_for edit_compuesto_path(@compuesto) %>" class="btn btn-primary btn-lg" role="button">Editar</a></p>
   <%= @compuesto.en_venta %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_compuesto_path(@compuesto) %> |
-<%= link_to 'Back', compuestos_path %>
+<p><a href="<%= url_for compuestos_path %>" class="btn btn-primary btn-lg" role="button">Volver</a></p>

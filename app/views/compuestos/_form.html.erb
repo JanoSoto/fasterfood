@@ -1,4 +1,4 @@
-<%= form_for(@compuesto) do |f| %>
+<%= form_for(@compuesto, :html => {:class => "form-horizontal"}) do |f| %>
   <% if @compuesto.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@compuesto.errors.count, "error") %> prohibited this compuesto from being saved:</h2>
@@ -11,19 +11,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :precio %><br>
-    <%= f.number_field :precio %>
-  </div>
-  <div class="field">
-    <%= f.label :nombre_producto %><br>
-    <%= f.text_field :nombre_producto %>
-  </div>
-  <div class="field">
-    <%= f.label :en_venta %><br>
-    <%= f.check_box :en_venta %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-group" class="field">
+        <label for="input_precio" class="col-sm-2 control-label">Precio</label>
+        <div class="col-sm-2">
+            <input type="text" class="form-control" id="input_precio" placeholder="e.g: 5000" value="<%= @compuesto.precio %>">
+        </div>
+    </div>
+    <div class="form-group" class="field">
+      <label for="input_nombre" class="col-sm-2 control-label">Nombre</label>
+        <div class="col-sm-2">
+            <input type="text" class="form-control" id="input_precio" placeholder="e.g: Combo 1" value="<%= @compuesto.nombre_producto %>">
+        </div>
+    </div>
+    <div class="form-group" class="field">
+      <label for="input_enventa" class="col-sm-2 control-label">en_venta</label>
+        <div class="col-sm-2">
+            <input type="checkbox" class="form-control minimal-red" id="input_precio" placeholder="e.g: Combo 1" <%= "checked" if @compuesto.en_venta %>>
+        </div>
+    </div>
+    <div class="form-group" class="field">
+        <div class="col-sm-offset-2">
+            <%= render "html/boton_guardar_cancelar" %>
+        </div>
+    </div>
 <% end %>
+

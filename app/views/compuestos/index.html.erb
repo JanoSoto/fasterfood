@@ -1,29 +1,37 @@
-<h1>Listing compuestos</h1>
+<%= page_title "Productos Compuestos" %>
+<!--<%= link_to 'New Compuesto', new_compuesto_path %>-->
+  
 
-<table>
-  <thead>
-    <tr>
-      <th>Precio</th>
-      <th>Nombre producto</th>
-      <th>En venta</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
+                <tr>
+                    <th>ID</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>En venta</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
+                </tr>
+                
+                <% @compuestos.each do |compuesto| %>
+                  <tr>
+                    <td><%= compuesto.id %></td>
+                    <td><%= compuesto.nombre_producto %></td>
+                    <td><%= compuesto.precio %></td>
+                    <td>
+                        <span class="label <%= if compuesto.en_venta then "label-success" else "label-warning" end %>">
+                            <%= if compuesto.en_venta then "Si" else "No" end %>
+                        </span>
+                    </td>
+                    <!--<td><%= link_to 'Show', compuesto %></td> -->
+                    <td><%= link_to 'Edit', edit_compuesto_path(compuesto) %></td>
+                    <td><%= link_to 'Destroy', compuesto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  </tr>
+                <% end %>
 
-  <tbody>
-    <% @compuestos.each do |compuesto| %>
-      <tr>
-        <td><%= compuesto.precio %></td>
-        <td><%= compuesto.nombre_producto %></td>
-        <td><%= compuesto.en_venta %></td>
-        <td><%= link_to 'Show', compuesto %></td>
-        <td><%= link_to 'Edit', edit_compuesto_path(compuesto) %></td>
-        <td><%= link_to 'Destroy', compuesto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Compuesto', new_compuesto_path %>
+            </table>
+        </div><!-- /.box-body -->
+    </div>
+</div>
