@@ -52371,3 +52371,244 @@ ActionView::Template::Error (undefined local variable or method `distinc' for #<
   Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
   Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
   Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.3ms)
+
+
+Started GET "/compuestos/2/edit" for 127.0.0.1 at 2014-06-12 16:04:56 -0400
+Processing by CompuestosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT  `compuestos`.* FROM `compuestos`  WHERE `compuestos`.`id` = 2 LIMIT 1[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT `basicos`.* FROM `basicos`
+  Rendered compuestos/_form.html.erb (38.8ms)
+  Rendered compuestos/edit.html.erb within layouts/application (55.5ms)
+Completed 500 Internal Server Error in 79ms
+
+ActionView::Template::Error (undefined local variable or method `distincs' for #<Basico::ActiveRecord_Relation:0xc05edec>):
+    44:     </div>
+    45: 
+    46:     <!-- Basicos -->    
+    47:     <% if @compuesto.basico.any? %>
+    48:         <table class="table table-hover">
+    49:             <tr>
+    50:                 <th>ID</th>
+  app/models/compuesto.rb:4:in `block in <class:Compuesto>'
+  app/views/compuestos/_form.html.erb:47:in `block in _app_views_compuestos__form_html_erb___17206765_99608530'
+  app/views/compuestos/_form.html.erb:1:in `_app_views_compuestos__form_html_erb___17206765_99608530'
+  app/views/compuestos/edit.html.erb:3:in `_app_views_compuestos_edit_html_erb__363817140_100339820'
+
+
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.0ms)
+
+
+Started GET "/compuestos/2/edit" for 127.0.0.1 at 2014-06-12 16:05:05 -0400
+Processing by CompuestosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT  `compuestos`.* FROM `compuestos`  WHERE `compuestos`.`id` = 2 LIMIT 1[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT `basicos`.* FROM `basicos`
+  Rendered compuestos/_form.html.erb (37.3ms)
+  Rendered compuestos/edit.html.erb within layouts/application (57.6ms)
+Completed 500 Internal Server Error in 84ms
+
+ActionView::Template::Error (undefined local variable or method `distincs' for #<Basico::ActiveRecord_Relation:0xb5c68f8>):
+    44:     </div>
+    45: 
+    46:     <!-- Basicos -->    
+    47:     <% if @compuesto.basico.any? %>
+    48:         <table class="table table-hover">
+    49:             <tr>
+    50:                 <th>ID</th>
+  app/models/compuesto.rb:4:in `block in <class:Compuesto>'
+  app/views/compuestos/_form.html.erb:47:in `block in _app_views_compuestos__form_html_erb___17206765_99608530'
+  app/views/compuestos/_form.html.erb:1:in `_app_views_compuestos__form_html_erb___17206765_99608530'
+  app/views/compuestos/edit.html.erb:3:in `_app_views_compuestos_edit_html_erb__363817140_100339820'
+
+
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.6ms)
+
+
+Started GET "/compuestos/2/edit" for 127.0.0.1 at 2014-06-12 16:05:25 -0400
+Processing by CompuestosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT  `compuestos`.* FROM `compuestos`  WHERE `compuestos`.`id` = 2 LIMIT 1[0m
+  [1m[35mBasico Exists (2.2ms)[0m  SELECT  DISTINCT 1 AS one FROM `basicos` INNER JOIN `composicions` ON `basicos`.`id` = `composicions`.`basico_id` WHERE `composicions`.`compuesto_id` = 2 LIMIT 1
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `composicions` ON `basicos`.`id` = `composicions`.`basico_id` WHERE `composicions`.`compuesto_id` = 2[0m
+  [1m[35mComposicion Load (0.3ms)[0m  SELECT `composicions`.* FROM `composicions`  WHERE `composicions`.`basico_id` = 1
+  Rendered compuestos/_form.html.erb (90.0ms)
+  Rendered compuestos/edit.html.erb within layouts/application (106.8ms)
+Completed 200 OK in 265ms (Views: 221.7ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/assets/alerta_obsolescencia.css?body=1" for 127.0.0.1 at 2014-06-12 16:05:26 -0400
+
+
+Started GET "/assets/bootstrap-theme.css?body=1" for 127.0.0.1 at 2014-06-12 16:05:26 -0400
+
+
+Started GET "/assets/basicos.css?body=1" for 127.0.0.1 at 2014-06-12 16:05:26 -0400
+
+
+Started GET "/stylesheets/bootstrap-theme.css.map.css" for 127.0.0.1 at 2014-06-12 16:05:26 -0400
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/bootstrap-theme.css.map.css"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.8ms)
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (13.2ms)
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.8ms)
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (156.2ms)
+
+
+Started GET "/assets/bootstrap-theme.min.css?body=1" for 127.0.0.1 at 2014-06-12 16:05:26 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-06-12 16:05:26 -0400
+
+
+Started GET "/stylesheets/bootstrap.css.map.css" for 127.0.0.1 at 2014-06-12 16:05:26 -0400
+
+ActionController::RoutingError (No route matches [GET] "/stylesheets/bootstrap.css.map.css"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (19.7ms)
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (9.1ms)
+  Rendered /home/giovanni/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (148.7ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/compuestos.css?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/prueba.css?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/twitter/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/alerta_obsolescencia.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/basicos.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/compuestos.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-12 16:05:27 -0400
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2014-06-12 16:05:28 -0400
