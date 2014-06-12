@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611120712) do
+ActiveRecord::Schema.define(version: 20140611163652) do
 
   create_table "alerta_obsolescencia", force: true do |t|
     t.string   "tiempo_emision"
@@ -48,10 +48,29 @@ ActiveRecord::Schema.define(version: 20140611120712) do
     t.datetime "updated_at"
   end
 
+  create_table "composicions", force: true do |t|
+    t.integer  "compuesto_id"
+    t.integer  "basico_id"
+    t.integer  "cantidad"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "compuestos", force: true do |t|
     t.integer  "precio"
     t.string   "nombre_producto"
     t.boolean  "en_venta"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lotes", force: true do |t|
+    t.integer  "ingrediente_id"
+    t.integer  "entrega_id"
+    t.date     "fecha_llegada"
+    t.time     "hora_llegada"
+    t.date     "fecha_vencimiento"
+    t.boolean  "queda_producto"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

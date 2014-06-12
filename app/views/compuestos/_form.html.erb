@@ -42,4 +42,26 @@
             <%= boton_guardar_cancelar((f.submit "Guardar", :class => "btn btn-success"), compuestos_path) %>
         </div>
     </div>
+
+    <!-- Basicos -->    
+    <% if @compuesto.basico.any? %>
+        <table class="table table-hover">
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Reason</th>
+            </tr>
+            <% @compuesto.basico.each do | basico | %>
+            <tr>
+                <td><%= basico.id              %></td>
+                <td><%= basico.nombre_producto %></td>
+                <td><%= basico.precio          %></td>
+                <td><%= basico.composicion.at(0).cantidad        %></td>
+                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+            </tr>
+            <% end %>
+        </table>
+    <% end %>
 <% end %>

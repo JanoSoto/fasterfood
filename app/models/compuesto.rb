@@ -1,3 +1,5 @@
 class Compuesto < ActiveRecord::Base
-	has_and_belongs_to_many :basicos
+	has_many :composicion
+	# distincs es para decir que un compuesto solo puede tener productos basicos unicos
+	has_many :basico, -> { distincs }, :through => :composicion
 end
