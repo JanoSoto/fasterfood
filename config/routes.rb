@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :user_session
+  #root :controller => "user_sessions", :action => "new" # optional, this just sets the root route
+
   resources :users
 
   resources :alerta_obsolescencia
