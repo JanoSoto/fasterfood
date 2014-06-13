@@ -1,4 +1,9 @@
-<% base_url = request.url.gsub(request.path, '') %>
+<%
+    base_url = request.url
+    if request.path != '/'
+        base_url = base_url.gsub(request.path, '')
+    end
+%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -419,7 +424,8 @@
 
                 <!-- Main content -->
                 <section class="content">
-					
+					<p class="notice"><%= notice %></p>
+                    <p class="alert"><%= alert %></p>
 					<%= yield %>
                 
                 </section><!-- /.content -->
