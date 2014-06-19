@@ -15,9 +15,6 @@
         <label for="input_precio" class="col-sm-2 control-label">Precio</label>
         <div class="col-sm-2">
             <%= f.text_field :precio, :html => {:class => "form-control"}%>
-            <!--
-            <input type="text" class="form-control" id="input_precio" placeholder="e.g: 5000" value="<%= @compuesto.precio %>">
-            -->
         </div>
     </div>
     <div class="form-group" class="field">
@@ -33,8 +30,6 @@
       <label for="input_enventa" class="col-sm-2 control-label">en_venta</label>
         <div class="col-sm-2">
             <%= f.check_box :en_venta, :html => {:class => "form-control"}%>
-            
-            <!-- <input type="checkbox" class="form-control minimal-red" id="input_precio" placeholder="e.g: Combo 1" <%= "checked" if @compuesto.en_venta %>> -->
         </div>
     </div>
     <div class="form-group" class="field">
@@ -43,25 +38,81 @@
         </div>
     </div>
 
+    <!--
+    <% basicos = Basico.all - @compuesto.basico %>
+    -->
+    <!--<p>%= f.collection_select :basico, :basicos_id, Basico.all, :id %></p>-->
+    <!--%= f.collection_select :basico_id, Basico.all, :id, :nombre_producto %>-->
+    <% diferencia_basicos = Basico.all - @compuesto.basico %>
+    <% if diferencia_basicos.any? %>
+        <select id="select_basico">
+            <% diferencia_basicos.each do | basico | %>
+                <%= ('<option value="' + basico.id.to_s + '">' + basico.nombre_producto + '</option>').html_safe %>
+            <% end %>
+        </select>
+    <% end %>
+    <!--
+    <%= f.fields_for :basicos do |builder|  %>
+        <%= builder.select :basico_id, Basico.all.collect {|x| [x.nombre_producto, x.id]}, {}, :id => "select_basico" %>
+    <% end %>-->
+
+    <a href="#" id="agregar">Agregar</a>
+
     <!-- Basicos -->    
-    <% if @compuesto.basico.any? %>
-        <table class="table table-hover">
+    <%= f.fields_for :basicos do |builder|  %>
+        <table class="table table-hover" id="tabla_basicos">
             <tr>
                 <th>ID</th>
-                <th>User</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Reason</th>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Eliminar</th>
             </tr>
-            <% @compuesto.basico.each do | basico | %>
-            <tr>
-                <td><%= basico.id              %></td>
-                <td><%= basico.nombre_producto %></td>
-                <td><%= basico.precio          %></td>
-                <td><%= basico.composicion.at(0).cantidad        %></td>
-                <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
+            <% if @compuesto.basico.any? %>
+                <% @compuesto.basico.each do | basico | %>
+                <tr>
+                    <td><input type="hidden" name="compuesto[basicos][basico_id][]" value="<%= basico.id %>"><%= basico.id              %></td>
+                    <td><%= basico.nombre_producto %></td>
+                    <td><%= basico.precio          %></td>
+                    <!--<td><%= basico.composicion.at(0).cantidad        %></td>-->
+                    <td><a href="#" class="eliminar">Eliminar</a></td>
+                </tr>
+                <% end %>
             <% end %>
         </table>
     <% end %>
 <% end %>
+<script type="text/javascript">
+    $(function(){
+        $('#tabla_basicos').delegate('.eliminar', 'click', function(){
+            // Agrego el producto a la lista elegible
+            var select = $('#select_basico');
+            var valor_seleccionado = $(this).closest('input').val();
+            if( select.find('option[value='+ valor_seleccionado +']').length == 0){
+                var eliminado        = $(this).closest('tr');
+                var eliminado_nombre = eliminado.find('td:nth-child(2)');
+                var eliminado_value  = eliminado.find('td:nth-child(1)');
+                select.append( new Option(eliminado_nombre.text(),eliminado_value.text()) );
+            }
+
+            $(this).closest('tr').remove();
+            $('#agregar').show();
+            $('#select_basico').show();
+        });
+        $('#agregar').on('click', function(){
+         var row = '<tr>';
+            row += '<td><input type="hidden" name="compuesto[basicos][basico_id][]" value ="'+$('#select_basico').val()+'">' + $('#select_basico').val() + '</td>';
+            row += '<td>' + $('#select_basico :selected').text() + '</td>';
+            row += '<td>' + 'hola' + '</td>';
+            row += '<td><a href="#" class="eliminar">Eliminar</a></td>';
+            row += '</tr>';
+            $('#tabla_basicos tr:last').after(row);
+
+            // Remuevo el producto de la lista elegible
+            $('#select_basico :selected').remove();
+            if($('#select_basico option').length == 0){
+                $('#agregar').hide();
+                $('#select_basico').hide();
+            }
+        });
+    });
+</script>

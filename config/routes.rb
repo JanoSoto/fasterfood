@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ingredientes
+
   devise_for :users
   root 'compuestos#index'
   resources :alerta_obsolescencia

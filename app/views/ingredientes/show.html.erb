@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Refrigerado:</strong>
+  <%= @ingrediente.refrigerado %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @ingrediente.nombre %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @ingrediente.categoria %>
+</p>
+
+<p>
+  <strong>Stock actual:</strong>
+  <%= @ingrediente.stock_actual %>
+</p>
+
+<p>
+  <strong>Stock critico:</strong>
+  <%= @ingrediente.stock_critico %>
+</p>
+
+<p>
+  <strong>Stock ideal:</strong>
+  <%= @ingrediente.stock_ideal %>
+</p>
+
+<%= link_to 'Edit', edit_ingrediente_path(@ingrediente) %> |
+<%= link_to 'Back', ingredientes_path %>

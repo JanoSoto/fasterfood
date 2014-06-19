@@ -12,8 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><%= yield(:page_title) %></title>
 	<title><%= base_url %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag    'application', media: 'all' %>
+  <!--%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  %= javascript_include_tag 'application', 'data-turbolinks-track' => true %>-->
   <%= csrf_meta_tags %>
           <!-- bootstrap 3.0.2 -->
         <link href="<%= base_url %>/AdminLTE/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -319,11 +320,19 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li class="active">
-                            <a href="index.html">
-                                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-                            </a>
-                        </li>
+                        <% acciones = {
+                            'productos' => {
+                                'compuestos' => @compuestos,
+                                'basicos' => @basicos,
+                            },
+                            'ingredientes' => @ingredientes,
+                        } %>
+                        <% acciones.each do | nombre, accion | %>
+                            <% if can? :manage, accion %>
+                                <%= generar_menu_para nombre, accion %>
+                            <% end %>
+                        <% end %>
+                        
                         <li>
                             <a href="pages/widgets.html">
                                 <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>

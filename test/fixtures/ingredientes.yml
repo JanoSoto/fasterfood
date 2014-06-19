@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  refrigerado: false
+  nombre: MyString
+  categoria: MyString
+  stock_actual: 1
+  stock_critico: 1
+  stock_ideal: 1
+
+two:
+  refrigerado: false
+  nombre: MyString
+  categoria: MyString
+  stock_actual: 1
+  stock_critico: 1
+  stock_ideal: 1
