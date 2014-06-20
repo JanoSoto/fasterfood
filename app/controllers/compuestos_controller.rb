@@ -45,28 +45,29 @@ class CompuestosController < ApplicationController
   # PATCH/PUT /compuestos/1.json
   def update
     respond_to do |format|
-        #if !@compuesto.update(compuesto_params)
-        basicos_ids = Array.new
-        if !params[:compuesto][:basicos].nil?
-            params[:compuesto][:basicos].each do | key, basico_id |
-                basicos_ids.push(basico_id)
-            end
-        end
+      basicos = Array.new
+      if !params[:compuesto][:basico].nil?
+          params[:compuesto][:basico].each do | basico |
+              basicos.push(:id => basico['id'], :cantidad => basico['cantidad'])
+          end
+      end
 
+      i = 0
+      @compuesto.basico = Array.new
+      @compuesto.composicion = Array.new
+      @compuesto.errors.add(:nombre_poducto, "A")
 
-      #@compuesto.basico = @compuesto.basico + Basico.find(basicos_ids)
-      @compuesto.basico = Basico.find(basicos_ids)
-      #@compuesto.basico = Basico.find([1,2])
-      #@compuesto.basico = Basico.find([1,2])
+      basicos.each do | basico |
+        basico_nuevo = Basico.find(basico[:id])
+        @compuesto.basico.push basico_nuevo
+        @compuesto.composicion[i].cantidad = basico[:cantidad]
+        i = i + 1
+      end
+
       if @compuesto.update(compuesto_params)
-        format.html { redirect_to @compuesto, notice: 'Compuesto was successfully updated.' }
-        #format.html { redirect_to @compuesto.errors, notice: 'Compuesto was successfully updated.' }
+        format.html { redirect_to edit_compuesto_path(@compuesto), notice: 'Producto actualizado correctamente !' }
         format.json { render :show, status: :ok, location: @compuesto }
       else
-        @compuesto.errors.add(:nombre_poducto, compuesto_params)
-        @compuesto.errors.add(:nombre_poducto, params[:compuesto][:basicos].inspect)
-        @compuesto.errors.add(:nombre_poducto, params.require(:compuesto).inspect)
-        @compuesto.errors.add(:nombre_poducto, basicos_ids.inspect)
         format.html { render :edit }
         format.json { render json: @compuesto.errors, status: :unprocessable_entity }
       end
@@ -91,10 +92,11 @@ class CompuestosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def compuesto_params
-      params.require(:compuesto).permit(:precio, :nombre_producto, :en_venta, :basicos,
+      params.require(:compuesto).permit(:precio, :nombre_producto, :en_venta,
         #:basicos => [:precio, :nombre_producto, :en_venta]
         #:composicions_attributes => [:cantidad,
-          :basicos_attributes => [:precio, :nombre_producto, :en_venta]
+          #basico_attributes[:id, :cantidad],
+          #:composicion_attributes => [:cantidad]
         #],
       )
     end

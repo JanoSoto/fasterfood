@@ -12,12 +12,6 @@
   <% end %>
 
     <div class="form-group" class="field">
-        <label for="input_precio" class="col-sm-2 control-label">Precio</label>
-        <div class="col-sm-2">
-            <%= f.text_field :precio, :html => {:class => "form-control"}%>
-        </div>
-    </div>
-    <div class="form-group" class="field">
       <label for="input_nombre" class="col-sm-2 control-label">Nombre</label>
         <div class="col-sm-2">
             <%= f.text_field :nombre_producto, :html => {:class => "form-control"}%>
@@ -27,11 +21,33 @@
         </div>
     </div>
     <div class="form-group" class="field">
+        <label for="input_precio" class="col-sm-2 control-label">Precio</label>
+        <div class="col-sm-2">
+            <%= f.text_field :precio, :html => {:class => "form-control"}%>
+        </div>
+    </div>
+    <div class="form-group" class="field">
       <label for="input_enventa" class="col-sm-2 control-label">en_venta</label>
         <div class="col-sm-2">
             <%= f.check_box :en_venta, :html => {:class => "form-control"}%>
         </div>
     </div>
+    <% diferencia_basicos = Basico.all - @compuesto.basico %>
+    <% if diferencia_basicos.any? %>
+        <div class="form-group" id="div_select_basico">
+            <label for="input_enventa" class="col-sm-2 control-label">Añadir productos básicos</label>
+            <div class="col-sm-2">
+                <select id="select_basico" class="form-control">
+                    <% diferencia_basicos.each do | basico | %>
+                        <%= ('<option value="' + basico.id.to_s + '">' + basico.nombre_producto + '</option>').html_safe %>
+                    <% end %>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <a href="#" id="agregar">Agregar</a>
+            </div>
+        </div>
+    <% end %>
     <div class="form-group" class="field">
         <div class="col-sm-offset-2">
             <%= boton_guardar_cancelar((f.submit "Guardar", :class => "btn btn-success"), compuestos_path) %>
@@ -39,24 +55,9 @@
     </div>
 
     <!--
-    <% basicos = Basico.all - @compuesto.basico %>
-    -->
-    <!--<p>%= f.collection_select :basico, :basicos_id, Basico.all, :id %></p>-->
-    <!--%= f.collection_select :basico_id, Basico.all, :id, :nombre_producto %>-->
-    <% diferencia_basicos = Basico.all - @compuesto.basico %>
-    <% if diferencia_basicos.any? %>
-        <select id="select_basico">
-            <% diferencia_basicos.each do | basico | %>
-                <%= ('<option value="' + basico.id.to_s + '">' + basico.nombre_producto + '</option>').html_safe %>
-            <% end %>
-        </select>
-    <% end %>
-    <!--
     <%= f.fields_for :basicos do |builder|  %>
         <%= builder.select :basico_id, Basico.all.collect {|x| [x.nombre_producto, x.id]}, {}, :id => "select_basico" %>
     <% end %>-->
-
-    <a href="#" id="agregar">Agregar</a>
 
     <!-- Basicos -->    
     <%= f.fields_for :basicos do |builder|  %>
@@ -68,14 +69,17 @@
                 <th>Eliminar</th>
             </tr>
             <% if @compuesto.basico.any? %>
+                <% i = 0 %>
                 <% @compuesto.basico.each do | basico | %>
-                <tr>
-                    <td><input type="hidden" name="compuesto[basicos][basico_id][]" value="<%= basico.id %>"><%= basico.id              %></td>
-                    <td><%= basico.nombre_producto %></td>
-                    <td><%= basico.precio          %></td>
-                    <!--<td><%= basico.composicion.at(0).cantidad        %></td>-->
-                    <td><a href="#" class="eliminar">Eliminar</a></td>
-                </tr>
+                    <tr>
+                        <td><input type="hidden" name="compuesto[basico][][id]" value="<%= basico.id %>"><%= basico.id              %></td>
+                        <td><%= basico.nombre_producto %></td>
+                        <!--<td><%= @compuesto.composicion.inspect %></td>-->
+                        <!--<td><%= basico.composicion.at(0).cantidad        %></td>-->
+                        <td><input type="text" name="compuesto[basico][][cantidad]" value="<%= @compuesto.composicion[i].cantidad        %>"></td>
+                        <td><a href="#" class="eliminar">Eliminar</a></td>
+                    </tr>
+                    <% i = i + 1 %>
                 <% end %>
             <% end %>
         </table>
@@ -95,14 +99,15 @@
             }
 
             $(this).closest('tr').remove();
-            $('#agregar').show();
-            $('#select_basico').show();
+            //$('#agregar').show();
+            //$('#select_basico').show();
+            $('#div_select_basico').show();
         });
         $('#agregar').on('click', function(){
          var row = '<tr>';
-            row += '<td><input type="hidden" name="compuesto[basicos][basico_id][]" value ="'+$('#select_basico').val()+'">' + $('#select_basico').val() + '</td>';
+            row += '<td><input type="hidden" name="compuesto[basico][][id]" value ="'+$('#select_basico').val()+'">' + $('#select_basico').val() + '</td>';
             row += '<td>' + $('#select_basico :selected').text() + '</td>';
-            row += '<td>' + 'hola' + '</td>';
+            row += '<td><input type="text" name="compuesto[basico][][cantidad]" value="1"></td>';
             row += '<td><a href="#" class="eliminar">Eliminar</a></td>';
             row += '</tr>';
             $('#tabla_basicos tr:last').after(row);
@@ -110,8 +115,9 @@
             // Remuevo el producto de la lista elegible
             $('#select_basico :selected').remove();
             if($('#select_basico option').length == 0){
-                $('#agregar').hide();
-                $('#select_basico').hide();
+                //$('#agregar').hide();
+                //$('#select_basico').hide();
+                $('#div_select_basico').hide();
             }
         });
     });

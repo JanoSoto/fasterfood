@@ -1,6 +1,4 @@
 <%= page_title "Productos Compuestos" %>
-<!--<%= link_to 'New Compuesto', new_compuesto_path %>-->
-  
 
 <div class="row">
     <div class="col-xs-12">
@@ -26,8 +24,8 @@
                         </span>
                     </td>
                     <!--<td><%= link_to 'Show', compuesto %></td> -->
-                    <td><%= link_to 'Edit', edit_compuesto_path(compuesto) %></td>
-                    <td><%= link_to 'Destroy', compuesto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <td><%= link_to 'Modificar', edit_compuesto_path(compuesto) %></td>
+                    <td><%= link_to 'Eliminar', compuesto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                   </tr>
                 <% end %>
 
@@ -35,3 +33,4 @@
         </div><!-- /.box-body -->
     </div>
 </div>
+<a href="<%= url_for new_compuesto_path %>" class="pull-right"><button type="button" class="btn btn-success">Añadir Producto Compuesto</button></a>

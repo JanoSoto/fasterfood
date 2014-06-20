@@ -6,7 +6,7 @@ module ApplicationHelper
 		html  = '<div class="btn-group">'
 		#html += '<button type="submit" class="btn btn-success">Guardar</button>'
 		html += aceptar_btn
-		html += '<a href="' + cancelar_url + '" class="btn btn-danger">Cancelar</a>'
+		html += '<a href="' + cancelar_url + '" class="btn btn-default">Cancelar</a>'
 		html += '</div>'
 		html.html_safe
 	end
