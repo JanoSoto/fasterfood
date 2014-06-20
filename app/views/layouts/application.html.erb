@@ -303,7 +303,9 @@
                             <img src="<%= base_url %>/AdminLTE/img/avatar3.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, Jane</p>
+                            <% if user_signed_in? %>
+                                <p><%= current_user.email %></p>
+                            <% end %>
                             <%= link_to "Salir", destroy_user_session_path, :method => :delete %>
 
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
