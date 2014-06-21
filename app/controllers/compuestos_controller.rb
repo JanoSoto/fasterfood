@@ -44,6 +44,7 @@ class CompuestosController < ApplicationController
   # PATCH/PUT /compuestos/1
   # PATCH/PUT /compuestos/1.json
   def update
+    raise 'An error has occured'  
     respond_to do |format|
       basicos = Array.new
       if !params[:compuesto][:basico].nil?
