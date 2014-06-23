@@ -323,6 +323,17 @@
                     <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-bar-chart-o"></i>
+                                <span>Productos</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<%= url_for controller: 'basicos', action: 'index' %>"><i class="fa fa-angle-double-right"></i>Básico</a></li>
+                                <li><a href="<%= url_for controller: 'compuestos', action: 'index' %>"><i class="fa fa-angle-double-right"></i> Compuesto</a></li>
+                            </ul>
+                        </li>
                         <% acciones = {
                             'productos' => {
                                 'compuestos' => @compuestos,

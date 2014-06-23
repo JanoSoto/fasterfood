@@ -1,6 +1,6 @@
 class CompuestosController < ApplicationController
   check_authorization
-  load_and_authorize_resource
+  load_and_authorize_resource param_method: :compuesto_params
   #before_filter :authenticate_user!, :except => [:index, :show]
   #before_action :set_compuesto, only: [:show, :edit, :update, :destroy]
   #before_action :authenticate_user!
@@ -31,6 +31,25 @@ class CompuestosController < ApplicationController
     @compuesto = Compuesto.new(compuesto_params)
 
     respond_to do |format|
+      basicos = Array.new
+      if !params[:compuesto][:basico].nil?
+          params[:compuesto][:basico].each do | basico |
+              basicos.push(:id => basico['id'], :cantidad => basico['cantidad'])
+          end
+      end
+
+      i = 0
+      @compuesto.basico = Array.new
+      @compuesto.composicion = Array.new
+
+      basicos.each do | basico |
+        basico_nuevo = Basico.find(basico[:id])
+        @compuesto.basico.push basico_nuevo
+        @compuesto.composicion[i].cantidad = basico[:cantidad]
+        i = i + 1
+      end
+      #@compuesto.errors.add :nombre_poducto, params.inspect
+      #raise 'An error has occured'
       if @compuesto.save
         format.html { redirect_to @compuesto, notice: 'Compuesto was successfully created.' }
         format.json { render :show, status: :created, location: @compuesto }
@@ -44,7 +63,7 @@ class CompuestosController < ApplicationController
   # PATCH/PUT /compuestos/1
   # PATCH/PUT /compuestos/1.json
   def update
-    raise 'An error has occured'  
+    #raise 'An error has occured'  
     respond_to do |format|
       basicos = Array.new
       if !params[:compuesto][:basico].nil?
@@ -56,7 +75,6 @@ class CompuestosController < ApplicationController
       i = 0
       @compuesto.basico = Array.new
       @compuesto.composicion = Array.new
-      @compuesto.errors.add(:nombre_poducto, "A")
 
       basicos.each do | basico |
         basico_nuevo = Basico.find(basico[:id])
