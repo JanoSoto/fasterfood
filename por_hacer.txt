@@ -1,1 +1,7 @@
 Validar que stock crítico sea menor que stock ideal, en productos, ingredientes, materiales, etc...
+
+Que pasa si agrego 0 hamburguesas en una venta?
+
+En una venta deben salirme solo los que estan "en_venta"
+
+Estado venta: preparando... Que pasa si pongo cancelar una venta, y justo antes de poner cancelar, la venta habia cambiado su estado a listo

@@ -1,0 +1,110 @@
+<%= form_for(@venta) do |f| %>
+    <%= controller.action_name %>
+  <% if @venta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@venta.errors.count, "error") %> prohibited this venta from being saved:</h2>
+
+      <ul>
+      <% @venta.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre_cliente %><br>
+    <%= f.text_field :nombre_cliente %>
+  </div>
+  <div class="field">
+    <%= f.label :comentario_perdida %><br>
+    <%= f.text_field :comentario_perdida %>
+  </div>
+  <div class="field">
+    <%= f.label :numero_de_caja %><br>
+    <%= f.number_field :numero_de_caja %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <div class="box-header">
+      <h3 class="box-title">Productos Basicos</h3>
+  </div>
+  <% diferencia_basicos = Basico.all - @venta.basico %>
+  <% if diferencia_basicos.any? %>
+      <div class="form-group" id="div_select_basico">
+          <label for="input_enventa" class="col-sm-2 control-label">Añadir productos básicos</label>
+          <div class="col-sm-2">
+              <select id="select_basico" class="form-control">
+                  <% diferencia_basicos.each do | basico | %>
+                      <%= ('<option value="' + basico.id.to_s + '">' + basico.nombre_producto + '</option>').html_safe %>
+                  <% end %>
+              </select>
+          </div>
+          <div class="col-sm-2">
+              <a href="#" id="agregar">Agregar</a>
+          </div>
+      </div>
+  <% end %>
+
+  <%= f.fields_for :basicos do |builder|  %>
+      <table class="table table-hover" id="tabla_basicos">
+          <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+              <th>Eliminar</th>
+          </tr>
+          <% if @venta.basico.any? %>
+              <% i = 0 %>
+              <% @venta.basico.each do | basico | %>
+                  <tr>
+                      <td><input type="hidden" name="venta[basico][][id]" value="<%= basico.id %>"><%= basico.id              %></td>
+                      <td><%= basico.nombre_producto %></td>
+                      <td><input type="text" name="venta[basico][][cantidad]" value="<%= @venta.detalle[i].cantidad        %>"></td>
+                      <td><a href="#" class="eliminar">Eliminar</a></td>
+                  </tr>
+                  <% i = i + 1 %>
+              <% end %>
+          <% end %>
+      </table>
+  <% end %>
+<% end %>
+
+<script type="text/javascript">
+    $(function(){
+        $('#tabla_basicos').delegate('.eliminar', 'click', function(){
+            // Agrego el producto a la lista elegible
+            var select = $('#select_basico');
+            var valor_seleccionado = $(this).closest('input').val();
+            if( select.find('option[value='+ valor_seleccionado +']').length == 0){
+                var eliminado        = $(this).closest('tr');
+                var eliminado_nombre = eliminado.find('td:nth-child(2)');
+                var eliminado_value  = eliminado.find('td:nth-child(1)');
+                select.append( new Option(eliminado_nombre.text(),eliminado_value.text()) );
+            }
+
+            $(this).closest('tr').remove();
+            //$('#agregar').show();
+            //$('#select_basico').show();
+            $('#div_select_basico').show();
+        });
+        $('#agregar').on('click', function(){
+         var row = '<tr>';
+            row += '<td><input type="hidden" name="venta[basico][][id]" value ="'+$('#select_basico').val()+'">' + $('#select_basico').val() + '</td>';
+            row += '<td>' + $('#select_basico :selected').text() + '</td>';
+            row += '<td><input type="text" name="venta[basico][][cantidad]" value="1"></td>';
+            row += '<td><a href="#" class="eliminar">Eliminar</a></td>';
+            row += '</tr>';
+            $('#tabla_basicos tr:last').after(row);
+
+            // Remuevo el producto de la lista elegible
+            $('#select_basico :selected').remove();
+            if($('#select_basico option').length == 0){
+                //$('#agregar').hide();
+                //$('#select_basico').hide();
+                $('#div_select_basico').hide();
+            }
+        });
+    });
+</script>

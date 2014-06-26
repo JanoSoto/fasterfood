@@ -21,3 +21,12 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    errors:
+      messages:
+        blank: " no puede ser vacío"
+        taken: " ya está ocupado"
+  activerecord:
+    attributes:
+      user:
+        password_confirmation: Confirmacion de contraseña

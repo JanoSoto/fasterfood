@@ -1,0 +1,57 @@
+<%= form_for(@detalle) do |f| %>
+  <% if @detalle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@detalle.errors.count, "error") %> prohibited this detalle from being saved:</h2>
+
+      <ul>
+      <% @detalle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :compuesto_id %><br>
+    <%= f.number_field :compuesto_id %>
+  </div>
+  <div class="field">
+    <%= f.label :basico_id %><br>
+    <%= f.number_field :basico_id %>
+  </div>
+  <div class="field">
+    <%= f.label :estado %><br>
+    <%= f.text_field :estado %>
+  </div>
+  <div class="field">
+    <%= f.label :tiempo_entrega %><br>
+    <%= f.datetime_select :tiempo_entrega %>
+  </div>
+  <div class="field">
+    <%= f.label :tiempo_en_espera %><br>
+    <%= f.datetime_select :tiempo_en_espera %>
+  </div>
+  <div class="field">
+    <%= f.label :tiempo_preparando %><br>
+    <%= f.datetime_select :tiempo_preparando %>
+  </div>
+  <div class="field">
+    <%= f.label :tiempo_terminado %><br>
+    <%= f.datetime_select :tiempo_terminado %>
+  </div>
+  <div class="field">
+    <%= f.label :tiempo_entregado_deseachado %><br>
+    <%= f.datetime_select :tiempo_entregado_deseachado %>
+  </div>
+  <div class="field">
+    <%= f.label :intento_entrega %><br>
+    <%= f.number_field :intento_entrega %>
+  </div>
+  <div class="field">
+    <%= f.label :precio %><br>
+    <%= f.number_field :precio %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

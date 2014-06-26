@@ -343,13 +343,25 @@
                         } %>
                         <% acciones.each do | nombre, accion | %>
                             <% if can? :manage, accion %>
-                                <%= generar_menu_para nombre, accion %>
+                                <% generar_menu_para nombre, accion %>
                             <% end %>
                         <% end %>
                         
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-th"></i>
+                                <span>Ventas</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="<%= url_for controller: 'venta', action: 'index' %>"><i class="fa fa-angle-double-right"></i>Index</a></li>
+                                <li><a href="<%= url_for controller: 'venta', action: 'new' %>"><i class="fa fa-angle-double-right"></i>Nueva venta</a></li>
+                            </ul>
+                        </li>
+
                         <li>
                             <a href="pages/widgets.html">
-                                <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
+                                <i class="fa fa-th"></i> <span>Ventas</span> <small class="badge pull-right bg-green">new</small>
                             </a>
                         </li>
                         <li class="treeview">

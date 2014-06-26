@@ -54,6 +54,9 @@ en:
       expired: "has expired, please request a new one"
       not_found: "not found"
       not_locked: "was not locked"
+      blank: " no puede ser vacío"
+      taken: " ya está ocupado"
+      invalid: " inválido"
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"

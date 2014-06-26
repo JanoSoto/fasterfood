@@ -1,0 +1,68 @@
+<p>
+  <strong>Vendedor:</strong>
+  <%= @venta.user.email %>
+</p>
+
+<p>
+  <strong>Fecha hora:</strong>
+  <%= @venta.fecha_hora %>
+  <!-- .strftime("%d-%m-%Y %H:%M") -->
+</p>
+
+<p>
+  <strong>Nombre cliente:</strong>
+  <%= @venta.nombre_cliente %>
+</p>
+
+<p>
+  <strong>Precio total:</strong>
+  <%= @venta.precio_total %>
+</p>
+
+<p>
+  <strong>Comentario perdida:</strong>
+  <%= @venta.comentario_perdida %>
+</p>
+
+<p>
+  <strong>Numero de caja:</strong>
+  <%= @venta.numero_de_caja %>
+</p>
+
+<p>
+  <strong>Estado venta:</strong>
+  <% if @venta.estado_venta.nil? %>
+      <span class="label label-danger">Cancelada</span>
+  <% else %>
+      <span class="label label-warning">Emitida</span>
+  <% end %>
+</p>
+
+<p>
+  <strong>Tiempo terminado venta:</strong>
+  <%= @venta.tiempo_terminado_venta %>
+</p>
+
+<!--%= link_to 'Edit', edit_venta_path(@venta) %> |
+<%= link_to 'Back', venta_path %>-->
+
+<div class="box-header">
+  <h3 class="box-title">Productos Basicos</h3>
+</div>
+<table class="table table-hover" id="tabla_basicos">
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+    </tr>
+    <% if @venta.basico.any? %>
+        <% i = 0 %>
+        <% @venta.basico.each do | basico | %>
+            <tr>
+                <td><%= basico.nombre_producto %></td>
+                <td><%= @venta.detalle[i].cantidad %></td>
+            </tr>
+            <% i = i + 1 %>
+        <% end %>
+    <% end %>
+</table>

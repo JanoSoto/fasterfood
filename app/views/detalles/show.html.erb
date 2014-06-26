@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Compuesto:</strong>
+  <%= @detalle.compuesto_id %>
+</p>
+
+<p>
+  <strong>Basico:</strong>
+  <%= @detalle.basico_id %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @detalle.estado %>
+</p>
+
+<p>
+  <strong>Tiempo entrega:</strong>
+  <%= @detalle.tiempo_entrega %>
+</p>
+
+<p>
+  <strong>Tiempo en espera:</strong>
+  <%= @detalle.tiempo_en_espera %>
+</p>
+
+<p>
+  <strong>Tiempo preparando:</strong>
+  <%= @detalle.tiempo_preparando %>
+</p>
+
+<p>
+  <strong>Tiempo terminado:</strong>
+  <%= @detalle.tiempo_terminado %>
+</p>
+
+<p>
+  <strong>Tiempo entregado deseachado:</strong>
+  <%= @detalle.tiempo_entregado_deseachado %>
+</p>
+
+<p>
+  <strong>Intento entrega:</strong>
+  <%= @detalle.intento_entrega %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @detalle.precio %>
+</p>
+
+<%= link_to 'Edit', edit_detalle_path(@detalle) %> |
+<%= link_to 'Back', detalles_path %>

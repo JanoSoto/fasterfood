@@ -1,0 +1,1 @@
+json.extract! @detalle, :id, :compuesto_id, :basico_id, :estado, :tiempo_entrega, :tiempo_en_espera, :tiempo_preparando, :tiempo_terminado, :tiempo_entregado_deseachado, :intento_entrega, :precio, :created_at, :updated_at

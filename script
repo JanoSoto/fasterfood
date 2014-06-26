@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Listo"
+source ~/.rvm/scripts/rvm
+echo "Listo"
+rails s

@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
+  resources :detalles
+
+  get 'venta/:id/cambiar_estado/:estado_nuevo' => 'venta#cambiar_estado'
+  resources :venta do
+    get 'index_path'
+  end
+
+  resources :vendedors
+
   resources :ingredientes
 
   devise_for :users
-  root 'compuestos#index'
+  root 'basicos#index'
   resources :alerta_obsolescencia
 
   resources :compuestos

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @vendedor.rut %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @vendedor.nombre %>
+</p>
+
+<p>
+  <strong>Apellido paterno:</strong>
+  <%= @vendedor.apellido_paterno %>
+</p>
+
+<p>
+  <strong>Apellido materno:</strong>
+  <%= @vendedor.apellido_materno %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @vendedor.telefono %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @vendedor.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_vendedor_path(@vendedor) %> |
+<%= link_to 'Back', vendedors_path %>

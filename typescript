@@ -1,0 +1,450 @@
+Script iniciado (lun 23 jun 2014 11:24:34 CLT
+)]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rails ssource ~/.rvm/scripts/rvm rails generate devise:install[8Pgem install devise -Vrails generate devise:install[3Psource ~/.rvm/scripts/rvm rails s[K[K./script 
+Listo
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ mv script script [K.sh
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ script.sh
+script.sh: no se encontró la orden
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ script.sh.script.sh/script.sh
+Listo
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rail[K[K[K[K./script.sh
+Listo
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ ./script.sh
+Listo
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ ./script.sh[2Pscript.shmv script script.sh[10Pscript.sh./script.sh[K./script.sh
+Listo
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ ./script.sh
+Listo
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ ./script.sh
+Listo
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ ./script.sh[2Pscript.shmv script script.sh[H[2J]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ mv script script.sh^C
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ ./script.sh
+Listo
+^CExiting
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require': Interrupt
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `block in require'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:232:in `load_dependency'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+	from /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/config.rb:15:in `<top (required)>'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `block in require'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:232:in `load_dependency'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+	from /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick.rb:211:in `<top (required)>'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `block in require'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:232:in `load_dependency'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/dependencies.rb:247:in `require'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rack-1.5.2/lib/rack/handler/webrick.rb:1:in `<top (required)>'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rack-1.5.2/lib/rack/handler.rb:20:in `const_get'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rack-1.5.2/lib/rack/handler.rb:20:in `block in get'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rack-1.5.2/lib/rack/handler.rb:20:in `each'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rack-1.5.2/lib/rack/handler.rb:20:in `inject'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rack-1.5.2/lib/rack/handler.rb:20:in `get'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rack-1.5.2/lib/rack/handler.rb:38:in `block in pick'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rack-1.5.2/lib/rack/handler.rb:36:in `each'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rack-1.5.2/lib/rack/handler.rb:36:in `pick'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rack-1.5.2/lib/rack/handler.rb:57:in `default'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rack-1.5.2/lib/rack/server.rb:268:in `server'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/railties-4.1.1/lib/rails/commands/server.rb:112:in `print_boot_information'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/railties-4.1.1/lib/rails/commands/server.rb:64:in `start'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/railties-4.1.1/lib/rails/commands/commands_tasks.rb:81:in `block in server'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/railties-4.1.1/lib/rails/commands/commands_tasks.rb:76:in `tap'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/railties-4.1.1/lib/rails/commands/commands_tasks.rb:76:in `server'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/railties-4.1.1/lib/rails/commands/commands_tasks.rb:40:in `run_command!'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/railties-4.1.1/lib/rails/commands.rb:17:in `<top (required)>'
+	from /home/giovanni/Universidad/pbd_final/pbd/bin/rails:8:in `require'
+	from /home/giovanni/Universidad/pbd_final/pbd/bin/rails:8:in `<top (required)>'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `load'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/spring-1.1.3/lib/spring/client/rails.rb:27:in `call'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/spring-1.1.3/lib/spring/client/command.rb:7:in `call'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/spring-1.1.3/lib/spring/client.rb:26:in `run'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/spring-1.1.3/bin/spring:48:in `<top (required)>'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `load'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/spring-1.1.3/lib/spring/binstub.rb:11:in `<top (required)>'
+	from /home/giovanni/Universidad/pbd_final/pbd/bin/spring:16:in `require'
+	from /home/giovanni/Universidad/pbd_final/pbd/bin/spring:16:in `<top (required)>'
+	from bin/rails:3:in `load'
+	from bin/rails:3:in `<main>'
+
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ source ~/.rvm/scripts/rvm
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ gem install simple_form
+Successfully installed simple_form-3.0.2
+Parsing documentation for simple_form-3.0.2
+Installing ri documentation for simple_form-3.0.2
+Done installing documentation for simple_form after 7 seconds
+1 gem installed
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rails g migration AddColumnsToUser s[Krut:integer nombre:string{20} apellido_paterno:string{20} apellido_materno:string{ 20} telefono:integer{8} user_id:integer 
+[1m[37m      invoke[0m  active_record
+[1m[32m      create[0m    db/migrate/20140623161642_add_columns_to_user.rb
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rake dbm[Krake d[K}[K[K[K[K[K[K[K:migrated:migrate
+^C/home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/optparse.rb:213:in `<top (required)>': Interrupt
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rake-10.3.2/lib/rake.rb:38:in `require'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rake-10.3.2/lib/rake.rb:38:in `<top (required)>'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rake-10.3.2/bin/rake:31:in `require'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/gems/rake-10.3.2/bin/rake:31:in `<top (required)>'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/bin/rake:23:in `load'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/bin/rake:23:in `<main>'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `eval'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `<main>'
+
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rake dd:migrate[C[1P:migrated:migrate[1P:migrateb:migrate
+== 20140623161642 AddColumnsToUser: migrating =================================
+-- add_column(:users, :rut, :integer)
+   -> 0.4389s
+-- add_column(:users, :nombre, :string, {:limit=>20})
+   -> 0.2706s
+-- add_column(:users, :apellido_paterno, :string, {:limit=>20})
+   -> 0.2707s
+-- add_column(:users, :apellido_materno, :string, {:limit=>20})
+   -> 0.2833s
+-- add_column(:users, :telefono, :integer, {:limit=>8})
+   -> 0.2595s
+-- add_column(:users, :user_id, :integer)
+   -> 0.2819s
+== 20140623161642 AddColumnsToUser: migrated (1.8061s) ========================
+
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rails generate devise:views
+[1m[32m      invoke[0m  Devise::Generators::SharedViewsGenerator
+[1m[34m       exist[0m    app/views/devise/shared
+[1m[34m   identical[0m    app/views/devise/shared/_links.erb
+[1m[37m      invoke[0m  simple_form_for
+[1m[34m       exist[0m    app/views/devise/confirmations
+[1m[31m    conflict[0m    app/views/devise/confirmations/new.html.erb
+  Overwrite /home/giovanni/Universidad/pbd_final/pbd/app/views/devise/confirmations/new.html.erb? (enter "h" for help) [Ynaqdh] y
+[1m[33m       force[0m    app/views/devise/confirmations/new.html.erb
+[1m[34m       exist[0m    app/views/devise/passwords
+[1m[31m    conflict[0m    app/views/devise/passwords/edit.html.erb
+  Overwrite /home/giovanni/Universidad/pbd_final/pbd/app/views/devise/passwords/edit.html.erb? (enter "h" for help) [Ynaqdh] y
+[1m[33m       force[0m    app/views/devise/passwords/edit.html.erb
+[1m[31m    conflict[0m    app/views/devise/passwords/new.html.erb
+  Overwrite /home/giovanni/Universidad/pbd_final/pbd/app/views/devise/passwords/new.html.erb? (enter "h" for help) [Ynaqdh] y
+[1m[33m       force[0m    app/views/devise/passwords/new.html.erb
+[1m[34m       exist[0m    app/views/devise/registrations
+[1m[31m    conflict[0m    app/views/devise/registrations/edit.html.erb
+  Overwrite /home/giovanni/Universidad/pbd_final/pbd/app/views/devise/registrations/edit.html.erb? (enter "h" for help) [Ynaqdh] y
+[1m[33m       force[0m    app/views/devise/registrations/edit.html.erb
+[1m[31m    conflict[0m    app/views/devise/registrations/new.html.erb
+  Overwrite /home/giovanni/Universidad/pbd_final/pbd/app/views/devise/registrations/new.html.erb? (enter "h" for help) [Ynaqdh] y
+[1m[33m       force[0m    app/views/devise/registrations/new.html.erb
+[1m[34m       exist[0m    app/views/devise/sessions
+[1m[31m    conflict[0m    app/views/devise/sessions/new.html.erb
+  Overwrite /home/giovanni/Universidad/pbd_final/pbd/app/views/devise/sessions/new.html.erb? (enter "h" for help) [Ynaqdh] y
+[1m[33m       force[0m    app/views/devise/sessions/new.html.erb
+[1m[34m       exist[0m    app/views/devise/unlocks
+[1m[31m    conflict[0m    app/views/devise/unlocks/new.html.erb
+  Overwrite /home/giovanni/Universidad/pbd_final/pbd/app/views/devise/unlocks/new.html.erb? (enter "h" for help) [Ynaqdh] y
+[1m[33m       force[0m    app/views/devise/unlocks/new.html.erb
+[1m[37m      invoke[0m  erb
+[1m[34m       exist[0m    app/views/devise/mailer
+[1m[34m   identical[0m    app/views/devise/mailer/confirmation_instructions.html.erb
+[1m[34m   identical[0m    app/views/devise/mailer/reset_password_instructions.html.erb
+[1m[34m   identical[0m    app/views/devise/mailer/unlock_instructions.html.erb
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ git branch
+* agregar_vendedores
+  master
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rails g scaffold venta
+Plural version of the model detected, using singularized version. Override with --force-plural.
+[1m[37m      invoke[0m  active_record
+[1m[32m      create[0m    db/migrate/20140623183531_create_venta.rb
+[1m[32m      create[0m    app/models/ventum.rb
+[1m[37m      invoke[0m    test_unit
+[1m[32m      create[0m      test/models/ventum_test.rb
+[1m[32m      create[0m      test/fixtures/venta.yml
+[1m[37m      invoke[0m  resource_route
+[1m[32m       route[0m    resources :venta
+[1m[37m      invoke[0m  scaffold_controller
+[1m[32m      create[0m    app/controllers/venta_controller.rb
+[1m[37m      invoke[0m    erb
+[1m[32m      create[0m      app/views/venta
+[1m[32m      create[0m      app/views/venta/index.html.erb
+[1m[32m      create[0m      app/views/venta/edit.html.erb
+[1m[32m      create[0m      app/views/venta/show.html.erb
+[1m[32m      create[0m      app/views/venta/new.html.erb
+[1m[32m      create[0m      app/views/venta/_form.html.erb
+[1m[37m      invoke[0m    test_unit
+[1m[32m      create[0m      test/controllers/venta_controller_test.rb
+[1m[37m      invoke[0m    helper
+[1m[32m      create[0m      app/helpers/venta_helper.rb
+[1m[37m      invoke[0m      test_unit
+[1m[32m      create[0m        test/helpers/venta_helper_test.rb
+[1m[37m      invoke[0m    jbuilder
+[1m[32m      create[0m      app/views/venta/index.json.jbuilder
+[1m[32m      create[0m      app/views/venta/show.json.jbuilder
+[1m[37m      invoke[0m  assets
+[1m[37m      invoke[0m    coffee
+[1m[32m      create[0m      app/assets/javascripts/venta.js.coffee
+[1m[37m      invoke[0m    scss
+[1m[32m      create[0m      app/assets/stylesheets/venta.css.scss
+[1m[37m      invoke[0m  scss
+[1m[34m   identical[0m    app/assets/stylesheets/scaffolds.css.scss
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rake db:migrate
+== 20140623183531 CreateVenta: migrating ======================================
+-- create_table(:venta)
+-- vendedor_id()
+rake aborted!
+StandardError: An error has occurred, all later migrations canceled:
+
+undefined local variable or method `vendedor_id' for #<CreateVenta:0xc196340>/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:648:in `block in method_missing'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `block in say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:641:in `method_missing'
+/home/giovanni/Universidad/pbd_final/pbd/db/migrate/20140623183531_create_venta.rb:4:in `block in change'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:198:in `create_table'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:458:in `create_table'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:649:in `block in method_missing'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `block in say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:641:in `method_missing'
+/home/giovanni/Universidad/pbd_final/pbd/db/migrate/20140623183531_create_venta.rb:3:in `change'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:595:in `exec_migration'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:579:in `block (2 levels) in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:578:in `block in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:294:in `with_connection'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:577:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:752:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:992:in `block in execute_migration_in_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:1040:in `ddl_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:991:in `execute_migration_in_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:953:in `block in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:949:in `each'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:949:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:807:in `up'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:785:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/railties/databases.rake:34:in `block (2 levels) in <top (required)>'
+/home/giovanni/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `eval'
+/home/giovanni/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `<main>'
+NameError: undefined local variable or method `vendedor_id' for #<CreateVenta:0xc196340>
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:648:in `block in method_missing'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `block in say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:641:in `method_missing'
+/home/giovanni/Universidad/pbd_final/pbd/db/migrate/20140623183531_create_venta.rb:4:in `block in change'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:198:in `create_table'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:458:in `create_table'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:649:in `block in method_missing'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `block in say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:641:in `method_missing'
+/home/giovanni/Universidad/pbd_final/pbd/db/migrate/20140623183531_create_venta.rb:3:in `change'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:595:in `exec_migration'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:579:in `block (2 levels) in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:578:in `block in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:294:in `with_connection'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:577:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:752:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:992:in `block in execute_migration_in_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:1040:in `ddl_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:991:in `execute_migration_in_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:953:in `block in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:949:in `each'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:949:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:807:in `up'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:785:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/railties/databases.rake:34:in `block (2 levels) in <top (required)>'
+/home/giovanni/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `eval'
+/home/giovanni/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `<main>'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rake db:migrate[H[2J]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rake db:migrate
+== 20140623183531 CreateVenta: migrating ======================================
+-- create_table(:venta)
+rake aborted!
+StandardError: An error has occurred, all later migrations canceled:
+
+Mysql2::Error: Table 'venta' already exists: CREATE TABLE `venta` (`id` int(11) auto_increment PRIMARY KEY, `vendedor_id` int(11) NOT NULL, `fecha_hora` datetime NOT NULL, `nombre_cliente` varchar(20) NOT NULL, `precio_total` int(11) NOT NULL, `comentario_perdida` varchar(200) NOT NULL, `numero_de_caja` int(11), `estado_venta` varchar(20), `tiempo_terminado_venta` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:301:in `query'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:301:in `block in execute'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_adapter.rb:373:in `block in log'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_adapter.rb:367:in `log'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:301:in `execute'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/mysql2_adapter.rb:228:in `execute'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:205:in `create_table'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:458:in `create_table'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:649:in `block in method_missing'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `block in say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:641:in `method_missing'
+/home/giovanni/Universidad/pbd_final/pbd/db/migrate/20140623183531_create_venta.rb:3:in `change'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:595:in `exec_migration'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:579:in `block (2 levels) in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:578:in `block in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:294:in `with_connection'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:577:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:752:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:992:in `block in execute_migration_in_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:1040:in `ddl_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:991:in `execute_migration_in_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:953:in `block in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:949:in `each'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:949:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:807:in `up'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:785:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/railties/databases.rake:34:in `block (2 levels) in <top (required)>'
+/home/giovanni/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `eval'
+/home/giovanni/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `<main>'
+ActiveRecord::StatementInvalid: Mysql2::Error: Table 'venta' already exists: CREATE TABLE `venta` (`id` int(11) auto_increment PRIMARY KEY, `vendedor_id` int(11) NOT NULL, `fecha_hora` datetime NOT NULL, `nombre_cliente` varchar(20) NOT NULL, `precio_total` int(11) NOT NULL, `comentario_perdida` varchar(200) NOT NULL, `numero_de_caja` int(11), `estado_venta` varchar(20), `tiempo_terminado_venta` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:301:in `query'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:301:in `block in execute'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_adapter.rb:373:in `block in log'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_adapter.rb:367:in `log'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:301:in `execute'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/mysql2_adapter.rb:228:in `execute'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:205:in `create_table'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:458:in `create_table'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:649:in `block in method_missing'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `block in say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:641:in `method_missing'
+/home/giovanni/Universidad/pbd_final/pbd/db/migrate/20140623183531_create_venta.rb:3:in `change'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:595:in `exec_migration'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:579:in `block (2 levels) in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:578:in `block in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:294:in `with_connection'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:577:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:752:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:992:in `block in execute_migration_in_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:1040:in `ddl_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:991:in `execute_migration_in_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:953:in `block in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:949:in `each'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:949:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:807:in `up'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:785:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/railties/databases.rake:34:in `block (2 levels) in <top (required)>'
+/home/giovanni/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `eval'
+/home/giovanni/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `<main>'
+Mysql2::Error: Table 'venta' already exists
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:301:in `query'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:301:in `block in execute'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_adapter.rb:373:in `block in log'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activesupport-4.1.1/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_adapter.rb:367:in `log'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:301:in `execute'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/mysql2_adapter.rb:228:in `execute'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract/schema_statements.rb:205:in `create_table'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract_mysql_adapter.rb:458:in `create_table'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:649:in `block in method_missing'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `block in say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:621:in `say_with_time'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:641:in `method_missing'
+/home/giovanni/Universidad/pbd_final/pbd/db/migrate/20140623183531_create_venta.rb:3:in `change'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:595:in `exec_migration'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:579:in `block (2 levels) in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:578:in `block in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:294:in `with_connection'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:577:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:752:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:992:in `block in execute_migration_in_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:1040:in `ddl_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:991:in `execute_migration_in_transaction'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:953:in `block in migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:949:in `each'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:949:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:807:in `up'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/migration.rb:785:in `migrate'
+/home/giovanni/.rvm/gems/ruby-2.1.2/gems/activerecord-4.1.1/lib/active_record/railties/databases.rake:34:in `block (2 levels) in <top (required)>'
+/home/giovanni/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `eval'
+/home/giovanni/.rvm/gems/ruby-2.1.2/bin/ruby_executable_hooks:15:in `<main>'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rake db:migrate[H[2J]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rake db:migrate
+== 20140623183531 CreateVenta: migrating ======================================
+-- create_table(:venta)
+   -> 0.1215s
+== 20140623183531 CreateVenta: migrated (0.1223s) =============================
+
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ railske db:migrateils g scaffold venta[12Pgit branchrails g scaffold venta --skip-migration
+Plural version of the model detected, using singularized version. Override with --force-plural.
+[1m[37m      invoke[0m  active_record
+[1m[34m   identical[0m    app/models/ventum.rb
+[1m[37m      invoke[0m    test_unit
+[1m[34m   identical[0m      test/models/ventum_test.rb
+[1m[34m   identical[0m      test/fixtures/venta.yml
+[1m[37m      invoke[0m  resource_route
+[1m[32m       route[0m    resources :venta
+[1m[37m      invoke[0m  scaffold_controller
+[1m[34m   identical[0m    app/controllers/venta_controller.rb
+[1m[37m      invoke[0m    erb
+[1m[34m       exist[0m      app/views/venta
+[1m[34m   identical[0m      app/views/venta/index.html.erb
+[1m[34m   identical[0m      app/views/venta/edit.html.erb
+[1m[34m   identical[0m      app/views/venta/show.html.erb
+[1m[34m   identical[0m      app/views/venta/new.html.erb
+[1m[34m   identical[0m      app/views/venta/_form.html.erb
+[1m[37m      invoke[0m    test_unit
+[1m[34m   identical[0m      test/controllers/venta_controller_test.rb
+[1m[37m      invoke[0m    helper
+[1m[34m   identical[0m      app/helpers/venta_helper.rb
+[1m[37m      invoke[0m      test_unit
+[1m[34m   identical[0m        test/helpers/venta_helper_test.rb
+[1m[37m      invoke[0m    jbuilder
+[1m[34m   identical[0m      app/views/venta/index.json.jbuilder
+[1m[34m   identical[0m      app/views/venta/show.json.jbuilder
+[1m[37m      invoke[0m  assets
+[1m[37m      invoke[0m    coffee
+[1m[34m   identical[0m      app/assets/javascripts/venta.js.coffee
+[1m[37m      invoke[0m    scss
+[1m[34m   identical[0m      app/assets/stylesheets/venta.css.scss
+[1m[37m      invoke[0m  scss
+[1m[34m   identical[0m    app/assets/stylesheets/scaffolds.css.scss
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rails g scaffold venta --skip-migrationv--skip-migratione--skip-migrationn--skip-migrationd--skip-migratione--skip-migrationd--skip-migrationo--skip-migrationr--skip-migration_--skip-migrationi--skip-migrationd--skip-migration:--skip-migrationi--skip-migrationn--skip-migrationt--skip-migratione--skip-migrationg--skip-migratione--skip-migrationr--skip-migration{--skip-migrationn--skip-migrationu--skip-migrationl--skip-migrationl--skip-migration:--skip-migrationf--skip-migrationa--skip-migrationl--skip-migrations--skip-migratione--skip-migration
+^C/home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/monitor.rb:188:in `mon_enter': Interrupt
+	from /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:39:in `require'
+	from /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/rubygems/text.rb:1:in `<top (required)>'
+	from /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/rubygems/spec_fetcher.rb:4:in `<top (required)>'
+	from /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2@global/gems/bundler-1.6.2/lib/bundler/source/rubygems.rb:3:in `<top (required)>'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2@global/gems/bundler-1.6.2/lib/bundler/dsl.rb:31:in `rubygems_source'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2@global/gems/bundler-1.6.2/lib/bundler/dsl.rb:127:in `source'
+	from /home/giovanni/Universidad/pbd_final/pbd/Gemfile:1:in `eval_gemfile'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2@global/gems/bundler-1.6.2/lib/bundler/dsl.rb:36:in `instance_eval'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2@global/gems/bundler-1.6.2/lib/bundler/dsl.rb:36:in `eval_gemfile'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2@global/gems/bundler-1.6.2/lib/bundler/dsl.rb:10:in `evaluate'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2@global/gems/bundler-1.6.2/lib/bundler/definition.rb:26:in `build'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2@global/gems/bundler-1.6.2/lib/bundler.rb:153:in `definition'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2@global/gems/bundler-1.6.2/lib/bundler.rb:116:in `setup'
+	from /home/giovanni/.rvm/gems/ruby-2.1.2@global/gems/bundler-1.6.2/lib/bundler/setup.rb:7:in `<top (required)>'
+	from /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /home/giovanni/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+
+]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ rails g scaffold venta vendedor_id:integer{null:false--skip-migration}--skip-migration --skip-migrationf--skip-migratione--skip-migrationc--skip-migrationh--skip-migrationa--skip-migration_--skip-migrationh--skip-migrationo--skip-migrationr--skip-migrationa--skip-migration:--skip-migrationd--skip-migrationa--skip-migrationt--skip-migratione--skip-migrationt--skip-migrationi--skip-migrationm--skip-migratione--skip-migration{--skip-migrationn--skip-migrationu--skip-migrationl--skip-migrationl--skip-migration:--skip-migrationf--skip-migrationa--skip-migrationl--skip-migrations--skip-migratione--skip-migration}--skip-migration --skip-migrationn--skip-migrationo--skip-migrationm--skip-migrationb--skip-migrationr--skip-migratione--skip-migration_--skip-migrationc--skip-migrationl--skip-migrationi--skip-migratione--skip-migrationn--skip-migrationt--skip-migratione--skip-migration [A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C:--skip-migrationn[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cg--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C{--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C2--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C0--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C--skip-[1Pmigration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C--skip-m[1Pigration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C0--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C,}--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C }--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--ski[1Pp-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--skip[1P-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--skip-[1Pmigration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--skip-m[1Pigration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--skip-mi[1Pgration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--skip-mig[1Pration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--skip-migr[1Pation[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--skip-migra[1Ption[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--skip-migrat[1Pion[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--skip-migrati[1Pon[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--skip-migratio[1Pn[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C}--skip-migration[K[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C--skip-migration [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C --skip-migrationn[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C^?--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C:--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C--skip-migrati[1Pon[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C--skip-migration[K[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C:--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C--skip-migration[K[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C--skip-migration [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C:--skip-migrationn[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cs--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cg--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C --skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cp--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cc--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Co--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C_--skip-migration[A]0;giovanni@giovanni-DOTMU: ~/Universidad/pbd_final/pbdgiovanni@giovanni-DOTMU:~/Universidad/pbd_final/pbd$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ct--skip-migrationo--skip-migration[Ct--skip-migration[C[Ca--skip-migration[C[C[Cl--skip-migration[C[C[C[C:--skip-migration[C[C[C[C[Ci--skip-migration[C[C[C[C[C[Cn--skip-migration[C[C[C[C[C[C[Ct--skip-migration[C[C[C[C[C[C[C[Ce--skip-migration[C[C[C[C[C[C[C[C[Cg--skip-migration[C[C[C[C[C[C[C[C[C[Ce--skip-migration[C[C[C[C[C[C[C[C[C[C[Cr--skip-migration[C[C[C[C[C[C[C[C[C[C[C[C --skip-migration[C[C[C[C[C[C[C[C[C[C[C[C[Cc--skip-migration[C[C[C[C[C[C[C[C[C[C[C[C[C[Co--skip-migrationm--skip-migratione--skip-migrationn--skip-migrationt--skip-migrationa--skip-migrationr--skip-migrationi--skip-migrationo--skip-migration_--skip-migrationp--skip-migratione--skip-migrationr--skip-migrationd--skip-migrationi--skip-migrationd--skip-migrationa--skip-migration:--skip-migrations--skip-migrationt--skip-migrationr--skip-migrationi--skip-migrationn--skip-migrationg--skip-migration --skip-migrationn--skip-migrationu--skip-migrationm--skip-migratione--skip-migrationr--skip-migrationo--skip-migration_--skip-migrationd--skip-migratione--skip-migration_--skip-migrationc--skip-migrationa--skip-migrationj--skip-migrationa--skip-migration:--skip-migrationi--skip-migrationn--skip-migrationt--skip-migratione--skip-migrationg--skip-migratione--skip-migrationr--skip-migration --skip-migratione--skip-migrations--skip-migrationt--skip-migrationa--skip-migrationd--skip-migrationo--skip-migration_--skip-migrationv--skip-migratione--skip-migrationn--skip-migrationt--skip-migrationa--skip-migration:--skip-migrations--skip-migrationt--skip-migrationr--skip-migrationi--skip-migrationn--skip-migrationg--skip-migration{--skip-migration2--skip-migration0--skip-migration\--skip-migration[1P--skip-migration}--skip-migration --skip-migrationt--skip-migrationi--skip-migratione--skip-migrationm--skip-migrationp--skip-migrationo--skip-migration_--skip-migrationt--skip-migratione--skip-migrationr--skip-migrationm--skip-migrationi--skip-migrationn--skip-migrationa--skip-migrationd--skip-migrationo--skip-migration_--skip-migrationv--skip-migratione--skip-migrationn--skip-migrationt--skip-migrationa--skip-migration:--skip-migrationd--skip-migrationa--skip-migrationt--skip-migratione--skip-migrationt--skip-migrationi--skip-migrationm--skip-migratione--skip-migration --skip-migration
+Plural version of the model detected, using singularized version. Override with --force-plural.
+[1m[37m      invoke[0m  active_record
+[1m[34m   identical[0m    app/models/ventum.rb
+[1m[37m      invoke[0m    test_unit
+[1m[34m   identical[0m      test/models/ventum_test.rb
+[1m[31m    conflict[0m      test/fixtures/venta.yml
+    Overwrite /home/giovanni/Universidad/pbd_final/pbd/test/fixtures/venta.yml? (enter "h" for help) [Ynaqdh] y
+[1m[33m       force[0m      test/fixtures/venta.yml
+[1m[37m      invoke[0m  resource_route
+[1m[32m       route[0m    resources :venta
+[1m[37m      invoke[0m  scaffold_controller
+[1m[31m    conflict[0m    app/controllers/venta_controller.rb
+  Overwrite /home/giovanni/Universidad/pbd_final/pbd/app/controllers/venta_controller.rb? (enter "h" for help) [Ynaqdh] y
+[1m[33m       force[0m    app/controllers/venta_controller.rb
+[1m[37m      invoke[0m    erb
+[1m[34m       exist[0m      app/views/venta
+[1m[31m    conflict[0m      app/views/venta/index.html.erb
+    Overwrite /home/giovanni/Universidad/pbd_final/pbd/app/views/venta/index.html.erb? (enter "h" for help) [Ynaqdh] y
+[1m[33m       force[0m      app/views/venta/index.html.erb
+[1m[34m   identical[0m      app/views/venta/edit.html.erb
+[1m[31m    conflict[0m      app/views/venta/show.html.erb
+    Overwrite /home/giovanni/Universidad/pbd_final/pbd/app/views/venta/show.html.erb? (enter "h" for help) [Ynaqdh] y
+[1m[33m       force[0m      app/views/venta/show.html.erb
+[1m[34m   identical[0m      app/views/venta/new.html.erb
+[1m[31m    conflict[0m      app/views/venta/_form.html.erb
+    Overwrite /home/giovanni/Universidad/pbd_final/pbd/app/views/venta/_form.html.erb? (enter "h" for help) [Ynaqdh] y
+[1m[33m       force[0m      app/views/venta/_form.html.erb
+[1m[37m      invoke[0m    test_unit
+[1m[31m    conflict[0m      test/controllers/venta_controller_test.rb
+    Overwrite /home/giovanni/Universidad/pbd_final/pbd/test/controllers/venta_controller_test.rb? (enter "h" for help) [Ynaqdh] y
+[1m[33m       force[0m      test/controllers/venta_controller_test.rb
+[1m[37m      invoke[0m    helper
+[1m[34m   identical[0m      app/helpers/venta_helper.rb
+[1m[37m      invoke[0m      test_unit
+[1m[34m   identical[0m        test/helpers/venta_helper_test.rb
+[1
