@@ -30,14 +30,13 @@
   <div class="box-header">
       <h3 class="box-title">Productos Basicos</h3>
   </div>
-  <% diferencia_basicos = Basico.all - @venta.basico %>
-  <% if diferencia_basicos.any? %>
+  <% if @diferencia_basicos.any? %>
       <div class="form-group" id="div_select_basico">
           <label for="input_enventa" class="col-sm-2 control-label">Añadir productos básicos</label>
           <div class="col-sm-2">
               <select id="select_basico" class="form-control">
-                  <% diferencia_basicos.each do | basico | %>
-                      <%= ('<option value="' + basico.id.to_s + '">' + basico.nombre_producto + '</option>').html_safe %>
+                  <% @diferencia_basicos.each do | basico | %>
+                      <%= ('<option value="' + basico.tipo + '_' + basico.id.to_s + '">' + basico.nombre_producto + '</option>').html_safe %>
                   <% end %>
               </select>
           </div>
@@ -53,15 +52,17 @@
               <th>ID</th>
               <th>Nombre</th>
               <th>Cantidad</th>
+              <th>Comentario</th>
               <th>Eliminar</th>
           </tr>
           <% if @venta.basico.any? %>
               <% i = 0 %>
               <% @venta.basico.each do | basico | %>
                   <tr>
-                      <td><input type="hidden" name="venta[basico][][id]" value="<%= basico.id %>"><%= basico.id              %></td>
+                      <td><input type="hidden" name="venta[basico][][id]" value="<%= basico.id %>"><%= basico.id %></td>
                       <td><%= basico.nombre_producto %></td>
                       <td><input type="text" name="venta[basico][][cantidad]" value="<%= @venta.detalle[i].cantidad        %>"></td>
+                      <td><input type="text" name="venta[basico][][comentario]" value="<%= @venta.detalle[i].comentario        %>"></td>
                       <td><a href="#" class="eliminar">Eliminar</a></td>
                   </tr>
                   <% i = i + 1 %>
@@ -94,6 +95,7 @@
             row += '<td><input type="hidden" name="venta[basico][][id]" value ="'+$('#select_basico').val()+'">' + $('#select_basico').val() + '</td>';
             row += '<td>' + $('#select_basico :selected').text() + '</td>';
             row += '<td><input type="text" name="venta[basico][][cantidad]" value="1"></td>';
+            row += '<td><input type="text" name="venta[basico][][comentario]" value=""></td>';
             row += '<td><a href="#" class="eliminar">Eliminar</a></td>';
             row += '</tr>';
             $('#tabla_basicos tr:last').after(row);

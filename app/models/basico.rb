@@ -1,4 +1,5 @@
 class Basico < ActiveRecord::Base
+	attr_accessor :tipo
 	has_many :detalle
 	has_many :composicion
 	has_many :compuesto, :through => :composicion

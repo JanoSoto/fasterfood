@@ -17,6 +17,18 @@ class VentaController < ApplicationController
     @venta = Venta.new
     @venta.numero_de_caja = 1
     @venta.estado_venta = Venta.estados['EMITIDA']
+    basicos = Basico.all
+    compuestos = Compuesto.all
+
+    basicos.each do | basico |
+      basico.tipo = 'basico'
+    end
+
+    compuestos.each do | compuesto |
+      compuesto.tipo = 'compuesto'
+    end
+
+    @diferencia_basicos = basicos + compuestos
   end
 
   # GET /venta/1/edit
@@ -40,21 +52,35 @@ class VentaController < ApplicationController
           params[:venta][:basico].each do | basico |
             
               @venta.errors.add :nombre_cliente, "HOLA"
-              basicos.push(:id => basico['id'], :cantidad => basico['cantidad'])
+              
+              #id = basico['id'].slice('basico_').to_s.slice('compuesto_').to_s
+              #basico['id']['basico_'] = ''
+              id = basico['id'].sub('basico_', '')
+              id =        id.sub('compuesto_', '')
+              tipo = basico['id'].sub('_'+id, '')
+              basicos.push(:id => id, :cantidad => basico['cantidad'], :comentario => basico['comentario'], :tipo => tipo)
+              #basicos.push(:id => basico['id'], :comentario => basico['comentario'])
           end
       end
 
       i = 0
       @venta.basico = Array.new
+      @venta.compuesto = Array.new
       @venta.detalle = Array.new
 
       @venta.precio_total = 0;
       
       basicos.each do | basico |
-        basico_nuevo = Basico.find(basico[:id])
-        @venta.errors.add :comentario_perdida, basico_nuevo.inspect
-        @venta.basico.push basico_nuevo
+        if basico[:tipo] == 'basico'
+          basico_nuevo = Basico.find(basico[:id])
+          @venta.basico.push basico_nuevo
+        else
+          basico_nuevo = Compuesto.find(basico[:id])
+          @venta.compuesto.push basico_nuevo
+        end
+
         @venta.detalle[i].cantidad = basico[:cantidad]
+        @venta.detalle[i].comentario = basico[:comentario]
         @venta.precio_total += basico_nuevo.precio.to_i * basico[:cantidad].to_i
         i = i + 1
       end
@@ -126,6 +152,14 @@ class VentaController < ApplicationController
       format.html { redirect_to '/venta', notice: 'Venta cancelada correctamente.'}
       format.json { head :no_content }
     end
+  end
+
+  def preparar
+    @ventas = Venta.all.where(:estado_venta => [Venta::EMITIDA, Venta::PREPARANDO, Venta::FINALIZADA])
+    #respond_to do |format|
+      #format.html { redirect_to '/venta', notice: 'Venta cancelada correctamente.'}
+      #format.json { head :no_content }
+    #end
   end
 
   def cambiar_estado
