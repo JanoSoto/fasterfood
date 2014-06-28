@@ -1,8 +1,8 @@
 class CompuestosController < ApplicationController
-  check_authorization
+  #check_authorization
   load_and_authorize_resource param_method: :compuesto_params
   #before_filter :authenticate_user!, :except => [:index, :show]
-  #before_action :set_compuesto, only: [:show, :edit, :update, :destroy]
+  before_action :set_compuesto, only: [:show, :edit, :update, :destroy]
   #before_action :authenticate_user!
 
   # GET /compuestos
@@ -29,6 +29,7 @@ class CompuestosController < ApplicationController
   # POST /compuestos.json
   def create
     @compuesto = Compuesto.new(compuesto_params)
+    @compuesto.nombre_producto = @compuesto.nombre_producto.strip
 
     respond_to do |format|
       basicos = Array.new
@@ -83,7 +84,10 @@ class CompuestosController < ApplicationController
         i = i + 1
       end
 
-      if @compuesto.update(compuesto_params)
+      parametros = compuesto_params
+      parametros[:nombre_producto] = parametros[:nombre_producto].strip.downcase
+
+      if @compuesto.update(parametros)
         format.html { redirect_to edit_compuesto_path(@compuesto), notice: 'Producto actualizado correctamente !' }
         format.json { render :show, status: :ok, location: @compuesto }
       else
@@ -96,9 +100,11 @@ class CompuestosController < ApplicationController
   # DELETE /compuestos/1
   # DELETE /compuestos/1.json
   def destroy
-    @compuesto.destroy
+    #@compuesto.destroy
+    @compuesto.en_venta = !@compuesto.en_venta
+    @compuesto.save
     respond_to do |format|
-      format.html { redirect_to compuestos_url, notice: 'Compuesto was successfully destroyed.' }
+      format.html { redirect_to compuestos_url, notice: 'Estado cambiado correctamente.' }
       format.json { head :no_content }
     end
   end

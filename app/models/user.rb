@@ -20,5 +20,17 @@ class User < ActiveRecord::Base
 	validates :apellido_paterno, presence: true
 	validates :apellido_materno, presence: true
 	validates :telefono, presence: true
+	
+	ADMINISTRADOR = 1
+	VENDEDOR = 3
+	COCINERO = 5
+
+	def self.estados
+		{
+			'ADMINISTRADOR'    => ADMINISTRADOR,
+			'VENDEDOR'      => VENDEDOR,
+			'COCINERO'   => COCINERO,
+		}
+	end
 
 end

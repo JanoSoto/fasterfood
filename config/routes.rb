@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  match "/404", :to => "errors#not_found", via: 'get'
+  match "/422", :to => "errors#unacceptable", via: 'get'
+  match "/500", :to => "errors#internal_error", via: 'get'
+  
+  get 'preparar' => 'preparar#index'
+  get 'preparar_pruebas' => 'preparar#pruebas'
+  get 'preparar/cambiar_estado/:id_venta/:tipo_producto/:id_producto' => 'preparar#cambiar_estado'
+
   resources :detalles
 
-  get 'venta/preparar' => 'venta#preparar'
+  #get 'venta/preparar' => 'preparar#index'
   get 'venta/:id/cambiar_estado/:estado_nuevo' => 'venta#cambiar_estado'
   resources :venta do
     get 'index_path'

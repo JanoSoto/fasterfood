@@ -43,3 +43,4 @@ gem "twitter-bootstrap-rails"
 gem 'cancancan'
 gem 'devise'
 gem 'simple_form'
+gem 'better_errors'

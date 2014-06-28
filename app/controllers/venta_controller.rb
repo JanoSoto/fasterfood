@@ -1,10 +1,13 @@
 class VentaController < ApplicationController
+  load_and_authorize_resource param_method: :compuesto_params
+  check_authorization
+  before_filter :authenticate_user!#, :except => [:index, :show]
   before_action :set_venta, only: [:show, :edit, :update, :destroy, :cambiar_estado]
 
   # GET /venta
   # GET /venta.json
   def index
-    @venta = Venta.all
+    @venta = Venta.order(fecha_hora: :desc).all
   end
 
   # GET /venta/1
@@ -16,9 +19,10 @@ class VentaController < ApplicationController
   def new
     @venta = Venta.new
     @venta.numero_de_caja = 1
-    @venta.estado_venta = Venta.estados['EMITIDA']
-    basicos = Basico.all
-    compuestos = Compuesto.all
+    @venta.estado_venta = Venta.estados['PREPARANDO']
+    
+    basicos = Basico.where(en_venta: true)
+    compuestos = Compuesto.where(en_venta: true)
 
     basicos.each do | basico |
       basico.tipo = 'basico'
@@ -44,7 +48,7 @@ class VentaController < ApplicationController
       @venta.vendedor_id = current_user.id
       @venta.fecha_hora = Time.now
       @venta.numero_de_caja = 1
-      @venta.estado_venta = 1
+      @venta.estado_venta = Venta::PREPARANDO
 
       ##### Agregar Basicos #####
       basicos = Array.new
@@ -81,10 +85,27 @@ class VentaController < ApplicationController
 
         @venta.detalle[i].cantidad = basico[:cantidad]
         @venta.detalle[i].comentario = basico[:comentario]
+        @venta.detalle[i].precio = basico_nuevo.precio.to_i * basico[:cantidad].to_i
+        @venta.detalle[i].estado = Venta::PREPARANDO
+
         @venta.precio_total += basico_nuevo.precio.to_i * basico[:cantidad].to_i
         i = i + 1
       end
       ##### Agregar Basicos #####
+
+      basicos = Basico.where(en_venta: true)
+      compuestos = Compuesto.where(en_venta: true)
+
+      basicos.each do | basico |
+        basico.tipo = 'basico'
+      end
+
+      compuestos.each do | compuesto |
+        compuesto.tipo = 'compuesto'
+      end
+
+      @diferencia_basicos = (basicos - @venta.basico ) + (compuestos  - @venta.compuesto)
+      #@diferencia_basicos = @venta.basico
       
       if @venta.save
         format.html { redirect_to @venta, notice: 'Venta añadida correctamente.' }
@@ -155,11 +176,6 @@ class VentaController < ApplicationController
   end
 
   def preparar
-    @ventas = Venta.all.where(:estado_venta => [Venta::EMITIDA, Venta::PREPARANDO, Venta::FINALIZADA])
-    #respond_to do |format|
-      #format.html { redirect_to '/venta', notice: 'Venta cancelada correctamente.'}
-      #format.json { head :no_content }
-    #end
   end
 
   def cambiar_estado

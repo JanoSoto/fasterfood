@@ -41,7 +41,10 @@ class BasicosController < ApplicationController
   # PATCH/PUT /basicos/1.json
   def update
     respond_to do |format|
-      if @basico.update(basico_params)
+      parametros = basico_params
+      parametros[:nombre_producto] = parametros[:nombre_producto].strip.downcase
+
+      if @basico.update(parametros)
         format.html { redirect_to @basico, notice: 'Basico was successfully updated.' }
         format.json { render :show, status: :ok, location: @basico }
       else

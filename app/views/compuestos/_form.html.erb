@@ -1,7 +1,7 @@
 <%= form_for(@compuesto, :html => {:class => "form-horizontal"}) do |f| %>
   <% if @compuesto.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@compuesto.errors.count, "error") %> prohibited this compuesto from being saved:</h2>
+      <h2><%= pluralize(@compuesto.errors.count, "error") %>:</h2>
 
       <ul>
       <% @compuesto.errors.full_messages.each do |message| %>

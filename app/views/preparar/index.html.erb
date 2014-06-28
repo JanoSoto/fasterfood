@@ -1,0 +1,203 @@
+<%
+    base_url = request.url
+    if request.path != '/'
+        base_url = base_url.gsub(request.path, '')
+    end
+%>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	function buscar_detalles(detalles, tipo, id){
+		$.each(detalles, function(key, value){
+			if(tipo == 'basico' && value.basico_id == id){
+				console.log("ACA")
+				salida = {
+					'a': 1
+					//'cantidad': value.cantidad,
+					//'estado': value.estado,
+				}
+				console.log('salida')
+			}
+			if(tipo == 'compuesto' && value.compuesto_id == id){
+				return {
+					'cantidad': value.cantidad,
+					'estado': value.estado,
+				};
+			}
+		})
+	}
+	function CargarVentas(){
+		$.ajax({
+			url: "<%= url_for controller: 'preparar', :format => :json %>",
+			context: document.body
+		}).done(function(ventas) {
+			var colores = [
+			<% @colores.each do | color | %>
+				"<%= color %>",
+			<% end %>
+			]
+			html = '';
+			i = 0
+			$.each(ventas, function(venta_key, venta){
+				html += '<div class="col-md-4 pull-left">'
+					html += '<div class="box box-solid ' + colores[i] + '">';
+						html += '<div class="box-header">'
+						    html += '<h3 class="box-title">Cliente: ' + venta.nombre_cliente + '</h3>'
+						    html += '<h3 class="box-title">Cliente: ' + venta.id + '</h3>'
+						html += '</div>'
+						html += '<div class="box-body">'
+						var index = 0
+						console.log(venta)
+
+						detalle = venta.detalle
+						$.each( venta.basico, function(basico_key, basico){
+								var cantidad = -1
+								var estado = -1
+
+								seguir = true
+								$.each(detalle, function(key, value){
+									if(seguir && value.basico_id == basico.id){
+										cantidad = value.cantidad
+										estado = value.estado
+										seguir = false
+										//console.log('salida')
+									}
+								})
+
+				        		html += '<li>'
+			        			if( estado != <%= Venta::PREPARANDO %>){
+			        				html += '<p class="texto_gris_claro">'
+			        			}
+			        			html += basico.id + '_' + cantidad + ' * ' + basico.nombre_producto + '_';
+			        			html += basico.id + '_' + venta.detalle[index].cantidad + ' * ' + basico.nombre_producto;
+				        		if( estado != <%= Venta::PREPARANDO %>){
+				        			html += '</p>'
+				        		}
+    					        if( estado == <%= Venta::PREPARANDO %>){
+				        			console.log(venta.detalle[index].estado)
+									html += '<a href="<%= base_url %>/preparar/cambiar_estado/' + venta.id + '/basico/' + basico.id + '"><i class="fa fa-check"></i></a>'
+								}
+					        html += '</li>'
+					        index = index + 1
+						});
+						$.each( venta.compuesto, function(basico_key, basico){
+		        			var cantidad = -1
+							var estado = -1
+
+							seguir = true
+							$.each(detalle, function(key, value){
+								if(seguir && value.compuesto_id == basico.id){
+									cantidad = value.cantidad
+									estado = value.estado
+									seguir = false
+									//console.log('salida')
+								}
+							})
+
+			        		html += '<li>'
+		        			if( estado != <%= Venta::PREPARANDO %>){
+		        				html += '<p class="texto_gris_claro">'
+		        			}
+		        			html += basico.id + '_' + cantidad + ' * ' + basico.nombre_producto + '_';
+		        			html += basico.id + '_' + venta.detalle[index].cantidad + ' * ' + basico.nombre_producto;
+			        		if( estado != <%= Venta::PREPARANDO %>){
+			        			html += '</p>'
+			        		}
+					        if( estado == <%= Venta::PREPARANDO %>){
+			        			console.log(venta.detalle[index].estado)
+								html += '<a href="<%= base_url %>/preparar/cambiar_estado/' + venta.id + '/basico/' + basico.id + '"><i class="fa fa-check"></i></a>'
+							}
+					        html += '</li>'
+					        index = index + 1
+						});
+						html += '</div>';
+					html += '</div>';
+
+					// Compuestos
+
+				html += '</div>';
+				i++
+			});
+			$('#ventas').html(html);
+		});
+	}
+	CargarVentas();
+	setInterval(function(){
+		CargarVentas();
+	}, 10000);
+});
+</script>
+<style type="text/css">
+	.box-body li a{
+		color: white;
+	}
+	.texto_gris_claro{
+		color: #ddd;
+	}
+</style>
+<div class="row">
+<% if @venta.nil? %>
+<h1>¡ No hay ventas pendientes !</h1>
+<% end %>
+<% i = 0 %>
+<div id="ventas">
+<% @ventas.each do | venta | %>
+	<div class="col-md-4 pull-left">
+	<div class="box box-solid <%= @colores[i] %>">
+	    <div class="box-header">
+	        <h3 class="box-title">Cliente: <%= venta.nombre_cliente %></h3>
+	        <h3 class="box-title">Cliente: <%= venta.id %></h3>
+	    </div>
+	    <div class="box-body">
+	    <% index = 0 %>
+		<% venta.basico.each do | basico | %>
+				<% detalle = Detalle.where(venta_id: venta.id, basico_id: basico.id) %>
+		        <li>
+		        	<% if venta.detalle[index].estado.to_i != Venta::PREPARANDO %>
+		        		<p class="texto_gris_claro">
+	        		<% end %>
+			        <%= venta.detalle[index].cantidad %> * <%= basico.nombre_producto %>
+			        <% if venta.detalle[index].estado.to_i != Venta::PREPARANDO %>
+		        		</p>
+		        	<% end %>
+			        <% if venta.detalle[index].estado.to_i == Venta::PREPARANDO %>
+				        <%= link_to '<i class="fa fa-check"></i>'.html_safe,
+				        	controller: 'preparar',
+				        	action: 'cambiar_estado',
+				        	id_venta: venta.id,
+				        	tipo_producto: 'basico',
+				        	id_producto: basico.id
+			        	%>
+		        	<% end %>
+		        </li>
+		        <% index = index + 1 %>
+		<% end %>
+	    
+		<% venta.compuesto.each do | basico | %>
+		        <li>
+		        	<% if venta.detalle[index].estado.to_i != Venta::PREPARANDO %>
+		        		<p class="texto_gris_claro">
+	        		<% end %>
+	        		<%= venta.detalle[index].cantidad %> * <%= basico.nombre_producto %>
+		        	<% if venta.detalle[index].estado.to_i != Venta::PREPARANDO %>
+		        		</p>
+		        	<% end %>
+		        	
+		        <% if venta.detalle[index].estado.to_i == Venta::PREPARANDO %>
+			        <%= link_to '<i class="fa fa-check"></i>'.html_safe,
+			        	controller: 'preparar',
+			        	action: 'cambiar_estado',
+			        	id_venta: venta.id,
+			        	tipo_producto: 'compuesto',
+			        	id_producto: basico.id
+			        %>
+		        <% end %>
+		        </li>
+		        <% index = index + 1 %>
+		<% end %>
+	    </div><!-- /.box-body -->
+	</div><!-- /.box -->
+	</div>
+	<% i = (i + 1) % @colores.count %>
+<% end %>
+</div>
+</div>

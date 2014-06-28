@@ -1,0 +1,80 @@
+<%
+    base_url = request.url
+    if request.path != '/'
+        base_url = base_url.gsub(request.path, '')
+    end
+%>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	function CargarVentas(){
+		$.ajax({
+			url: "<%= url_for controller: 'preparar', :format => :json %>",
+			context: document.body
+		}).done(function(ventas) {
+			var colores = [
+			<% @colores.each do | color | %>
+				"<%= color %>",
+			<% end %>
+			]
+			html = '';
+			i = 0
+			$.each(ventas, function(venta_key, venta){
+				console.log(venta)
+				html += '<div class="col-md-4 pull-left">'
+					html += '<div class="box box-solid ' + colores[i] + '">';
+						html += '<div class="box-header">'
+						    html += '<h3 class="box-title">Cliente: ' + venta.nombre_cliente + '</h3>'
+						    html += '<h3 class="box-title">Cliente: ' + venta.id + '</h3>'
+						html += '</div>'
+						html += '<div class="box-body">'
+						var index = 0
+						$.each( venta.basico, function(basico_key, basico){
+				        		html += '<li>'
+				        			html += '<p class="texto_gris_claro">'
+					        			html += venta.detalle[index].cantidad + ' * ' + basico.nombre_producto;
+								html += '<a href="<%= base_url %>/preparar/cambiar_estado/' + venta.id + '/basico/' + basico.id + '"><i class="fa fa-check"></i></a>'
+					        		html += '</p>'
+					        html += '</li>'
+					        index = index + 1
+						});
+						$.each( venta.compuesto, function(basico_key, basico){
+				        		html += '<li>'
+				        			html += '<p class="texto_gris_claro">'
+					        			html += venta.detalle[index].cantidad + ' * ' + basico.nombre_producto;
+								html += '<a href="<%= base_url %>/preparar/cambiar_estado/' + venta.id + '/compuesto/' + basico.id + '"><i class="fa fa-check"></i></a>'
+					        		html += '</p>'
+					        html += '</li>'
+					        index = index + 1
+						});
+						html += '</div>';
+					html += '</div>';
+
+					// Compuestos
+
+				html += '</div>';
+				i++
+			});
+			$('#ventas').html(html);
+		});
+	}
+	setInterval(function(){
+		CargarVentas();
+	}, 5000);
+});
+</script>
+<style type="text/css">
+	.box-body li a{
+		color: white;
+	}
+	.texto_gris_claro{
+		color: #ddd;
+	}
+</style>
+<div class="row">
+<% if @venta.nil? %>
+<h1>¡ No hay ventas pendientes !</h1>
+<% end %>
+<% i = 0 %>
+<div id="ventas">
+</div>
+</div>

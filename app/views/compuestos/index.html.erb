@@ -10,7 +10,6 @@
                     <th>Precio</th>
                     <th>En venta</th>
                     <th>Modificar</th>
-                    <th>Eliminar</th>
                 </tr>
                 
                 <% @compuestos.each do |compuesto| %>
@@ -20,12 +19,14 @@
                     <td><%= compuesto.precio %></td>
                     <td>
                         <span class="label <%= if compuesto.en_venta then "label-success" else "label-warning" end %>">
-                            <%= if compuesto.en_venta then "Si" else "No" end %>
+                            <%= if compuesto.en_venta then "Si&nbsp;".html_safe else "No" end %>
                         </span>
+                        &nbsp;
+                        <%= link_to '<i class="fa fa-undo"></i>'.html_safe, compuesto, method: :delete, data: { confirm: '¿Está seguro?' } %>
                     </td>
                     <!--<td><%= link_to 'Show', compuesto %></td> -->
                     <td><%= link_to 'Modificar', edit_compuesto_path(compuesto) %></td>
-                    <td><%= link_to 'Eliminar', compuesto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                        <td></td>
                   </tr>
                 <% end %>
 
