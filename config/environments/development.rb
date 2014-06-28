@@ -1,4 +1,5 @@
 Rails.application.configure do
+  BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -11,6 +12,7 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports and disable caching.
+  #config.consider_all_requests_local       = false
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 

@@ -1,4 +1,10 @@
-<h1>Listing venta</h1>
+<h2>Ventas
+  <a href="<%= url_for new_venta_path %>" class="pull-right">
+    <button type="button" class="btn btn-success">Nueva Venta</button>
+  </a>
+</h3>
+
+
 
 <table class="table table-hover">
   <thead>
@@ -32,11 +38,12 @@
                      id: venta.id,
                      estado_nuevo: Venta::ENTREGADA %>
             <% elsif venta.estado_venta != Venta::ENTREGADA%>
+                <!--
                 <%= link_to '++'.html_safe,
                          controller: 'venta',
                          action: 'cambiar_estado',
                          id: venta.id,
-                         estado_nuevo: (venta.estado_venta.to_i + 1).to_s %>
+                         estado_nuevo: (venta.estado_venta.to_i + 1).to_s %>-->
             <% end %>
         </td>
         <td><%= link_to 'Detalles', venta %></td>
@@ -53,5 +60,3 @@
 </table>
 
 <br>
-
-<%= link_to 'Nueva venta', new_venta_path %>

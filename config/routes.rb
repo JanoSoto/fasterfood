@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   get 'recepcion_materiales/insumos'
 
   get 'recepcion_materiales/ingredientes'
@@ -7,6 +8,16 @@ Rails.application.routes.draw do
 
   resources :merma_insumos
 
+=======
+  match "/404", :to => "errors#not_found", via: 'get'
+  match "/422", :to => "errors#unacceptable", via: 'get'
+  match "/500", :to => "errors#internal_error", via: 'get'
+  match "/acceso_denegado", :to => "errors#acceso_denegado", via: 'get'
+  
+  get 'preparar' => 'preparar#index'
+  get 'preparar_pruebas' => 'preparar#pruebas'
+  get 'preparar/cambiar_estado/:id_venta/:tipo_producto/:id_producto' => 'preparar#cambiar_estado'
+>>>>>>> 94a0f48a9aeddb7966d67ce1803c5fd8305cd0ce
   resources :lotes
 
   resources :insumos
@@ -18,7 +29,7 @@ Rails.application.routes.draw do
 
   resources :detalles
 
-  get 'venta/preparar' => 'venta#preparar'
+  #get 'venta/preparar' => 'preparar#index'
   get 'venta/:id/cambiar_estado/:estado_nuevo' => 'venta#cambiar_estado'
   resources :venta do
     get 'index_path'
@@ -29,6 +40,13 @@ Rails.application.routes.draw do
   resources :ingredientes and resources :ingrediente
 
   devise_for :users
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
+    #get '/logout' => 'devise/sessions#destroy'
+  end
+  resources :users, :controller => "user"
+
   root 'basicos#index'
   resources :alerta_obsolescencia
 

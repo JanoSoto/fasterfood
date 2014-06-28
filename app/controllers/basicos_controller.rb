@@ -1,4 +1,7 @@
 class BasicosController < ApplicationController
+  check_authorization
+  before_filter :authenticate_user!
+  load_and_authorize_resource
   before_action :set_basico, only: [:show, :edit, :update, :destroy]
 
   # GET /basicos
@@ -41,7 +44,10 @@ class BasicosController < ApplicationController
   # PATCH/PUT /basicos/1.json
   def update
     respond_to do |format|
-      if @basico.update(basico_params)
+      parametros = basico_params
+      parametros[:nombre_producto] = parametros[:nombre_producto].strip.downcase
+
+      if @basico.update(parametros)
         format.html { redirect_to @basico, notice: 'Basico was successfully updated.' }
         format.json { render :show, status: :ok, location: @basico }
       else
