@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha_hora_llegada: 2014-06-27 20:19:55
+  fecha_vencimiento: 2014-06-27
+  ingrediente_id: 
+
+two:
+  fecha_hora_llegada: 2014-06-27 20:19:55
+  fecha_vencimiento: 2014-06-27
+  ingrediente_id: 

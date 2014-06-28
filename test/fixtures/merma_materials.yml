@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cantidad_merma: 1
+  fecha_merma: 2014-06-26 19:49:01
+  comentario_merma: MyString
+  ingredientes_id: 
+
+two:
+  cantidad_merma: 1
+  fecha_merma: 2014-06-26 19:49:01
+  comentario_merma: MyString
+  ingredientes_id: 

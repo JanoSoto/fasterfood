@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha hora llegada:</strong>
+  <%= @lote.fecha_hora_llegada %>
+</p>
+
+<p>
+  <strong>Fecha vencimiento:</strong>
+  <%= @lote.fecha_vencimiento %>
+</p>
+
+<p>
+  <strong>Ingrediente:</strong>
+  <%= @lote.ingrediente %>
+</p>
+
+<%= link_to 'Edit', edit_lote_path(@lote) %> |
+<%= link_to 'Back', lotes_path %>

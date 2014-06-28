@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo_insumo: MyString
+  nombre_insumo: MyString
+  categoria_insumo: MyString
+  stock_actual: 
+  stock_critico: 
+  stock_ideal: 
+
+two:
+  tipo_insumo: MyString
+  nombre_insumo: MyString
+  categoria_insumo: MyString
+  stock_actual: 
+  stock_critico: 
+  stock_ideal: 

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cantidad merma:</strong>
+  <%= @merma_material.cantidad_merma %>
+</p>
+
+<p>
+  <strong>Fecha merma:</strong>
+  <%= @merma_material.fecha_merma %>
+</p>
+
+<p>
+  <strong>Comentario merma:</strong>
+  <%= @merma_material.comentario_merma %>
+</p>
+
+<p>
+  <strong>Ingredientes:</strong>
+  <%= @merma_material.ingredientes %>
+</p>
+
+<%= link_to 'Edit', edit_merma_material_path(@merma_material) %> |
+<%= link_to 'Back', merma_materials_path %>

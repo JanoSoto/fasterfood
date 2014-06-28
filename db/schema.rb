@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626115424) do
+ActiveRecord::Schema.define(version: 20140628001954) do
 
   create_table "alerta_obsolescencia", force: true do |t|
     t.string   "tiempo_emision"
@@ -48,20 +48,10 @@ ActiveRecord::Schema.define(version: 20140626115424) do
     t.datetime "updated_at"
   end
 
-  create_table "composicions", force: true do |t|
-    t.integer  "compuesto_id"
-    t.integer  "basico_id"
-    t.integer  "cantidad"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "compuestos", force: true do |t|
-    t.integer  "precio"
-    t.string   "nombre_producto"
-    t.boolean  "en_venta"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "precio"
+    t.string  "nombre_producto"
+    t.boolean "en_venta"
   end
 
   create_table "detalles", force: true do |t|
@@ -93,16 +83,37 @@ ActiveRecord::Schema.define(version: 20140626115424) do
     t.datetime "updated_at"
   end
 
-  create_table "lotes", force: true do |t|
-    t.integer  "ingrediente_id"
-    t.integer  "entrega_id"
-    t.date     "fecha_llegada"
-    t.time     "hora_llegada"
-    t.date     "fecha_vencimiento"
-    t.boolean  "queda_producto"
+  create_table "insumos", force: true do |t|
+    t.string   "tipo_insumo"
+    t.string   "nombre_insumo"
+    t.string   "categoria_insumo"
+    t.integer  "stock_actual"
+    t.integer  "stock_critico"
+    t.integer  "stock_ideal"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "lotes", force: true do |t|
+    t.datetime "fecha_hora_llegada"
+    t.date     "fecha_vencimiento"
+    t.integer  "ingrediente_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lotes", ["ingrediente_id"], name: "index_lotes_on_ingrediente_id", using: :btree
+
+  create_table "merma_materials", force: true do |t|
+    t.integer  "cantidad_merma"
+    t.datetime "fecha_merma"
+    t.string   "comentario_merma"
+    t.integer  "ingredientes_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "merma_materials", ["ingredientes_id"], name: "index_merma_materials_on_ingredientes_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -123,8 +134,7 @@ ActiveRecord::Schema.define(version: 20140626115424) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "role_id",                           default: 5
-    t.integer  "vendedor_id"
+    t.integer  "role_id",                           default: 3
     t.integer  "rut"
     t.string   "nombre",                 limit: 20
     t.string   "apellido_paterno",       limit: 20
@@ -133,7 +143,7 @@ ActiveRecord::Schema.define(version: 20140626115424) do
     t.integer  "user_id"
   end
 
-  add_index "users", ["email"], name: "index_users_on_username", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
@@ -160,6 +170,7 @@ ActiveRecord::Schema.define(version: 20140626115424) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cantidad"
+    t.string   "tipo_producto",          limit: 9
   end
 
 end

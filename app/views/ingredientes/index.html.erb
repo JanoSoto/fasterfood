@@ -26,7 +26,9 @@
                 <td><%= link_to 'Eliminar', ingrediente, method: :delete, data: { confirm: '¿Está seguro que desea eliminar este ingrediente?' } %></td>
               </tr>
             <% end %>
-          </table>
+          </table> <br>
+          <%= link_to 'Nuevo ingrediente', new_ingrediente_path %>
+
         </div><!-- /.box-body -->
     </div>
 </div>
