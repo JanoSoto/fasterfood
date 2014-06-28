@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140628001954) do
+ActiveRecord::Schema.define(version: 20140628190207) do
 
   create_table "alerta_obsolescencia", force: true do |t|
     t.string   "tiempo_emision"
@@ -104,16 +104,27 @@ ActiveRecord::Schema.define(version: 20140628001954) do
 
   add_index "lotes", ["ingrediente_id"], name: "index_lotes_on_ingrediente_id", using: :btree
 
-  create_table "merma_materials", force: true do |t|
-    t.integer  "cantidad_merma"
-    t.datetime "fecha_merma"
+  create_table "merma_ingredientes", force: true do |t|
+    t.integer  "cantidad"
+    t.date     "fecha_merma"
     t.string   "comentario_merma"
-    t.integer  "ingredientes_id"
+    t.integer  "ingrediente_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "merma_materials", ["ingredientes_id"], name: "index_merma_materials_on_ingredientes_id", using: :btree
+  add_index "merma_ingredientes", ["ingrediente_id"], name: "index_merma_ingredientes_on_ingrediente_id", using: :btree
+
+  create_table "merma_insumos", force: true do |t|
+    t.integer  "cantidad_merma"
+    t.date     "fecha_merma"
+    t.string   "comentario_merma"
+    t.integer  "insumo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "merma_insumos", ["insumo_id"], name: "index_merma_insumos_on_insumo_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name"

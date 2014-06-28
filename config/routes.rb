@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'recepcion_materiales/insumos'
+
+  get 'recepcion_materiales/ingredientes'
+
+  resources :merma_ingredientes
+
+  resources :merma_insumos
+
   resources :lotes
 
   resources :insumos
@@ -27,6 +35,9 @@ Rails.application.routes.draw do
   resources :compuestos
 
   resources :basicos
+
+  post ':controller(/:action(/:id(.:format)))'
+  get ':controller(/:action(/:id(.:format)))'
 
   #root 'user_session#sign_in'
 

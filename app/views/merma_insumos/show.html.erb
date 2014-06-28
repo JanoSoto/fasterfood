@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cantidad merma:</strong>
+  <%= @merma_insumo.cantidad_merma %>
+</p>
+
+<p>
+  <strong>Fecha merma:</strong>
+  <%= @merma_insumo.fecha_merma %>
+</p>
+
+<p>
+  <strong>Comentario merma:</strong>
+  <%= @merma_insumo.comentario_merma %>
+</p>
+
+<p>
+  <strong>Insumo:</strong>
+  <%= @merma_insumo.insumo %>
+</p>
+
+<%= link_to 'Edit', edit_merma_insumo_path(@merma_insumo) %> |
+<%= link_to 'Back', merma_insumos_path %>
