@@ -11,16 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140629181249) do
+ActiveRecord::Schema.define(version: 20140629232913) do
 
   create_table "alerta_obsolescencia", force: true do |t|
-    t.string   "tiempo_emision"
-    t.boolean  "visualizada"
-    t.boolean  "necesidad_cubierta"
-    t.integer  "lote_id"
-    t.string   "mensaje"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "tiempo_emision"
+    t.boolean "visualizada"
+    t.boolean "necesidad_cubierta"
+    t.integer "lote_id"
+    t.string  "mensaje"
   end
 
   create_table "alerta_stock", force: true do |t|
@@ -47,11 +45,9 @@ ActiveRecord::Schema.define(version: 20140629181249) do
   end
 
   create_table "composicions", force: true do |t|
-    t.integer  "compuesto_id"
-    t.integer  "basico_id"
-    t.integer  "cantidad"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "basico_id"
+    t.integer "compuesto_id"
+    t.integer "cantidad"
   end
 
   create_table "compuestos", force: true do |t|
@@ -80,25 +76,23 @@ ActiveRecord::Schema.define(version: 20140629181249) do
     t.string   "comentario",                  limit: 20
   end
 
-<<<<<<< HEAD
   create_table "detalles_basicos", force: true do |t|
     t.integer  "basico_id"
     t.integer  "ingrediente_id"
     t.integer  "cantidad"
-=======
-  create_table "entregas", force: true do |t|
-    t.datetime "fecha_hora_entrega"
-    t.integer  "proveedor_id"
->>>>>>> b0427e413a57aebfd7985c3baa970011d122bdb9
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
-=======
+  create_table "entregas", force: true do |t|
+    t.datetime "fecha_hora_entrega"
+    t.integer  "proveedor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   add_index "entregas", ["proveedor_id"], name: "index_entregas_on_proveedor_id", using: :btree
 
->>>>>>> b0427e413a57aebfd7985c3baa970011d122bdb9
   create_table "ingredientes", force: true do |t|
     t.boolean  "refrigerado"
     t.string   "nombre",        limit: 20
@@ -154,19 +148,38 @@ ActiveRecord::Schema.define(version: 20140629181249) do
 
   add_index "merma_insumos", ["insumo_id"], name: "index_merma_insumos_on_insumo_id", using: :btree
 
-  create_table "proveedors", force: true do |t|
-    t.string   "rut_proveedor"
-    t.string   "nombre_proveedor"
-    t.integer  "telefono_proveedor"
-    t.string   "email_proveedor"
+  create_table "merma_materials", force: true do |t|
+    t.integer  "cantidad_merma"
+    t.datetime "fecha_merma"
+    t.string   "comentario_merma"
+    t.integer  "ingredientes_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "merma_materials", ["ingredientes_id"], name: "index_merma_materials_on_ingredientes_id", using: :btree
 
   create_table "mermas", force: true do |t|
     t.integer  "cantidad_merma"
     t.datetime "fecha_merma"
     t.string   "comentario_merma"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "migrations", force: true do |t|
+    t.integer  "basico_id"
+    t.integer  "compuesto_id"
+    t.integer  "cantidad"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "proveedors", force: true do |t|
+    t.string   "rut_proveedor"
+    t.string   "nombre_proveedor"
+    t.integer  "telefono_proveedor"
+    t.string   "email_proveedor"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -190,10 +203,6 @@ ActiveRecord::Schema.define(version: 20140629181249) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-<<<<<<< HEAD
-    t.integer  "vendedor_id"
-=======
->>>>>>> b0427e413a57aebfd7985c3baa970011d122bdb9
     t.integer  "rut"
     t.string   "nombre",                 limit: 20
     t.string   "apellido_paterno",       limit: 20
@@ -203,7 +212,7 @@ ActiveRecord::Schema.define(version: 20140629181249) do
     t.integer  "rol"
   end
 
-  add_index "users", ["email"], name: "index_users_on_username", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "vendedors", force: true do |t|

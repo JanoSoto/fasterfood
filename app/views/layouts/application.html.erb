@@ -304,50 +304,50 @@
                         </div>-->
                         <div class="pull-left info">
                             <% if user_signed_in? %>
-                                <p><%= current_user.email %></p>
+                                <p><i class="fa fa-circle text-success"></i> <%= current_user.email %></p>
                             <% end %>
-                            <%= link_to "Salir", destroy_user_session_path, :method => :delete %>
-
-                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                            <div class="pull-right"><%= link_to "Salir", destroy_user_session_path, :method => :delete %></div>
                         </div>
                     </div>
-                    <!-- search form -->
-                    <form action="#" method="get" class="sidebar-form">
-                        <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Search..."/>
-                            <span class="input-group-btn">
-                                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-                            </span>
-                        </div>
-                    </form>
-                    <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-tasks"></i>
-                                <span>Productos</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="<%= url_for controller: 'basicos', action: 'index' %>"><i class="fa fa-angle-double-right"></i>Básico</a></li>
-                                <li><a href="<%= url_for controller: 'compuestos', action: 'index' %>"><i class="fa fa-angle-double-right"></i> Compuesto</a></li>
-                                <li><a href="<%= url_for controller: 'ingredientes', action: 'index' %>"><i class="fa fa-angle-double-right"></i> Ingredientes</a></li>
-                            </ul>
-                        </li>
-                        <% if can? :manage, User %>
+                        <% if current_user.rol == User::ADMINISTRADOR %>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-tasks"></i>
+                                    <span>Productos</span>
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="<%= url_for controller: 'basicos', action: 'index' %>"><i class="fa fa-angle-double-right"></i>Básico</a></li>
+                                    <li><a href="<%= url_for controller: 'compuestos', action: 'index' %>"><i class="fa fa-angle-double-right"></i> Compuesto</a></li>
+                                    <li><a href="<%= url_for controller: 'ingredientes', action: 'index' %>"><i class="fa fa-angle-double-right"></i> Ingredientes</a></li>
+                                </ul>
+                            </li>
+                            <% if can? :manage, User %>
+                                <li>
+                                    <a href="<%= url_for :controller => 'user', action: 'index' %>">
+                                        <i class="fa fa-user"></i> <span>Usuarios</span>
+                                    </a>
+                                </li>
+                            <% end %>
+                        <% end %>
+
+                        <% if can? :manage, Venta %>
                             <li>
-                                <a href="<%= url_for :controller => 'user', action: 'index' %>">
-                                    <i class="fa fa-user"></i> <span>Usuarios</span>
+                                <a href="<%= url_for :controller => 'venta' %>">
+                                    <i class="fa fa-cutlery"></i> <span>Ventas</span>
                                 </a>
                             </li>
                         <% end %>
 
-                        <li>
-                            <a href="<%= url_for :controller => 'venta' %>">
-                                <i class="fa fa-cutlery"></i> <span>Ventas</span>
-                            </a>
-                        </li>
+                        <% if can? :manage, :preparar %>
+                            <li>
+                                <a href="<%= url_for :controller => 'preparar' %>">
+                                    <i class="fa fa-cutlery"></i> <span>Pedidos</span>
+                                </a>
+                            </li>
+                        <% end %>
 
                         <li class="treeview">
                             <a href="#">

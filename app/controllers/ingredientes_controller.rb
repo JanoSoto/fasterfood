@@ -26,6 +26,7 @@ class IngredientesController < ApplicationController
   def create
     @edit = false
     @ingrediente = Ingrediente.new(ingrediente_params)
+    @ingrediente.nombre = @ingrediente.nombre.strip.downcase
 
     respond_to do |format|
       if @ingrediente.save
@@ -43,6 +44,8 @@ class IngredientesController < ApplicationController
   def update
     @edit = true
     respond_to do |format|
+      params[:nombre] = params[:nombre].strip.downcase
+      
       if @ingrediente.update(ingrediente_params)
         format.html { redirect_to @ingrediente, notice: 'Ingrediente actualizado con éxito.' }
         format.json { render :show, status: :ok, location: @ingrediente }
