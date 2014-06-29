@@ -7,6 +7,14 @@ Rails.application.routes.draw do
   get 'preparar' => 'preparar#index'
   get 'preparar_pruebas' => 'preparar#pruebas'
   get 'preparar/cambiar_estado/:id_venta/:tipo_producto/:id_producto' => 'preparar#cambiar_estado'
+  resources :lotes
+
+  resources :insumos
+
+  resources :merma_materials and resources :merma_material
+  #resources :mermas
+
+  get 'mermas/ingresar_merma'
 
   resources :detalles
 
@@ -18,7 +26,7 @@ Rails.application.routes.draw do
 
   resources :vendedors
 
-  resources :ingredientes
+  resources :ingredientes and resources :ingrediente
 
   devise_for :users
   devise_scope :user do
@@ -34,6 +42,9 @@ Rails.application.routes.draw do
   resources :compuestos
 
   resources :basicos
+
+  #root 'user_session#sign_in'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

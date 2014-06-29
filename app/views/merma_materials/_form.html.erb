@@ -1,0 +1,15 @@
+<%= simple_form_for(@merma_material) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :ingredientes, collection: Ingrediente.all.select("nombre"), prompt: "Elija un ingrediente" %>
+    <%= f.input :cantidad_merma %>
+    <%= f.input :fecha_merma %>
+    <%= f.input :comentario_merma %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+

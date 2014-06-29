@@ -1,0 +1,35 @@
+<h1>Insumos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipo insumo</th>
+      <th>Nombre insumo</th>
+      <th>Categoria insumo</th>
+      <th>Stock actual</th>
+      <th>Stock critico</th>
+      <th>Stock ideal</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @insumos.each do |insumo| %>
+      <tr>
+        <td><%= insumo.tipo_insumo %></td>
+        <td><%= insumo.nombre_insumo %></td>
+        <td><%= insumo.categoria_insumo %></td>
+        <td><%= insumo.stock_actual %></td>
+        <td><%= insumo.stock_critico %></td>
+        <td><%= insumo.stock_ideal %></td>
+        <td><%= link_to 'Show', insumo %></td>
+        <td><%= link_to 'Edit', edit_insumo_path(insumo) %></td>
+        <td><%= link_to 'Destroy', insumo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Insumo', new_insumo_path %>

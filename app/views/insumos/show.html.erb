@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo insumo:</strong>
+  <%= @insumo.tipo_insumo %>
+</p>
+
+<p>
+  <strong>Nombre insumo:</strong>
+  <%= @insumo.nombre_insumo %>
+</p>
+
+<p>
+  <strong>Categoria insumo:</strong>
+  <%= @insumo.categoria_insumo %>
+</p>
+
+<p>
+  <strong>Stock actual:</strong>
+  <%= @insumo.stock_actual %>
+</p>
+
+<p>
+  <strong>Stock critico:</strong>
+  <%= @insumo.stock_critico %>
+</p>
+
+<p>
+  <strong>Stock ideal:</strong>
+  <%= @insumo.stock_ideal %>
+</p>
+
+<%= link_to 'Edit', edit_insumo_path(@insumo) %> |
+<%= link_to 'Back', insumos_path %>

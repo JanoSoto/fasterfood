@@ -1,0 +1,17 @@
+<%= simple_form_for(@insumo) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <% tiposInsumo = {'Envase' => 'Envase', 'Envoltorio' => 'Envoltorio', 'Higiene' => 'Higiene'} %>
+    <%= f.input :tipo_insumo, collection: tiposInsumo, prompt: "Eliga un tipo..."  %>
+    <%= f.input :nombre_insumo, collection: @insumos, as: :grouped_select, group_label_method: :insumos %>
+    <%= f.input :categoria_insumo %>
+    <%= f.input :stock_actual %>
+    <%= f.input :stock_critico %>
+    <%= f.input :stock_ideal %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
