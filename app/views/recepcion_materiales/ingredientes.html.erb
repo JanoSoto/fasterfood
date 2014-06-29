@@ -1,0 +1,15 @@
+<h1>Recepci&oacuten de ingredientes</h1>
+
+
+<%= form_tag("/ingredientes", method: "get") do %>
+	
+	<%= label_tag(:ingrediente, "Ingrediente") %>
+	<%= collection_select(:ingrediente, :id, Ingrediente.all, :id, :nombre) %> <br>
+	<%= label_tag(:cantidad, "Cantidad") %>
+	<%= text_field_tag(:cantidad) %> <br>
+
+	<%= submit_tag("Ingresar") %>
+	<!--% redirect_to ingredientes_url %-->
+
+<% end %>
+

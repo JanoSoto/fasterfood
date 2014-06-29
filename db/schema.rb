@@ -80,14 +80,25 @@ ActiveRecord::Schema.define(version: 20140629181249) do
     t.string   "comentario",                  limit: 20
   end
 
+<<<<<<< HEAD
   create_table "detalles_basicos", force: true do |t|
     t.integer  "basico_id"
     t.integer  "ingrediente_id"
     t.integer  "cantidad"
+=======
+  create_table "entregas", force: true do |t|
+    t.datetime "fecha_hora_entrega"
+    t.integer  "proveedor_id"
+>>>>>>> b0427e413a57aebfd7985c3baa970011d122bdb9
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
+  add_index "entregas", ["proveedor_id"], name: "index_entregas_on_proveedor_id", using: :btree
+
+>>>>>>> b0427e413a57aebfd7985c3baa970011d122bdb9
   create_table "ingredientes", force: true do |t|
     t.boolean  "refrigerado"
     t.string   "nombre",        limit: 20
@@ -116,20 +127,41 @@ ActiveRecord::Schema.define(version: 20140629181249) do
     t.integer  "ingrediente_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "numero_lote"
   end
 
   add_index "lotes", ["ingrediente_id"], name: "index_lotes_on_ingrediente_id", using: :btree
 
-  create_table "merma_materials", force: true do |t|
-    t.integer  "cantidad_merma"
-    t.datetime "fecha_merma"
+  create_table "merma_ingredientes", force: true do |t|
+    t.integer  "cantidad"
+    t.date     "fecha_merma"
     t.string   "comentario_merma"
-    t.integer  "ingredientes_id"
+    t.integer  "ingrediente_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "merma_materials", ["ingredientes_id"], name: "index_merma_materials_on_ingredientes_id", using: :btree
+  add_index "merma_ingredientes", ["ingrediente_id"], name: "index_merma_ingredientes_on_ingrediente_id", using: :btree
+
+  create_table "merma_insumos", force: true do |t|
+    t.integer  "cantidad_merma"
+    t.date     "fecha_merma"
+    t.string   "comentario_merma"
+    t.integer  "insumo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "merma_insumos", ["insumo_id"], name: "index_merma_insumos_on_insumo_id", using: :btree
+
+  create_table "proveedors", force: true do |t|
+    t.string   "rut_proveedor"
+    t.string   "nombre_proveedor"
+    t.integer  "telefono_proveedor"
+    t.string   "email_proveedor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "mermas", force: true do |t|
     t.integer  "cantidad_merma"
@@ -158,7 +190,10 @@ ActiveRecord::Schema.define(version: 20140629181249) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+<<<<<<< HEAD
     t.integer  "vendedor_id"
+=======
+>>>>>>> b0427e413a57aebfd7985c3baa970011d122bdb9
     t.integer  "rut"
     t.string   "nombre",                 limit: 20
     t.string   "apellido_paterno",       limit: 20

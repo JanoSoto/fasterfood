@@ -1,6 +1,7 @@
 class InsumosController < ApplicationController
   before_action :set_insumo, only: [:show, :edit, :update, :destroy]
 
+  
   # GET /insumos
   # GET /insumos.json
   def index
@@ -24,6 +25,7 @@ class InsumosController < ApplicationController
   # POST /insumos
   # POST /insumos.json
   def create
+    @edit = false
     @insumo = Insumo.new(insumo_params)
 
     respond_to do |format|
@@ -40,6 +42,7 @@ class InsumosController < ApplicationController
   # PATCH/PUT /insumos/1
   # PATCH/PUT /insumos/1.json
   def update
+    @edit = true
     respond_to do |format|
       if @insumo.update(insumo_params)
         format.html { redirect_to @insumo, notice: 'Insumo was successfully updated.' }

@@ -1,41 +1,17 @@
-<%= form_for(@ingrediente) do |f| %>
-  <% if @ingrediente.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ingrediente.errors.count, "error") %> prohibited this ingrediente from being saved:</h2>
+<%= simple_form_for(@ingrediente) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @ingrediente.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="form-inputs">
+    <% categoria = {'Verdura' => 'Verdura', 'Pan' => 'Pan', 'Pollo' => 'Pollo'} %>
+    <%= f.input :categoria, collection: categoria, prompt: "Eliga un tipo...", disabled: @edit %>
+    <%= f.input :refrigerado, as: :boolean, disabled: @edit %>
+    <%= f.input :nombre, disabled: @edit %>
+    <%= f.input :stock_actual, disabled: @edit %>
+    <%= f.input :stock_critico %>
+    <%= f.input :stock_ideal %>
+  </div>
 
-  <div class="field">
-    <%= f.label :refrigerado %><br>
-    <%= f.check_box :refrigerado %>
-  </div>
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :categoria %><br>
-    <%= f.text_field :categoria %>
-  </div>
-  <div class="field">
-    <%= f.label :stock_actual %><br>
-    <%= f.number_field :stock_actual %>
-  </div>
-  <div class="field">
-    <%= f.label :stock_critico %><br>
-    <%= f.number_field :stock_critico %>
-  </div>
-  <div class="field">
-    <%= f.label :stock_ideal %><br>
-    <%= f.number_field :stock_ideal %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

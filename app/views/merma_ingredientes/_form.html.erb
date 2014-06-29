@@ -1,0 +1,14 @@
+<%= simple_form_for(@merma_ingrediente) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :cantidad %>
+    <%= f.input :fecha_merma %>
+    <%= f.input :comentario_merma %>
+    <%= f.association :ingrediente, label_method: :nombre, value_method: :id, prompt: "Eliga uno..."%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit 'Enviar' %>
+  </div>
+<% end %>

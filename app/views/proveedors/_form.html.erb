@@ -1,0 +1,14 @@
+<%= simple_form_for(@proveedor) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :rut_proveedor %>
+    <%= f.input :nombre_proveedor %>
+    <%= f.input :telefono_proveedor %>
+    <%= f.input :email_proveedor %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

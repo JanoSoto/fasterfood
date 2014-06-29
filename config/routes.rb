@@ -3,6 +3,16 @@ Rails.application.routes.draw do
 
   resources :create_detalles_basicos
 
+  resources :proveedors
+
+  get 'recepcion_materiales/insumos'
+
+  get 'recepcion_materiales/ingredientes'
+
+  resources :merma_ingredientes
+
+  resources :merma_insumos
+
   match "/404", :to => "errors#not_found", via: 'get'
   match "/422", :to => "errors#unacceptable", via: 'get'
   match "/500", :to => "errors#internal_error", via: 'get'
@@ -14,6 +24,7 @@ Rails.application.routes.draw do
   get 'preparar' => 'preparar#index'
   get 'preparar_pruebas' => 'preparar#pruebas'
   get 'preparar/cambiar_estado/:id_venta/:tipo_producto/:id_producto' => 'preparar#cambiar_estado'
+
   resources :lotes
 
   resources :insumos
@@ -52,6 +63,9 @@ Rails.application.routes.draw do
   resources :compuestos
 
   resources :basicos
+
+  post ':controller(/:action(/:id(.:format)))'
+  get ':controller(/:action(/:id(.:format)))'
 
   #root 'user_session#sign_in'
 
