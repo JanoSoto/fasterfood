@@ -37,16 +37,18 @@ jQuery(document).ready(function($) {
 			]
 			html = '';
 			i = 0
+			if(ventas.length > 0)
+				$('#hay_ventas_pendientes').hide();
+			else
+				$('#hay_ventas_pendientes').show();
 			$.each(ventas, function(venta_key, venta){
 				html += '<div class="col-md-4 pull-left">'
 					html += '<div class="box box-solid ' + colores[i] + '">';
 						html += '<div class="box-header">'
 						    html += '<h3 class="box-title">Cliente: ' + venta.nombre_cliente + '</h3>'
-						    html += '<h3 class="box-title">Cliente: ' + venta.id + '</h3>'
 						html += '</div>'
 						html += '<div class="box-body">'
 						var index = 0
-						console.log(venta)
 
 						detalle = venta.detalle
 						$.each( venta.basico, function(basico_key, basico){
@@ -67,8 +69,7 @@ jQuery(document).ready(function($) {
 			        			if( estado != <%= Venta::PREPARANDO %>){
 			        				html += '<p class="texto_gris_claro">'
 			        			}
-			        			html += basico.id + '_' + cantidad + ' * ' + basico.nombre_producto + '_';
-			        			html += basico.id + '_' + venta.detalle[index].cantidad + ' * ' + basico.nombre_producto;
+			        			html += cantidad + ' * ' + basico.nombre_producto;
 				        		if( estado != <%= Venta::PREPARANDO %>){
 				        			html += '</p>'
 				        		}
@@ -97,14 +98,13 @@ jQuery(document).ready(function($) {
 		        			if( estado != <%= Venta::PREPARANDO %>){
 		        				html += '<p class="texto_gris_claro">'
 		        			}
-		        			html += basico.id + '_' + cantidad + ' * ' + basico.nombre_producto + '_';
-		        			html += basico.id + '_' + venta.detalle[index].cantidad + ' * ' + basico.nombre_producto;
+		        			html += cantidad + ' * ' + basico.nombre_producto;
 			        		if( estado != <%= Venta::PREPARANDO %>){
 			        			html += '</p>'
 			        		}
 					        if( estado == <%= Venta::PREPARANDO %>){
 			        			console.log(venta.detalle[index].estado)
-								html += '<a href="<%= base_url %>/preparar/cambiar_estado/' + venta.id + '/basico/' + basico.id + '"><i class="fa fa-check"></i></a>'
+								html += '<a href="<%= base_url %>/preparar/cambiar_estado/' + venta.id + '/compuesto/' + basico.id + '"><i class="fa fa-check"></i></a>'
 							}
 					        html += '</li>'
 					        index = index + 1
@@ -135,9 +135,7 @@ jQuery(document).ready(function($) {
 	}
 </style>
 <div class="row">
-<% if @venta.nil? %>
-<h1>¡ No hay ventas pendientes !</h1>
-<% end %>
+<h1 id="hay_ventas_pendientes" <%= if !@ventas.any? then 'style="display: none;"'.html_safe end %>>¡ No hay ventas pendientes !</h1>
 <% i = 0 %>
 <div id="ventas">
 <% @ventas.each do | venta | %>
@@ -145,7 +143,6 @@ jQuery(document).ready(function($) {
 	<div class="box box-solid <%= @colores[i] %>">
 	    <div class="box-header">
 	        <h3 class="box-title">Cliente: <%= venta.nombre_cliente %></h3>
-	        <h3 class="box-title">Cliente: <%= venta.id %></h3>
 	    </div>
 	    <div class="box-body">
 	    <% index = 0 %>

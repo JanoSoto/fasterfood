@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   match "/500", :to => "errors#internal_error", via: 'get'
   match "/acceso_denegado", :to => "errors#acceso_denegado", via: 'get'
   
+  post 'users/crear' => 'user#crear'
+  get '/usuarios' => 'user#index'
+
   get 'preparar' => 'preparar#index'
   get 'preparar_pruebas' => 'preparar#pruebas'
   get 'preparar/cambiar_estado/:id_venta/:tipo_producto/:id_producto' => 'preparar#cambiar_estado'
@@ -28,9 +31,11 @@ Rails.application.routes.draw do
 
   resources :ingredientes and resources :ingrediente
 
+
   devise_for :users
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
+    get '/users/sign_up' => 'devise/registrations#new'
     get '/logout' => 'devise/sessions#destroy'
     #get '/logout' => 'devise/sessions#destroy'
   end

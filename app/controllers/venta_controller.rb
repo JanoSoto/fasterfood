@@ -198,9 +198,8 @@ class VentaController < ApplicationController
     end
 
     respond_to do |format|
-      #format.html { redirect_to venta_url, notice: 'Venta was successfully destroyed.' }
-      #format.html { redirect_to '/venta', notice: 'Venta entregada correctamente.'}
-      format.html { redirect_to '/venta', notice: mensaje}
+      #format.html { redirect_to '/venta', notice: mensaje}
+      format.html { redirect_to '/venta'}
       format.json { head :no_content }
     end
   end

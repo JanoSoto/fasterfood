@@ -334,6 +334,13 @@
                                 <li><a href="<%= url_for controller: 'compuestos', action: 'index' %>"><i class="fa fa-angle-double-right"></i> Compuesto</a></li>
                             </ul>
                         </li>
+                        <% if can? :manage, User %>
+                        <li>
+                            <a href="<%= url_for :controller => 'user', action: 'index' %>">
+                                <i class="fa fa-user"></i> <span>Usuarios</span>
+                            </a>
+                        </li>
+                        <% end %>
                         <% acciones = {
                             'productos' => {
                                 'compuestos' => @compuestos,

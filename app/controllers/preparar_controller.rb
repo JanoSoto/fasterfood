@@ -87,7 +87,7 @@ class PrepararController < ApplicationController
   	#venta.basicos.index()
   	respond_to do |format|
       #format.html { redirect_to venta_url, notice: 'Venta was successfully destroyed.' }
-      format.html { redirect_to '/preparar', notice: venta.id.to_s + 'Estado actual: ' + venta.detalle[indice].estado.to_s}
+      format.html { redirect_to '/preparar' }
       format.json { head :no_content }
     end
   end
