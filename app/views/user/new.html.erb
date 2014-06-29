@@ -5,17 +5,27 @@
 <%= simple_form_for @user, :url => url_crear do |f| %>
 <!--
 %= form_for(@user, :html => {:class => "form-horizontal"}) do |f| %>
-  %= f.error_notification %>
 -->
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @user.errors.count %> <%= @user.errors.count == 1 ? 'error' : 'errores' %></h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="form-inputs">
   	<div class="form-group" class="field">
 		<!-- <%= f.label :email, autofocus: true, :html => {:class => "col-sm-2 control-label"} %> -->
-	    <%= f.text_field :email, :class => "form-control", :placeholder => "Email" %>
+	    <%= f.text_field :email, :class => "form-control", :placeholder => "Email", autocomplete: 'off', value: '' %>
 	</div>
 	<div class="form-group" class="field">
 		<!-- <%= f.label :password, autofocus: true, :html => {:class => "col-sm-2 control-label"} %> -->
-	    <%= f.password_field :password, :class => "form-control", :placeholder => "Contraseña" %>
+	    <%= f.password_field :password, :class => "form-control", :placeholder => "Contraseña", autocomplete: 'off' %>
 	</div>
 	<div class="form-group" class="field">
 		<!-- <%= f.label :password_confirmation, autofocus: true, :html => {:class => "col-sm-2 control-label"} %> -->

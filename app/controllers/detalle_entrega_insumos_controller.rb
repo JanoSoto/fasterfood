@@ -1,4 +1,5 @@
 class DetalleEntregaInsumosController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_detalle_entrega_insumo, only: [:show, :edit, :update, :destroy]
 
   # GET /detalle_entrega_insumos

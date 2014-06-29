@@ -1,10 +1,20 @@
+<%
+    base_url = request.url
+    if request.path != '/'
+        base_url = base_url.gsub(request.path, '')
+    end
+%>
+<link href="<%= base_url %>/AdminLTE/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+  $(function(){
+    $('#reservation').daterangepicker();
+  });
+</script>
 <h2>Ventas
   <a href="<%= url_for new_venta_path %>" class="pull-right">
     <button type="button" class="btn btn-success">Nueva Venta</button>
   </a>
 </h3>
-
-
 
 <table class="table table-hover">
   <thead>

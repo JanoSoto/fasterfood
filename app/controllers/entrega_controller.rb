@@ -1,4 +1,5 @@
 class EntregaController < ApplicationController
+  before_filter :authenticate_user!
 	#before_action :set_entrega, only: [:show, :edit, :update, :destroy]
 	def new
     	@entrega = Entrega.new

@@ -1,4 +1,5 @@
 class LotesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_lote, only: [:show, :edit, :update, :destroy]
 
   # GET /lotes

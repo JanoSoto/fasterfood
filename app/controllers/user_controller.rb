@@ -4,19 +4,24 @@ class UserController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @users = User.excludes(:id => current_user.id)
+    @users = User.where('id != ?', current_user.id)
   end
 
+  def show
+  	raise 'a'
+	redirect_to root_path
+  end
+  
   def new
     @user = User.new
-    render :action => 'new'
+    #render :action => 'new'
   end
 
-  def create
-    @user = User.new(params[:user])
+  def crear
+    @user = User.new(user_params)
     if @user.save
       	flash[:notice] = "Successfully created User." 
-		redirect_to show @user
+		redirect_to root_path
     else
       render :action => 'new'
     end
@@ -45,4 +50,8 @@ class UserController < ApplicationController
       redirect_to root_path
     end
   end 
+  private
+  	def user_params
+		params.require(:user).permit(:email, :password, :password_confirmation, :rut, :nombre, :apellido_paterno, :apellido_materno, :telefono, :rol)
+	end
 end

@@ -1,4 +1,5 @@
 class InsumosController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_insumo, only: [:show, :edit, :update, :destroy]
 
   

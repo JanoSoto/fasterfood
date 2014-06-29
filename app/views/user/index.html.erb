@@ -1,0 +1,23 @@
+<%= page_title "Usuarios" %>
+<a href="<%= url_for new_user_path %>" class="pull-right"><button type="button" class="btn btn-success"><i class="fa fa-plus-circle"></i> Crear Usuario</button></a>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                </tr>
+                
+                <% @users.each do | user | %>
+                  <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.nombre + ' ' + user.apellido_paterno %></td>
+                    <td><%= user.email %></td>
+                  </tr>
+                <% end %>
+            </table>
+        </div><!-- /.box-body -->
+    </div>
+</div>

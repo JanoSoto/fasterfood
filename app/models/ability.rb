@@ -16,7 +16,8 @@ class Ability
       elsif user.rol == User::VENDEDOR
         can :read, :all
       elsif user.rol == User::COCINERO
-        can :read, :all
+        can :manage, :preparar
+        #can :read, :preparar
       end
     end
 

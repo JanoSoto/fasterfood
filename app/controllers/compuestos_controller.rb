@@ -29,9 +29,10 @@ class CompuestosController < ApplicationController
   # POST /compuestos.json
   def create
     @compuesto = Compuesto.new(compuesto_params)
-    @compuesto.nombre_producto = @compuesto.nombre_producto.strip
+    @compuesto.nombre_producto = @compuesto.nombre_producto.strip.downcase
 
     respond_to do |format|
+
       basicos = Array.new
       if !params[:compuesto][:basico].nil?
           params[:compuesto][:basico].each do | basico |
@@ -49,10 +50,18 @@ class CompuestosController < ApplicationController
         @compuesto.composicion[i].cantidad = basico[:cantidad]
         i = i + 1
       end
+
+      @compuesto.valid?
+      if @compuesto.basico.any?
+        tiene_basicos = true
+      else
+        tiene_basicos = false
+        @compuesto.errors.add :general, "Debe agregar a lo menos un producto basico."
+      end
       #@compuesto.errors.add :nombre_poducto, params.inspect
       #raise 'An error has occured'
-      if @compuesto.save
-        format.html { redirect_to @compuesto, notice: 'Compuesto was successfully created.' }
+      if tiene_basicos and @compuesto.save
+        format.html { redirect_to @compuesto, notice: 'Producto creado correctamente.' }
         format.json { render :show, status: :created, location: @compuesto }
       else
         format.html { render :new }
@@ -66,6 +75,8 @@ class CompuestosController < ApplicationController
   def update
     #raise 'An error has occured'  
     respond_to do |format|
+      @compuesto.nombre_producto = @compuesto.nombre_producto.strip.downcase
+      
       basicos = Array.new
       if !params[:compuesto][:basico].nil?
           params[:compuesto][:basico].each do | basico |

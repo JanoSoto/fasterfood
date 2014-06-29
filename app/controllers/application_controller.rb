@@ -34,4 +34,14 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :telefono
     devise_parameter_sanitizer.for(:sign_up) << :user_id
   end
+
+  def after_sign_in_path_for(resource)
+    if current_user.rol == User::ADMINISTRADOR
+      '/'
+    elsif current_user.rol == User::VENDEDOR
+      '/venta'
+    elsif current_user.rol == User::COCINERO
+      '/preparar'
+    end
+  end
 end

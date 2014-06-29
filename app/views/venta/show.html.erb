@@ -30,12 +30,7 @@
 </p>
 
 <p>
-  <strong>Estado venta:</strong>
-  <% if @venta.estado_venta.nil? %>
-      <span class="label label-danger">Cancelada</span>
-  <% else %>
-      <span class="label label-warning">Emitida</span>
-  <% end %>
+  <strong>Estado venta:</strong><%= obtener_label_venta @venta.estado_venta %>
 </p>
 
 <p>

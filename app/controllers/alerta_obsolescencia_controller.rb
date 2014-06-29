@@ -1,4 +1,5 @@
 class AlertaObsolescenciaController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_alerta_obsolescencium, only: [:show, :edit, :update, :destroy]
 
   # GET /alerta_obsolescencia

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140629183047) do
+ActiveRecord::Schema.define(version: 20140629232913) do
 
   create_table "alerta_obsolescencia", force: true do |t|
     t.string   "tiempo_emision"
@@ -44,6 +44,12 @@ ActiveRecord::Schema.define(version: 20140629183047) do
     t.integer "precio"
     t.string  "nombre_producto"
     t.boolean "en_venta"
+  end
+
+  create_table "composicions", force: true do |t|
+    t.integer "basico_id"
+    t.integer "compuesto_id"
+    t.integer "cantidad"
   end
 
   create_table "compuestos", force: true do |t|
@@ -80,6 +86,14 @@ ActiveRecord::Schema.define(version: 20140629183047) do
     t.integer  "venta_id"
     t.integer  "cantidad"
     t.string   "comentario",                  limit: 20
+  end
+
+  create_table "detalles_basicos", force: true do |t|
+    t.integer  "basico_id"
+    t.integer  "ingrediente_id"
+    t.integer  "cantidad"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "entregas", force: true do |t|

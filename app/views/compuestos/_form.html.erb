@@ -1,11 +1,20 @@
+<%= page_title "Agregar Producto Compuesto" %>
 <%= form_for(@compuesto, :html => {:class => "form-horizontal"}) do |f| %>
-  <% if @compuesto.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@compuesto.errors.count, "error") %>:</h2>
-
+  <% elemento = @compuesto %>
+  <% if elemento.errors.any? %>
+    <div class="alert alert-warning alert-dismissable">
+      <i class="fa fa-warning"></i>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <!-- <i class="fa fa-warning text-yellow"> -->
+      <b>Hay errores con los datos que ingreso:</b>
       <ul>
-      <% @compuesto.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% elemento.errors.each do |key, message| %>
+        <li>
+          <% if key != :general %>
+            <%= key.capitalize.to_s.gsub( '_', ' ' ) %> 
+          <% end %>
+          <%= message %>
+        </li>
       <% end %>
       </ul>
     </div>

@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <% categoria = {'Verdura' => 'Verdura', 'Pan' => 'Pan', 'Pollo' => 'Pollo'} %>
+    <% categoria = {'Verdura' => 'Verdura', 'Pan' => 'Pan', 'Pollo' => 'Pollo', 'Carne' => 'Carne', 'Lacteos' => 'Lacteos'} %>
     <%= f.input :categoria, collection: categoria, prompt: "Eliga un tipo...", disabled: @edit %>
     <%= f.input :refrigerado, as: :boolean, disabled: @edit %>
     <%= f.input :nombre, disabled: @edit %>

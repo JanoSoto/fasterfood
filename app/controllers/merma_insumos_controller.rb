@@ -1,4 +1,5 @@
 class MermaInsumosController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_merma_insumo, only: [:show, :edit, :update, :destroy]
 
   # GET /merma_insumos

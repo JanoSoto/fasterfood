@@ -1,0 +1,91 @@
+<%
+    base_url = request.url
+    if request.path != '/'
+        base_url = base_url.gsub(request.path, '')
+    end
+%>
+<link href="<%= base_url %>/AdminLTE/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+  $(function(){
+    $('#reservation').daterangepicker( {
+        format: 'YYYY-MM-DD',
+        maxDate: '<%= Time.now.strftime("%Y-%m-%d") %>',
+        singleDatePicker: true,
+    } );
+  });
+</script>
+<h2>Ventas
+  <a href="<%= url_for new_venta_path %>" class="pull-right">
+    <button type="button" class="btn btn-success">Nueva Venta</button>
+  </a>
+</h3>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Date range:</label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <input type="text" class="form-control pull-right" id="reservation"/>
+            </div><!-- /.input group -->
+        </div><!-- /.form group -->
+    </div>
+</div>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nombre cliente</th>
+      <th>Precio total</th>
+      <th>Vendedor</th>
+      <th>Hora</th>
+      <th>Caja</th>
+      <th>Estado venta</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @venta.each do |venta| %>
+      <% venta.estado_venta = venta.estado_venta.to_i %>
+      <tr>
+        <td><%= venta.nombre_cliente %></td>
+        <td><%= venta.precio_total %></td>
+        <td><%= venta.user.email %></td>
+        <td><%= venta.fecha_hora %></td>
+        <td><%= venta.numero_de_caja %></td>
+        <td><%= venta.estado_venta %></td>
+        <td>
+            <%= obtener_label_venta venta.estado_venta %>
+            <% if venta.estado_venta == Venta::FINALIZADA %>
+                <%= link_to 'Entregar'.html_safe,
+                     controller: 'venta',
+                     action: 'cambiar_estado',
+                     id: venta.id,
+                     estado_nuevo: Venta::ENTREGADA %>
+            <% elsif venta.estado_venta != Venta::ENTREGADA%>
+                <!--
+                <%= link_to '++'.html_safe,
+                         controller: 'venta',
+                         action: 'cambiar_estado',
+                         id: venta.id,
+                         estado_nuevo: (venta.estado_venta.to_i + 1).to_s %>-->
+            <% end %>
+        </td>
+        <td><%= link_to 'Detalles', venta %></td>
+        <!--<td><%= link_to 'Edit', edit_venta_path(venta) %></td>-->
+        <td>
+        
+            <% if venta.estado_venta.in?([Venta::EMITIDA, Venta::PREPARANDO]) %>
+                <%= link_to '<i class="fa fa-times"></i>'.html_safe, venta, method: :delete, data: { confirm: 'Esta seguro?' } %>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
