@@ -1,6 +1,7 @@
 class UserController < ApplicationController
   before_filter :authenticate_user!
   check_authorization
+  load_and_authorize_resource
 
   def index
     @users = User.excludes(:id => current_user.id)
@@ -11,7 +12,7 @@ class UserController < ApplicationController
     render :action => 'new'
   end
 
-  def crear
+  def create
     @user = User.new(params[:user])
     if @user.save
       	flash[:notice] = "Successfully created User." 
