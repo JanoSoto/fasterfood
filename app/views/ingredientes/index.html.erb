@@ -1,4 +1,4 @@
-<h1>Listing ingredientes</h1>
+<h1>Listado ingredientes</h1>
 
 <div class="row">
     <div class="col-xs-12">
@@ -16,14 +16,13 @@
 
             <% @ingredientes.each do |ingrediente| %>
               <tr>
-                <td><%= link_to ingrediente.nombre, ingrediente %></td>
+                <td><%= ingrediente.nombre %></td>
                 <td><%= si_o_no ingrediente.refrigerado %></td>
                 <td><%= ingrediente.categoria %></td>
                 <td><%= ingrediente.stock_actual %></td>
                 <td><%= ingrediente.stock_critico %></td>
                 <td><%= ingrediente.stock_ideal %></td>
                 <td><%= link_to 'Editar', edit_ingrediente_path(ingrediente) %></td>
-                <td><%= link_to 'Eliminar', ingrediente, method: :delete, data: { confirm: '¿Está seguro que desea eliminar este ingrediente?' } %></td>
               </tr>
             <% end %>
           </table> <br>

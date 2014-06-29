@@ -1,35 +1,34 @@
 <h1>Insumos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Tipo insumo</th>
-      <th>Nombre insumo</th>
-      <th>Categoria insumo</th>
-      <th>Stock actual</th>
-      <th>Stock critico</th>
-      <th>Stock ideal</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @insumos.each do |insumo| %>
-      <tr>
-        <td><%= insumo.tipo_insumo %></td>
-        <td><%= insumo.nombre_insumo %></td>
-        <td><%= insumo.categoria_insumo %></td>
-        <td><%= insumo.stock_actual %></td>
-        <td><%= insumo.stock_critico %></td>
-        <td><%= insumo.stock_ideal %></td>
-        <td><%= link_to 'Show', insumo %></td>
-        <td><%= link_to 'Edit', edit_insumo_path(insumo) %></td>
-        <td><%= link_to 'Destroy', insumo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box-body table-responsive no-padding">
+          <table class="table table-hover">
+            <tr>
+                <th>Tipo insumo</th>
+                <th>Nombre insumo</th>
+                <th>Categoria insumo</th>
+                <th>Stock actual</th>
+                <th>Stock critico</th>
+                <th>Stock ideal</th>
+                <th colspan="2"></th>
+            </tr>
 
-<br>
+            <% @insumos.each do |insumo| %>
+              <tr>
+                <td><%= insumo.tipo_insumo %></td>
+                <td><%= insumo.nombre_insumo %></td>
+                <td><%= insumo.categoria_insumo %></td>
+                <td><%= insumo.stock_actual %></td>
+                <td><%= insumo.stock_critico %></td>
+                <td><%= insumo.stock_ideal %></td>
+                <td><%= link_to 'Editar', edit_ingrediente_path(insumo) %></td>
+              </tr>
+            <% end %>
+          </table> <br>
+          <%= link_to 'Nuevo insumo', new_ingrediente_path %>
 
-<%= link_to 'New Insumo', new_insumo_path %>
+        </div><!-- /.box-body -->
+    </div>
+</div>
