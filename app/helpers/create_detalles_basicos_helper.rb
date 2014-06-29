@@ -1,0 +1,2 @@
+module CreateDetallesBasicosHelper
+end

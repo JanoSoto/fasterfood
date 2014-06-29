@@ -1,0 +1,29 @@
+<h1>Listing create_detalles_basicos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Basico</th>
+      <th>Ingrediente</th>
+      <th>Cantidad</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @create_detalles_basicos.each do |create_detalles_basico| %>
+      <tr>
+        <td><%= create_detalles_basico.basico_id %></td>
+        <td><%= create_detalles_basico.ingrediente_id %></td>
+        <td><%= create_detalles_basico.cantidad %></td>
+        <td><%= link_to 'Show', create_detalles_basico %></td>
+        <td><%= link_to 'Edit', edit_create_detalles_basico_path(create_detalles_basico) %></td>
+        <td><%= link_to 'Destroy', create_detalles_basico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Create detalles basico', new_create_detalles_basico_path %>

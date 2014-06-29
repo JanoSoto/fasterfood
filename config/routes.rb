@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :detalles_basicos
+
+  resources :create_detalles_basicos
+
   match "/404", :to => "errors#not_found", via: 'get'
   match "/422", :to => "errors#unacceptable", via: 'get'
   match "/500", :to => "errors#internal_error", via: 'get'
@@ -22,6 +26,7 @@ Rails.application.routes.draw do
   resources :detalles
 
   #get 'venta/preparar' => 'preparar#index'
+  get 'venta/historial' => 'venta#historial'
   get 'venta/:id/cambiar_estado/:estado_nuevo' => 'venta#cambiar_estado'
   resources :venta do
     get 'index_path'

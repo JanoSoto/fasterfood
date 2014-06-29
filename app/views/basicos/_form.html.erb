@@ -1,11 +1,20 @@
+<%= page_title "Nuevo Producto Basico" %>
 <%= form_for(@basico, :html => {:class => "form-horizontal"}) do |f| %>
-  <% if @basico.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@basico.errors.count, "error") %> prohibited this basico from being saved:</h2>
-
+  <% elemento = @basico %>
+  <% if elemento.errors.any? %>
+    <div class="alert alert-warning alert-dismissable">
+      <i class="fa fa-warning"></i>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <!-- <i class="fa fa-warning text-yellow"> -->
+      <b>Hay errores con los datos que ingreso:</b>
       <ul>
-      <% @basico.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% elemento.errors.each do |key, message| %>
+        <li>
+          <% if key != :general %>
+            <%= key.capitalize.to_s.gsub( '_', ' ' ) %> 
+          <% end %>
+          <%= message %>
+        </li>
       <% end %>
       </ul>
     </div>
@@ -34,4 +43,83 @@
           <%= boton_guardar_cancelar((f.submit "Guardar", :class => "btn btn-success"), compuestos_path) %>
       </div>
   </div>
+  <!-- Agregar ingredientes -->
+  <% diferencia_basicos = Ingrediente.all - @basico.ingredientes %>
+  <% if diferencia_basicos.any? %>
+      <div class="form-group" id="div_select_basico">
+          <label for="input_enventa" class="col-sm-2 control-label">Añadir ingredientes</label>
+          <div class="col-sm-2">
+              <select id="select_basico" class="form-control">
+                  <% diferencia_basicos.each do | ingrediente | %>
+                      <%= ('<option value="' + ingrediente.id.to_s + '">' + ingrediente.nombre + '</option>').html_safe %>
+                  <% end %>
+              </select>
+          </div>
+          <div class="col-sm-2">
+              <a href="#" id="agregar">Agregar</a>
+          </div>
+      </div>
+  <% end %>
+  <!-- / Agregar ingredientes -->
+  <!-- Ingredientes -->
+  <%= f.fields_for :ingredientes do |builder|  %>
+      <table class="table table-hover" id="tabla_basicos">
+          <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+              <th>Eliminar</th>
+          </tr>
+          <% if @basico.ingredientes.any? %>
+              <% i = 0 %>
+              <% @basico.ingredientes.each do | ingrediente | %>
+                  <tr>
+                      <td><input type="hidden" name="basico[ingredientes][][id]" value="<%= ingrediente.id %>"><%= ingrediente.id              %></td>
+                      <td><%= ingrediente.nombre %></td>
+                      <td><input type="text" name="basico[ingredientes][][cantidad]" value="<%= @basico.detalles_basicos[i].cantidad %>"></td>
+                      <td><a href="#" class="eliminar">Eliminar</a></td>
+                  </tr>
+                  <% i = i + 1 %>
+              <% end %>
+          <% end %>
+      </table>
+  <% end %>
+  <!-- / Ingredientes -->
 <% end %>
+<script type="text/javascript">
+    $(function(){
+        $('#tabla_basicos').delegate('.eliminar', 'click', function(){
+            // Agrego el producto a la lista elegible
+            var select = $('#select_basico');
+            var valor_seleccionado = $(this).closest('input').val();
+            if( select.find('option[value='+ valor_seleccionado +']').length == 0){
+                var eliminado        = $(this).closest('tr');
+                var eliminado_nombre = eliminado.find('td:nth-child(2)');
+                var eliminado_value  = eliminado.find('td:nth-child(1)');
+                select.append( new Option(eliminado_nombre.text(),eliminado_value.text()) );
+            }
+
+            $(this).closest('tr').remove();
+            //$('#agregar').show();
+            //$('#select_basico').show();
+            $('#div_select_basico').show();
+        });
+        $('#agregar').on('click', function(){
+         var row = '<tr>';
+            row += '<td><input type="hidden" name="basico[ingredientes][][id]" value ="'+$('#select_basico').val()+'">' + $('#select_basico').val() + '</td>';
+            row += '<td>' + $('#select_basico :selected').text() + '</td>';
+            row += '<td><input type="text" name="basico[ingredientes][][cantidad]" value="1"></td>';
+            row += '<td><a href="#" class="eliminar">Eliminar</a></td>';
+            row += '</tr>';
+            $('#tabla_basicos tr:last').after(row);
+
+            // Remuevo el producto de la lista elegible
+            $('#select_basico :selected').remove();
+            if($('#select_basico option').length == 0){
+                //$('#agregar').hide();
+                //$('#select_basico').hide();
+                $('#div_select_basico').hide();
+            }
+        });
+    });
+</script>

@@ -1,12 +1,20 @@
+<%= page_title "Nueva Venta" %>
 <%= form_for(@venta) do |f| %>
-    <%= controller.action_name %>
-  <% if @venta.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@venta.errors.count, "error") %> prohibited this venta from being saved:</h2>
-
+  <% elemento = @venta %>
+  <% if elemento.errors.any? %>
+    <div class="alert alert-warning alert-dismissable">
+      <i class="fa fa-warning"></i>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <!-- <i class="fa fa-warning text-yellow"> -->
+      <b>Hay errores con los datos que ingreso:</b>
       <ul>
-      <% @venta.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% elemento.errors.each do |key, message| %>
+        <li>
+          <% if key != :general %>
+            <%= key.capitalize.to_s.gsub( '_', ' ' ) %> 
+          <% end %>
+          <%= message %>
+        </li>
       <% end %>
       </ul>
     </div>

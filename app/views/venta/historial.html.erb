@@ -7,7 +7,11 @@
 <link href="<%= base_url %>/AdminLTE/css/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
   $(function(){
-    $('#reservation').daterangepicker();
+    $('#reservation').daterangepicker( {
+        format: 'YYYY-MM-DD',
+        maxDate: '<%= Time.now.strftime("%Y-%m-%d") %>',
+        singleDatePicker: true,
+    } );
   });
 </script>
 <h2>Ventas
@@ -15,6 +19,21 @@
     <button type="button" class="btn btn-success">Nueva Venta</button>
   </a>
 </h3>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            <label>Date range:</label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                <input type="text" class="form-control pull-right" id="reservation"/>
+            </div><!-- /.input group -->
+        </div><!-- /.form group -->
+    </div>
+</div>
+
 
 <table class="table table-hover">
   <thead>
@@ -36,7 +55,7 @@
         <td><%= venta.nombre_cliente %></td>
         <td><%= venta.precio_total %></td>
         <td><%= venta.user.email %></td>
-        <td><%= venta.fecha_hora.to_formatted_s(:time) %></td>
+        <td><%= venta.fecha_hora %></td>
         <td><%= venta.numero_de_caja %></td>
         <td><%= venta.estado_venta %></td>
         <td>

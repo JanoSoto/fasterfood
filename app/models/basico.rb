@@ -1,6 +1,12 @@
 class Basico < ActiveRecord::Base
 	attr_accessor :tipo
 	attr_accessor :cantidad
+	
+	has_many :detalles_basicos
+	has_many :ingredientes, :through => :detalles_basicos
+	accepts_nested_attributes_for :detalles_basicos
+
+
 	has_many :detalle
 	has_many :composicion
 	has_many :compuesto, :through => :composicion

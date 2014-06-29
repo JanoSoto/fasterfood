@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  basico_id: 1
+  ingrediente_id: 1
+  cantidad: 1
+
+two:
+  basico_id: 1
+  ingrediente_id: 1
+  cantidad: 1

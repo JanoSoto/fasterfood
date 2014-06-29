@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Basico:</strong>
+  <%= @detalles_basico.basico_id %>
+</p>
+
+<p>
+  <strong>Ingrediente:</strong>
+  <%= @detalles_basico.ingrediente_id %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @detalles_basico.cantidad %>
+</p>
+
+<%= link_to 'Edit', edit_detalles_basico_path(@detalles_basico) %> |
+<%= link_to 'Back', detalles_basicos_path %>
