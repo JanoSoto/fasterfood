@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   match "/404", :to => "errors#not_found", via: 'get'
   match "/422", :to => "errors#unacceptable", via: 'get'
   match "/500", :to => "errors#internal_error", via: 'get'
+  match "/acceso_denegado", :to => "errors#acceso_denegado", via: 'get'
   
+  post 'users/crear' => 'user#crear'
   get 'preparar' => 'preparar#index'
   get 'preparar_pruebas' => 'preparar#pruebas'
   get 'preparar/cambiar_estado/:id_venta/:tipo_producto/:id_producto' => 'preparar#cambiar_estado'
@@ -20,6 +22,13 @@ Rails.application.routes.draw do
   resources :ingredientes
 
   devise_for :users
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new'
+    get '/logout' => 'devise/sessions#destroy'
+    #get '/logout' => 'devise/sessions#destroy'
+  end
+  resources :users, :controller => "user"
+
   root 'basicos#index'
   resources :alerta_obsolescencia
 

@@ -9,7 +9,6 @@ en:
       not_saved:
         one: "Ha habido 1 error:"
         other: "Han habido %{count} errores:"
- 
   devise:
     failure:
       already_authenticated: 'Ya iniciaste sesión.'

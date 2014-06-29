@@ -9,4 +9,7 @@ class ErrorsController < ActionController::Base
 
   def unprocessable_entity
   end
+
+  def acceso_denegado
+  end
 end

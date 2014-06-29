@@ -1,7 +1,7 @@
 class VentaController < ApplicationController
-  load_and_authorize_resource param_method: :compuesto_params
   check_authorization
   before_filter :authenticate_user!#, :except => [:index, :show]
+  load_and_authorize_resource param_method: :compuesto_params
   before_action :set_venta, only: [:show, :edit, :update, :destroy, :cambiar_estado]
 
   # GET /venta

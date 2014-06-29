@@ -1,4 +1,7 @@
 class BasicosController < ApplicationController
+  check_authorization
+  before_filter :authenticate_user!
+  load_and_authorize_resource
   before_action :set_basico, only: [:show, :edit, :update, :destroy]
 
   # GET /basicos

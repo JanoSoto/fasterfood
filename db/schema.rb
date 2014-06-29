@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140626115424) do
+ActiveRecord::Schema.define(version: 20140628213837) do
 
   create_table "alerta_obsolescencia", force: true do |t|
     t.string   "tiempo_emision"
@@ -41,11 +41,9 @@ ActiveRecord::Schema.define(version: 20140626115424) do
   end
 
   create_table "basicos", force: true do |t|
-    t.integer  "precio"
-    t.string   "nombre_producto"
-    t.boolean  "en_venta"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "precio"
+    t.string  "nombre_producto"
+    t.boolean "en_venta"
   end
 
   create_table "composicions", force: true do |t|
@@ -123,7 +121,6 @@ ActiveRecord::Schema.define(version: 20140626115424) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "role_id",                           default: 5
     t.integer  "vendedor_id"
     t.integer  "rut"
     t.string   "nombre",                 limit: 20
@@ -131,11 +128,11 @@ ActiveRecord::Schema.define(version: 20140626115424) do
     t.string   "apellido_materno",       limit: 20
     t.integer  "telefono",               limit: 8
     t.integer  "user_id"
+    t.integer  "rol"
   end
 
   add_index "users", ["email"], name: "index_users_on_username", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
 
   create_table "vendedors", force: true do |t|
     t.integer  "rut"
