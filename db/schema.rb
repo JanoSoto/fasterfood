@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140629023955) do
+ActiveRecord::Schema.define(version: 20140629183047) do
 
   create_table "alerta_obsolescencia", force: true do |t|
     t.string   "tiempo_emision"
@@ -51,6 +51,18 @@ ActiveRecord::Schema.define(version: 20140629023955) do
     t.string  "nombre_producto"
     t.boolean "en_venta"
   end
+
+  create_table "detalle_entrega_insumos", force: true do |t|
+    t.integer  "precio"
+    t.integer  "cantidad"
+    t.integer  "insumo_id"
+    t.integer  "entrega_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "detalle_entrega_insumos", ["entrega_id"], name: "index_detalle_entrega_insumos_on_entrega_id", using: :btree
+  add_index "detalle_entrega_insumos", ["insumo_id"], name: "index_detalle_entrega_insumos_on_insumo_id", using: :btree
 
   create_table "detalles", force: true do |t|
     t.integer  "compuesto_id"
@@ -93,7 +105,6 @@ ActiveRecord::Schema.define(version: 20140629023955) do
   create_table "insumos", force: true do |t|
     t.string   "tipo_insumo"
     t.string   "nombre_insumo"
-    t.string   "categoria_insumo"
     t.integer  "stock_actual"
     t.integer  "stock_critico"
     t.integer  "stock_ideal"

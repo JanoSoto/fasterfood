@@ -1,0 +1,2 @@
+module DetalleEntregaInsumosHelper
+end

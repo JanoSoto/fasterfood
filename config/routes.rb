@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :detalle_entrega_insumos
+
   resources :proveedors
 
   get 'recepcion_materiales/insumos'

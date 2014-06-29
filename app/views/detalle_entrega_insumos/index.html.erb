@@ -1,0 +1,29 @@
+<h1>Listing detalle_entrega_insumos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Precio</th>
+      <th>Cantidad</th>
+      <th>Insumo</th>
+      <th>Entrega</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @detalle_entrega_insumos.each do |detalle_entrega_insumo| %>
+      <tr>
+        <td><%= detalle_entrega_insumo.precio %></td>
+        <td><%= detalle_entrega_insumo.cantidad %></td>
+        <td><%= detalle_entrega_insumo.insumo %></td>
+        <td><%= detalle_entrega_insumo.entrega %></td>
+        <td><%= link_to 'Edit', edit_detalle_entrega_insumo_path(detalle_entrega_insumo) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Detalle entrega insumo', new_detalle_entrega_insumo_path %>
