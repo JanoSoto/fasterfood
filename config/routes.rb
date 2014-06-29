@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+  resources :proveedors
+
   get 'recepcion_materiales/insumos'
 
   get 'recepcion_materiales/ingredientes'
@@ -8,7 +9,6 @@ Rails.application.routes.draw do
 
   resources :merma_insumos
 
-=======
   match "/404", :to => "errors#not_found", via: 'get'
   match "/422", :to => "errors#unacceptable", via: 'get'
   match "/500", :to => "errors#internal_error", via: 'get'
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'preparar' => 'preparar#index'
   get 'preparar_pruebas' => 'preparar#pruebas'
   get 'preparar/cambiar_estado/:id_venta/:tipo_producto/:id_producto' => 'preparar#cambiar_estado'
->>>>>>> 94a0f48a9aeddb7966d67ce1803c5fd8305cd0ce
+
   resources :lotes
 
   resources :insumos

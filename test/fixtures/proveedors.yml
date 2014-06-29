@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rut_proveedor: MyString
+  nombre_proveedor: MyString
+  telefono_proveedor: 1
+  email_proveedor: MyString
+
+two:
+  rut_proveedor: MyString
+  nombre_proveedor: MyString
+  telefono_proveedor: 1
+  email_proveedor: MyString

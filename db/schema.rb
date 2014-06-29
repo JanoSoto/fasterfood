@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140628190207) do
-=======
-ActiveRecord::Schema.define(version: 20140628213837) do
->>>>>>> 94a0f48a9aeddb7966d67ce1803c5fd8305cd0ce
+ActiveRecord::Schema.define(version: 20140629023955) do
 
   create_table "alerta_obsolescencia", force: true do |t|
     t.string   "tiempo_emision"
@@ -74,6 +70,15 @@ ActiveRecord::Schema.define(version: 20140628213837) do
     t.string   "comentario",                  limit: 20
   end
 
+  create_table "entregas", force: true do |t|
+    t.datetime "fecha_hora_entrega"
+    t.integer  "proveedor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "entregas", ["proveedor_id"], name: "index_entregas_on_proveedor_id", using: :btree
+
   create_table "ingredientes", force: true do |t|
     t.boolean  "refrigerado"
     t.string   "nombre",        limit: 20
@@ -102,6 +107,7 @@ ActiveRecord::Schema.define(version: 20140628213837) do
     t.integer  "ingrediente_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "numero_lote"
   end
 
   add_index "lotes", ["ingrediente_id"], name: "index_lotes_on_ingrediente_id", using: :btree
@@ -128,6 +134,15 @@ ActiveRecord::Schema.define(version: 20140628213837) do
 
   add_index "merma_insumos", ["insumo_id"], name: "index_merma_insumos_on_insumo_id", using: :btree
 
+  create_table "proveedors", force: true do |t|
+    t.string   "rut_proveedor"
+    t.string   "nombre_proveedor"
+    t.integer  "telefono_proveedor"
+    t.string   "email_proveedor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "roles", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -147,11 +162,6 @@ ActiveRecord::Schema.define(version: 20140628213837) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-<<<<<<< HEAD
-    t.integer  "vendedor_id"
-=======
-    t.integer  "role_id",                           default: 3
->>>>>>> f38b75918bfc35f90bd34cf00c98992af1ad3d75
     t.integer  "rut"
     t.string   "nombre",                 limit: 20
     t.string   "apellido_paterno",       limit: 20
