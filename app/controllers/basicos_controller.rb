@@ -1,7 +1,7 @@
 class BasicosController < ApplicationController
   check_authorization
   before_filter :authenticate_user!
-  load_and_authorize_resource
+  load_and_authorize_resource param_method: :basico_params
   before_action :set_basico, only: [:show, :edit, :update, :destroy]
 
   # GET /basicos
@@ -53,7 +53,6 @@ class BasicosController < ApplicationController
 
       # / ANADIR INGREDIENTES
 
-      @basico.valid?
       if @basico.ingredientes.any?
         tiene_ingredientes = true
       else
@@ -124,9 +123,10 @@ class BasicosController < ApplicationController
   # DELETE /basicos/1
   # DELETE /basicos/1.json
   def destroy
-    @basico.destroy
+    @basico.en_venta = !@basico.en_venta
+    @basico.save
     respond_to do |format|
-      format.html { redirect_to basicos_url, notice: 'Basico was successfully destroyed.' }
+      format.html { redirect_to basicos_url, notice: 'Estado cambiado correctamente.' }
       format.json { head :no_content }
     end
   end

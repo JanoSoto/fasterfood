@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140629232913) do
+ActiveRecord::Schema.define(version: 20140630020308) do
 
   create_table "alerta_obsolescencia", force: true do |t|
     t.string  "tiempo_emision"
@@ -95,7 +95,7 @@ ActiveRecord::Schema.define(version: 20140629232913) do
 
   create_table "ingredientes", force: true do |t|
     t.boolean  "refrigerado"
-    t.string   "nombre",        limit: 20
+    t.string   "nombre",        limit: 50
     t.string   "categoria",     limit: 20
     t.integer  "stock_actual"
     t.integer  "stock_critico"
@@ -163,14 +163,6 @@ ActiveRecord::Schema.define(version: 20140629232913) do
     t.integer  "cantidad_merma"
     t.datetime "fecha_merma"
     t.string   "comentario_merma"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "migrations", force: true do |t|
-    t.integer  "basico_id"
-    t.integer  "compuesto_id"
-    t.integer  "cantidad"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -28,10 +28,6 @@
     <%= f.label :comentario_perdida %><br>
     <%= f.text_field :comentario_perdida %>
   </div>
-  <div class="field">
-    <%= f.label :numero_de_caja %><br>
-    <%= f.number_field :numero_de_caja %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
@@ -46,7 +42,7 @@
               
                   <% @diferencia_basicos.each do | basico | %>
                     <% if !basico.id.nil? %>
-                      <%= ('<option value="' + basico.tipo + '_' + basico.id.to_s + '">' + basico.nombre_producto + '</option>').html_safe %>
+                      <%= ('<option value="' + basico.tipo + '_' + basico.id.to_s + '">' + basico.nombre_producto.capitalize + '</option>').html_safe %>
                     <% end %>
                   <% end %>
               </select>
@@ -60,7 +56,6 @@
   <%= f.fields_for :basicos do |builder|  %>
       <table class="table table-hover" id="tabla_basicos">
           <tr>
-              <th>ID</th>
               <th>Nombre</th>
               <th>Cantidad</th>
               <th>Comentario</th>
@@ -71,7 +66,6 @@
               <% @venta.basico.each do | basico | %>
                 <% if !basico.nil? %>
                   <tr>
-                      <td><input type="hidden" name="venta[basico][][id]" value="basico_<%= basico.id %>">basico_<%= basico.id %></td>
                       <td><%= basico.nombre_producto %></td>
                       <td><input type="text" name="venta[basico][][cantidad]" value="<%= @venta.detalle[i].cantidad        %>"></td>
                       <td><input type="text" name="venta[basico][][comentario]" value="<%= @venta.detalle[i].comentario        %>"></td>
@@ -115,7 +109,7 @@
         });
         $('#agregar').on('click', function(){
          var row = '<tr>';
-            row += '<td><input type="hidden" name="venta[basico][][id]" value ="'+$('#select_basico').val()+'">' + $('#select_basico').val() + '</td>';
+            row += '<input type="hidden" name="venta[basico][][id]" value ="'+$('#select_basico').val()+'">';
             row += '<td>' + $('#select_basico :selected').text() + '</td>';
             row += '<td><input type="text" name="venta[basico][][cantidad]" value="1"></td>';
             row += '<td><input type="text" name="venta[basico][][comentario]" value=""></td>';

@@ -1,7 +1,8 @@
 <%= page_title "Iniciar Sesión" %>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   	<div class="form-group" class="field">
-    	<%= f.text_field :email, :class => "form-control", :placeholder => "Email" %>
+  		Rut (Sin puntos ni guion)
+    	<%= f.text_field :rut, :class => "form-control", :placeholder => "1234567890" %>
 	</div>
   	<div class="form-group" class="field">
 	    <%= f.password_field :password, :class => "form-control", :placeholder => "Contraseña" %>

@@ -2416,6 +2416,7 @@ Component: timeline
 /* skin-blue navbar */
 .skin-blue .navbar {
   background-color: #3c8dbc;
+  background-color: #3498db;
 }
 .skin-blue .navbar .nav a {
   color: rgba(255, 255, 255, 0.8);
@@ -2441,6 +2442,7 @@ Component: timeline
 /* skin-blue logo */
 .skin-blue .logo {
   background-color: #367fa9;
+  background-color: #3498db;
   color: #f9f9f9;
 }
 .skin-blue .logo > a {

@@ -27,6 +27,7 @@ class IngredientesController < ApplicationController
     @edit = false
     @ingrediente = Ingrediente.new(ingrediente_params)
     @ingrediente.nombre = @ingrediente.nombre.strip.downcase
+    @ingrediente.refrigerado = false
 
     respond_to do |format|
       if @ingrediente.save
