@@ -91,8 +91,22 @@
                                 </a>
                                 <ul class="treeview-menu">
                                     <li><a href="<%= url_for controller: 'basicos', action: 'index' %>"><i class="fa fa-angle-double-right"></i>Básico</a></li>
-                                    <li><a href="<%= url_for controller: 'compuestos', action: 'index' %>"><i class="fa fa-angle-double-right"></i> Compuesto</a></li>
-                                    <li><a href="<%= url_for controller: 'ingredientes', action: 'index' %>"><i class="fa fa-angle-double-right"></i> Ingredientes</a></li>
+                                    <li><a href="<%= url_for controller: 'compuestos', action: 'index' %>"><i class="fa fa-angle-double-right"></i>Compuesto</a></li>
+                                    <li><a href="<%= url_for controller: 'ingredientes', action: 'index' %>"><i class="fa fa-angle-double-right"></i>Ingredientes</a></li>
+                                    <li><a href="<%= url_for controller: 'insumos', action: 'index' %>"><i class="fa fa-angle-double-right"></i>Insumos</a></li>
+                                    <li><a href="<%= url_for controller: 'materials', action: 'index' %>"><i class="fa fa-angle-double-right"></i>Materiales</a></li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-tasks"></i>
+                                    <span>Mermas</span>
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li><a href="<%= url_for controller: 'merma_ingredientes', action: 'index' %>"><i class="fa fa-angle-double-right"></i>Ingrediente</a></li>
+                                    <li><a href="<%= url_for controller: 'merma_insumos', action: 'index' %>"><i class="fa fa-angle-double-right"></i>Insumo</a></li>
+                                    <li><a href="<%= url_for controller: 'merma_materials', action: 'index' %>"><i class="fa fa-angle-double-right"></i>Material</a></li>
                                 </ul>
                             </li>
                             <% if can? :manage, User %>

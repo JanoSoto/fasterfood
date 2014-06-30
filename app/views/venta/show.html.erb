@@ -52,12 +52,21 @@
         <th>Total</th>
         <th>Comentario</th>
     </tr>
-    <% productos = @venta.basico + @venta.compuesto %>
-    <% if productos.any? %>
+    <% if @venta.detalle.any? %>
+        <% i_basicos = 0 %>
+        <% i_compuestos = 0 %>
         <% i = 0 %>
-        <% productos.each do | basico | %>
+        <% @venta.detalle.each do | detalle | %>
             <tr>
-                <td><%= basico.nombre_producto %></td>
+                <td>
+                    <% if !detalle.basico_id.nil? %>
+                        <%= @venta.basico[ i_basicos ].nombre_producto %>
+                        <% i_basicos = i_basicos + 1 %>
+                    <% elsif !detalle.compuesto_id.nil? %>
+                        <%= @venta.compuesto[ i_compuestos ].nombre_producto %>
+                        <% i_compuestos = i_compuestos + 1 %>
+                    <% end %>
+                </td>
                 <td><%= @venta.detalle[i].cantidad %></td>
                 <td><%= @venta.detalle[i].precio / @venta.detalle[i].cantidad %></td>
                 <td><%= @venta.detalle[i].precio %></td>

@@ -15,6 +15,7 @@ class MermaIngredientesController < ApplicationController
   # GET /merma_ingredientes/new
   def new
     @merma_ingrediente = MermaIngrediente.new
+    @merma_ingrediente.cantidad = 0
   end
 
   # GET /merma_ingredientes/1/edit
@@ -28,7 +29,7 @@ class MermaIngredientesController < ApplicationController
 
     respond_to do |format|
       if @merma_ingrediente.save
-        format.html { redirect_to @merma_ingrediente, notice: 'Merma ingrediente was successfully created.' }
+        format.html { redirect_to '/merma_ingredientes', notice: 'Merma agregada correctamente.' }
         format.json { render :show, status: :created, location: @merma_ingrediente }
       else
         format.html { render :new }
