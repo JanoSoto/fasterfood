@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @merma_lote.cantidad %>
+</p>
+
+<p>
+  <strong>Fecha merma:</strong>
+  <%= @merma_lote.fecha_merma %>
+</p>
+
+<p>
+  <strong>Comentario:</strong>
+  <%= @merma_lote.comentario %>
+</p>
+
+<p>
+  <strong>Lote:</strong>
+  <%= @merma_lote.lote %>
+</p>
+
+<%= link_to 'Edit', edit_merma_lote_path(@merma_lote) %> |
+<%= link_to 'Back', merma_lotes_path %>

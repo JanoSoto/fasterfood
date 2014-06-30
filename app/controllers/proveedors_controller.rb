@@ -1,4 +1,5 @@
 class ProveedorsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_proveedor, only: [:show, :edit, :update, :destroy]
 
   # GET /proveedors

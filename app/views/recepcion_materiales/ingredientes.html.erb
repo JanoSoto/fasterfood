@@ -1,15 +1,24 @@
 <h1>Recepci&oacuten de ingredientes</h1>
+<p>fecha:
+	<% if @date %> 
+		<%= @date %> 
+	<% end %>
+</p>
 
-
-<%= form_tag("/ingredientes", method: "get") do %>
+<%= form_tag("/recepcion_materiales/ingredientes", method: "post") do %>
 	
-	<%= label_tag(:ingrediente, "Ingrediente") %>
-	<%= collection_select(:ingrediente, :id, Ingrediente.all, :id, :nombre) %> <br>
+	<%= label_tag(:ing, "Ingrediente") %>
+	<%= collection_select(:ing, :id, Ingrediente.all, :id, :nombre) %> <br>
 	<%= label_tag(:cantidad, "Cantidad") %>
 	<%= text_field_tag(:cantidad) %> <br>
+	<%= label_tag(:num_lote, "Número de lote") %>
+	<%= text_field_tag(:num_lote) %> <br>
+	<%= label_tag(:fecha_venc, "Fecha de vencimiento") %>
+	<%= date_select(:lote, :fecha_venc, start_year: Date.today.year) %> <br>
 
 	<%= submit_tag("Ingresar") %>
 	<!--% redirect_to ingredientes_url %-->
 
 <% end %>
 
+ 

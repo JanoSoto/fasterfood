@@ -1,0 +1,14 @@
+<%= simple_form_for(@detalle_entrega_insumo) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :insumo, label_method: :nombre_insumo, value_method: :id, prompt: "Eliga uno..." %>
+    <%= f.input :precio %>
+    <%= f.input :cantidad %>
+    <!--%= f.association :entrega, label_method: :id, value_method: :id, prompt: "Eliga una..." %-->
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,7 +1,6 @@
 class PrepararController < ApplicationController
   before_filter :authenticate_user!
   skip_authorization_check
-
   def index
     if current_user.rol != User::COCINERO
       raise CanCan::AccessDenied

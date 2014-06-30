@@ -1,0 +1,1 @@
+DROP TRIGGER IF EXISTS `TGR_PEDIDO_FINALIZADO`;CREATE DEFINER=`fasterfood`@`localhost` TRIGGER `TGR_PEDIDO_FINALIZADO` AFTER UPDATE ON `detalles` FOR EACH ROW if (select count(*) from detalles where detalles.venta_id = NEW.venta_id and detalles.estado = 3) = 0 then update venta set venta.estado_venta = 3 where NEW.venta_id = venta.id; end if

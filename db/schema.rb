@@ -14,11 +14,13 @@
 ActiveRecord::Schema.define(version: 20140630072213) do
 
   create_table "alerta_obsolescencia", force: true do |t|
-    t.string  "tiempo_emision"
-    t.boolean "visualizada"
-    t.boolean "necesidad_cubierta"
-    t.integer "lote_id"
-    t.string  "mensaje"
+    t.string   "tiempo_emision"
+    t.boolean  "visualizada"
+    t.boolean  "necesidad_cubierta"
+    t.integer  "lote_id"
+    t.string   "mensaje"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "alerta_stock", force: true do |t|
@@ -51,12 +53,22 @@ ActiveRecord::Schema.define(version: 20140630072213) do
   end
 
   create_table "compuestos", force: true do |t|
+    t.integer "precio"
+    t.string  "nombre_producto"
+    t.boolean "en_venta"
+  end
+
+  create_table "detalle_entrega_insumos", force: true do |t|
     t.integer  "precio"
-    t.string   "nombre_producto"
-    t.boolean  "en_venta"
+    t.integer  "cantidad"
+    t.integer  "insumo_id"
+    t.integer  "entrega_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "detalle_entrega_insumos", ["entrega_id"], name: "index_detalle_entrega_insumos_on_entrega_id", using: :btree
+  add_index "detalle_entrega_insumos", ["insumo_id"], name: "index_detalle_entrega_insumos_on_insumo_id", using: :btree
 
   create_table "detalles", force: true do |t|
     t.integer  "compuesto_id"
@@ -107,7 +119,6 @@ ActiveRecord::Schema.define(version: 20140630072213) do
   create_table "insumos", force: true do |t|
     t.string   "tipo_insumo"
     t.string   "nombre_insumo"
-    t.string   "categoria_insumo"
     t.integer  "stock_actual"
     t.integer  "stock_critico"
     t.integer  "stock_ideal"
@@ -148,24 +159,26 @@ ActiveRecord::Schema.define(version: 20140630072213) do
 
   add_index "merma_insumos", ["insumo_id"], name: "index_merma_insumos_on_insumo_id", using: :btree
 
-  create_table "merma_materials", force: true do |t|
-    t.integer  "cantidad_merma"
-    t.datetime "fecha_merma"
-    t.string   "comentario_merma"
-    t.integer  "ingredientes_id"
+  create_table "merma_lotes", force: true do |t|
+    t.integer  "cantidad"
+    t.date     "fecha_merma"
+    t.integer  "comentario"
+    t.integer  "lote_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "merma_materials", ["ingredientes_id"], name: "index_merma_materials_on_ingredientes_id", using: :btree
+  add_index "merma_lotes", ["lote_id"], name: "index_merma_lotes_on_lote_id", using: :btree
 
-  create_table "mermas", force: true do |t|
-    t.integer  "cantidad_merma"
-    t.datetime "fecha_merma"
-    t.string   "comentario_merma"
+  create_table "merma_vencimientos", force: true do |t|
+    t.integer  "cantidad"
+    t.date     "fecha_merma"
+    t.integer  "lote_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "merma_vencimientos", ["lote_id"], name: "index_merma_vencimientos_on_lote_id", using: :btree
 
   create_table "proveedors", force: true do |t|
     t.string   "rut_proveedor"
@@ -230,6 +243,7 @@ ActiveRecord::Schema.define(version: 20140630072213) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "cantidad"
+    t.string   "tipo_producto",          limit: 9
   end
 
 end

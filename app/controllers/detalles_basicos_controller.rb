@@ -1,4 +1,5 @@
 class DetallesBasicosController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_detalles_basico, only: [:show, :edit, :update, :destroy]
 
   # GET /detalles_basicos

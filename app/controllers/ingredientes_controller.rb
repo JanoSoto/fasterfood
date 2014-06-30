@@ -1,4 +1,7 @@
 class IngredientesController < ApplicationController
+  #check_authorization
+  before_filter :authenticate_user!
+  #load_and_authorize_resource
   before_action :set_ingrediente, only: [:show, :edit, :update, :destroy]
   skip_authorization_check
 

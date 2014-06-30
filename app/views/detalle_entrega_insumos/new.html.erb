@@ -1,0 +1,11 @@
+<h1>New detalle_entrega_insumo</h1>
+
+<%= form_tag("/new", method: "post") do %> 
+	<%= label_tag(:proveedor, "proveedor") %>
+	<%= collection_select(:proveedor, :rut_proveedor, Proveedor.all, :rut_proveedor, :nombre_proveedor) %>
+	<% #entrega = Entrega.new(rut_proveedor: :proveedor, Time.now(0)) %>
+<% end %>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', detalle_entrega_insumos_path %>

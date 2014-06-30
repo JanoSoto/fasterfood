@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @detalle_entrega_insumo.precio %>
+</p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @detalle_entrega_insumo.cantidad %>
+</p>
+
+<p>
+  <strong>Insumo:</strong>
+  <%= @detalle_entrega_insumo.insumo %>
+</p>
+
+<p>
+  <strong>Entrega:</strong>
+  <%= @detalle_entrega_insumo.entrega %>
+</p>
+
+<%= link_to 'Edit', edit_detalle_entrega_insumo_path(@detalle_entrega_insumo) %> |
+<%= link_to 'Back', detalle_entrega_insumos_path %>
