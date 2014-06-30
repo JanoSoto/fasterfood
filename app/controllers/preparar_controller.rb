@@ -1,6 +1,14 @@
 class PrepararController < ApplicationController
+<<<<<<< HEAD
   before_filter :authenticate_user!
+=======
+  skip_authorization_check
+
+>>>>>>> b66a53313a3a1861015b64eca8b4afddf96232b5
   def index
+    if current_user.rol != User::COCINERO
+      raise CanCan::AccessDenied
+    end
     @ventas = Venta.all.where(:estado_venta => [Venta::EMITIDA, Venta::PREPARANDO])
     @colores = [
       'bg-light-blue',
@@ -20,6 +28,9 @@ class PrepararController < ApplicationController
   end
 
   def pruebas
+    if current_user.rol != User::COCINERO
+      raise CanCan::AccessDenied
+    end
     @ventas = Venta.all.where(:estado_venta => [Venta::EMITIDA, Venta::PREPARANDO])
     @colores = [
       'bg-light-blue',
@@ -39,6 +50,9 @@ class PrepararController < ApplicationController
   end
 
   def cambiar_estado
+    if current_user.rol != User::COCINERO
+      raise CanCan::AccessDenied
+    end
   	id_venta = params[:id_venta]
   	tipo_producto = params[:tipo_producto]
   	id_producto = params[:id_producto]

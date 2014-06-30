@@ -50,8 +50,6 @@ Rails.application.routes.draw do
     get 'index_path'
   end
 
-  resources :vendedors
-
   resources :ingredientes and resources :ingrediente
 
 

@@ -3,30 +3,46 @@ class IngredientesController < ApplicationController
   before_filter :authenticate_user!
   #load_and_authorize_resource
   before_action :set_ingrediente, only: [:show, :edit, :update, :destroy]
+  skip_authorization_check
 
   # GET /ingredientes
   # GET /ingredientes.json
   def index
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
     @ingredientes = Ingrediente.all
   end
 
   # GET /ingredientes/1
   # GET /ingredientes/1.json
   def show
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
   end
 
   # GET /ingredientes/new
   def new
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
     @ingrediente = Ingrediente.new
   end
 
   # GET /ingredientes/1/edit
   def edit
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
   end
 
   # POST /ingredientes
   # POST /ingredientes.json
   def create
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
     @edit = false
     @ingrediente = Ingrediente.new(ingrediente_params)
     @ingrediente.nombre = @ingrediente.nombre.strip.downcase
@@ -46,6 +62,9 @@ class IngredientesController < ApplicationController
   # PATCH/PUT /ingredientes/1
   # PATCH/PUT /ingredientes/1.json
   def update
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
     @edit = true
     respond_to do |format|
       params[:nombre] = params[:nombre].strip.downcase
@@ -63,6 +82,9 @@ class IngredientesController < ApplicationController
   # DELETE /ingredientes/1
   # DELETE /ingredientes/1.json
   def destroy
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
     @ingrediente.destroy
     respond_to do |format|
       format.html { redirect_to ingredientes_url, notice: 'Ingrediente eliminado con éxito.' }

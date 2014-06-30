@@ -1,6 +1,5 @@
-<h1>Insumos</h1>
-
-
+<%= page_title "Insumos" %>
+<a href="<%= url_for new_insumo_path %>" class="pull-right"><button type="button" class="btn btn-success">Añadir Ingrediente</button></a>
 <div class="row">
     <div class="col-xs-12">
         <div class="box-body table-responsive no-padding">
@@ -26,9 +25,7 @@
                 <td><%= link_to 'Editar', edit_ingrediente_path(insumo) %></td>
               </tr>
             <% end %>
-          </table> <br>
-          <%= link_to 'Nuevo insumo', new_ingrediente_path %>
-
+          </table>
         </div><!-- /.box-body -->
     </div>
 </div>

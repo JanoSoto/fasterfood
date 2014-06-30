@@ -1,14 +1,53 @@
-<%= simple_form_for(@merma_insumo) do |f| %>
-  <%= f.error_notification %>
+<%= simple_form_for(@merma_insumo , :html => {:class => "form-horizontal"}) do |f| %>
+  <% elemento = @merma_insumo %>
+  <% if elemento.errors.any? %>
+    <div class="alert alert-warning alert-dismissable">
+      <i class="fa fa-warning"></i>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <!-- <i class="fa fa-warning text-yellow"> -->
+      <b>Hay errores con los datos que ingreso:</b>
+      <ul>
+      <% elemento.errors.each do |key, message| %>
+        <li>
+          <% if key != :general %>
+            <%= key.capitalize.to_s.gsub( '_', ' ' ) %> 
+          <% end %>
+          <%= message %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="form-inputs">
-    <%= f.input :cantidad_merma %>
-    <%= f.input :fecha_merma %>
-    <%= f.input :comentario_merma %>
-    <%= f.association :insumo, label_method: :nombre_insumo, value_method: :id, prompt: "Eliga uno..." %>
+    <div class="form-group" class="field">
+        <div class="col-sm-2">
+          <%= f.input :cantidad_merma  %>
+        </div>
+    </div>
+
+    <div class="form-group" class="field">
+        <div class="col-sm-2">
+          <%= f.input :fecha_merma %>
+      </div>
+    </div>
+
+    <div class="form-group" class="field">
+        <div class="col-sm-2">
+          <%= f.input :comentario_merma %>
+      </div>
+    </div>
+
+    <div class="form-group" class="field">
+      <div class="col-sm-2">
+        <%= f.association :insumo, label_method: :nombre, value_method: :id, prompt: "Eliga uno..."%>
+      </div>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.submit 'Enviar' %>
-  </div>
+  <div class="form-group" class="field">
+        <div class="col-sm-offset-2">
+            <%= boton_guardar_cancelar((f.submit "Guardar", :class => "btn btn-success"), merma_insumos_path) %>
+        </div>
+    </div>
 <% end %>

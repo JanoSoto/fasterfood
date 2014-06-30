@@ -1,23 +1,21 @@
-<h1>Listado ingredientes</h1>
-
+<%= page_title "Ingredientes" %>
+<a href="<%= url_for new_ingrediente_path %>" class="pull-right"><button type="button" class="btn btn-success">Añadir Ingrediente</button></a>
 <div class="row">
     <div class="col-xs-12">
         <div class="box-body table-responsive no-padding">
           <table class="table table-hover">
             <tr>
-              <th>Nombre</th>
-              <th>Refrigerado</th>
-              <th>Categoria</th>
-              <th>Stock actual</th>
-              <th>Stock critico</th>
-              <th>Stock ideal</th>
-              <th colspan="2"></th>
+                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Stock actual</th>
+                <th>Stock critico</th>
+                <th>Stock ideal</th>
+                <th colspan="2"></th>
             </tr>
 
             <% @ingredientes.each do |ingrediente| %>
               <tr>
                 <td><%= ingrediente.nombre %></td>
-                <td><%= si_o_no ingrediente.refrigerado %></td>
                 <td><%= ingrediente.categoria %></td>
                 <td><%= ingrediente.stock_actual %></td>
                 <td><%= ingrediente.stock_critico %></td>
@@ -25,8 +23,12 @@
                 <td><%= link_to 'Editar', edit_ingrediente_path(ingrediente) %></td>
               </tr>
             <% end %>
+<<<<<<< HEAD
           </table> <br>
           <%= link_to 'Nuevo ingrediente', new_ingrediente_path %>
+=======
+          </table>
+>>>>>>> b66a53313a3a1861015b64eca8b4afddf96232b5
         </div><!-- /.box-body -->
     </div>
 </div>

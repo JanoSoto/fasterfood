@@ -1,5 +1,5 @@
 class CompuestosController < ApplicationController
-  #check_authorization
+  check_authorization
   load_and_authorize_resource param_method: :compuesto_params
   #before_filter :authenticate_user!, :except => [:index, :show]
   before_action :set_compuesto, only: [:show, :edit, :update, :destroy]

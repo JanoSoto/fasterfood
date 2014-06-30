@@ -1,0 +1,10 @@
+Admin:
+	rut 	 000000000
+	password adminadmin
+Cocineros:
+	rut		 123456785
+	password 123456785
+
+Vendedores:
+	rut		 876543214
+	password 876543214

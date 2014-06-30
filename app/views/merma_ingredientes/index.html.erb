@@ -1,6 +1,9 @@
-<h1>Listing merma_ingredientes</h1>
-
-<table>
+<%= page_title "Mermas - Ingredientes" %>
+<a href="<%= url_for new_merma_ingrediente_path %>" class="pull-right"><button type="button" class="btn btn-success">Añadir Nueva Merma de Ingrediente</button></a>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
   <thead>
     <tr>
       <th>Cantidad</th>
@@ -17,15 +20,13 @@
         <td><%= merma_ingrediente.cantidad %></td>
         <td><%= merma_ingrediente.fecha_merma %></td>
         <td><%= merma_ingrediente.comentario_merma %></td>
-        <td><%= merma_ingrediente.ingrediente %></td>
-        <td><%= link_to 'Show', merma_ingrediente %></td>
-        <td><%= link_to 'Edit', edit_merma_ingrediente_path(merma_ingrediente) %></td>
-        <td><%= link_to 'Destroy', merma_ingrediente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= merma_ingrediente.ingrediente.nombre.capitalize %></td>
+        <td><%= link_to 'Editar', edit_merma_ingrediente_path(merma_ingrediente) %></td>
+        <td><%= link_to 'Eliminar', merma_ingrediente, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Merma ingrediente', new_merma_ingrediente_path %>
+        </div><!-- /.box-body -->
+    </div>
+</div>

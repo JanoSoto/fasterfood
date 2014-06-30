@@ -24,6 +24,7 @@ class VentaController < ApplicationController
     @venta = Venta.new
     @venta.numero_de_caja = 1
     @venta.estado_venta = Venta.estados['PREPARANDO']
+    @venta.comentario_perdida = ''
     
     basicos = Basico.where(en_venta: true)
     compuestos = Compuesto.where(en_venta: true)
@@ -49,24 +50,24 @@ class VentaController < ApplicationController
     @venta = Venta.new(venta_params)
     
     respond_to do |format|
-        @venta.vendedor_id = current_user.id
-        @venta.fecha_hora = Time.now
-        @venta.numero_de_caja = 1
-        @venta.estado_venta = Venta::PREPARANDO
+      @venta.vendedor_id = current_user.id
+      @venta.fecha_hora = Time.now
+      @venta.numero_de_caja = 1
+      @venta.estado_venta = Venta::PREPARANDO
 
-        ##### Agregar Basicos #####
-        basicos = Array.new
-        if !params[:venta][:basico].nil?
-            params[:venta][:basico].each do | basico |
+      ##### Agregar Basicos #####
+      basicos = Array.new
+      if !params[:venta][:basico].nil?
+          params[:venta][:basico].each do | basico |
 
-            #id = basico['id'].slice('basico_').to_s.slice('compuesto_').to_s
-            #basico['id']['basico_'] = ''
-            id = basico['id'].sub('basico_', '')
-            id =        id.sub('compuesto_', '')
-            tipo = basico['id'].sub('_'+id, '')
-            basicos.push(:id => id, :cantidad => basico['cantidad'], :comentario => basico['comentario'], :tipo => tipo)
-            #basicos.push(:id => basico['id'], :comentario => basico['comentario'])
-        end
+          #id = basico['id'].slice('basico_').to_s.slice('compuesto_').to_s
+          #basico['id']['basico_'] = ''
+          id = basico['id'].sub('basico_', '')
+          id =        id.sub('compuesto_', '')
+          tipo = basico['id'].sub('_'+id, '')
+          basicos.push(:id => id, :cantidad => basico['cantidad'], :comentario => basico['comentario'], :tipo => tipo)
+          #basicos.push(:id => basico['id'], :comentario => basico['comentario'])
+      end
     end
 
     i = 0
@@ -126,8 +127,6 @@ class VentaController < ApplicationController
     end
 
     if productos_validos
-        
-
         @diferencia_basicos = (basicos - @venta.basico ) + (compuestos  - @venta.compuesto)
         #@diferencia_basicos = @venta.basico
 
@@ -141,7 +140,55 @@ class VentaController < ApplicationController
 
         @diferencia_basicos = basicos + compuestos
     end
-    if productos_validos and tiene_productos and @venta.save
+
+    if productos_validos and tiene_productos and @venta.valid?
+        # descontamos el stock
+        if @venta.detalle.any?
+            i = 0
+            @venta.detalle.each do | detalle |
+                if !detalle.basico_id.nil?
+                    basico = Basico.find(detalle.basico_id)
+                    
+                    j = 0
+                        basico.ingredientes.each do | ingrediente |
+                            detalle_basico = DetallesBasico.where(:basico_id => detalle.basico_id, :ingrediente_id => ingrediente.id)
+
+                            if !detalle_basico.nil?
+                                nueva_cantidad = ingrediente.stock_actual - detalle.cantidad * detalle_basico[0].cantidad
+                                ingrediente.stock_actual = nueva_cantidad
+                            end
+                            ingrediente.save
+                            #raise (detalle.cantidad * detalle_basico[0].cantidad).to_s
+                            j = j + 1
+                        end
+
+                    i = i + 1
+                elsif !detalle.compuesto_id.nil?
+                    compuesto = Compuesto.find(detalle.compuesto_id)
+                    
+                    compuesto.basico.each do | basico |
+
+                        j = 0
+                        basico.ingredientes.each do | ingrediente |
+                            detalle_basico = DetallesBasico.where(:basico_id => basico.id, :ingrediente_id => ingrediente.id)
+
+                            if !detalle_basico.nil?
+                                nueva_cantidad = ingrediente.stock_actual - detalle.cantidad * detalle_basico[0].cantidad
+                                ingrediente.stock_actual = nueva_cantidad
+                            end
+                            ingrediente.save
+                            #raise (detalle.cantidad * detalle_basico[0].cantidad).to_s
+                            j = j + 1
+                        end
+                    
+                    end
+
+                    i = i + 1
+                end
+            end
+        end
+        # / descontamos el stock
+        @venta.save
         #format.html { redirect_to @venta, notice: 'Venta añadida correctamente.' }
         format.html { redirect_to '/venta', notice: 'Venta añadida correctamente.' }
         format.json { render :show, status: :created, location: @venta }

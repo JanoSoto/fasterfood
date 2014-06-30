@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140630041117) do
+=======
+ActiveRecord::Schema.define(version: 20140630072213) do
+>>>>>>> b66a53313a3a1861015b64eca8b4afddf96232b5
 
   create_table "alerta_obsolescencia", force: true do |t|
     t.string   "tiempo_emision"
@@ -208,7 +212,7 @@ ActiveRecord::Schema.define(version: 20140630041117) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rut"
+    t.string   "rut",                    limit: 9
     t.string   "nombre",                 limit: 20
     t.string   "apellido_paterno",       limit: 20
     t.string   "apellido_materno",       limit: 20
@@ -232,11 +236,11 @@ ActiveRecord::Schema.define(version: 20140630041117) do
   end
 
   create_table "venta", force: true do |t|
-    t.integer  "vendedor_id",                        null: false
-    t.datetime "fecha_hora",                         null: false
-    t.string   "nombre_cliente",         limit: 20,  null: false
-    t.integer  "precio_total",                       null: false
-    t.string   "comentario_perdida",     limit: 200, null: false
+    t.integer  "vendedor_id",                                     null: false
+    t.datetime "fecha_hora",                                      null: false
+    t.string   "nombre_cliente",         limit: 20,               null: false
+    t.integer  "precio_total",                                    null: false
+    t.string   "comentario_perdida",     limit: 200, default: "", null: false
     t.integer  "numero_de_caja"
     t.string   "estado_venta",           limit: 20
     t.datetime "tiempo_terminado_venta"

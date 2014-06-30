@@ -1,12 +1,15 @@
-<h1>Listing merma_insumos</h1>
-
-<table>
+<%= page_title "Mermas - insumos" %>
+<a href="<%= url_for new_merma_insumo_path %>" class="pull-right"><button type="button" class="btn btn-success">Añadir Nueva Merma de insumo</button></a>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
   <thead>
     <tr>
-      <th>Cantidad merma</th>
+      <th>Cantidad</th>
       <th>Fecha merma</th>
       <th>Comentario merma</th>
-      <th>Insumo</th>
+      <th>insumo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,14 +21,12 @@
         <td><%= merma_insumo.fecha_merma %></td>
         <td><%= merma_insumo.comentario_merma %></td>
         <td><%= merma_insumo.insumo %></td>
-        <td><%= link_to 'Show', merma_insumo %></td>
-        <td><%= link_to 'Edit', edit_merma_insumo_path(merma_insumo) %></td>
-        <td><%= link_to 'Destroy', merma_insumo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_merma_insumo_path(merma_insumo) %></td>
+        <td><%= link_to 'Eliminar', merma_insumo, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Merma insumo', new_merma_insumo_path %>
+        </div><!-- /.box-body -->
+    </div>
+</div>
