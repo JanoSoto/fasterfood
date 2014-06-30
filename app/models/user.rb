@@ -35,5 +35,5 @@ class User < ActiveRecord::Base
 	validates :apellido_paterno, presence: true
 	validates :apellido_materno, presence: true
 	validates :rol, inclusion: { in: [User::COCINERO, User::VENDEDOR, User::ADMINISTRADOR], message: "%{value} invalido" }
-
+  validates_with RUTValidator
 end

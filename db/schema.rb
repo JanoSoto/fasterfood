@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630020308) do
+ActiveRecord::Schema.define(version: 20140630040204) do
 
   create_table "alerta_obsolescencia", force: true do |t|
     t.string  "tiempo_emision"
@@ -195,7 +195,7 @@ ActiveRecord::Schema.define(version: 20140630020308) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "rut"
+    t.string   "rut",                    limit: 9
     t.string   "nombre",                 limit: 20
     t.string   "apellido_paterno",       limit: 20
     t.string   "apellido_materno",       limit: 20

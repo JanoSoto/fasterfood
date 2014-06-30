@@ -1,10 +1,16 @@
+<%
+    base_url = request.url
+    if request.path != '/'
+        base_url = base_url.gsub(request.path, '')
+    end
+%>
 <div class="error-page">
     <h2 class="headline text-info"> 500</h2>
     <div class="error-content">
         <h3><i class="fa fa-warning text-yellow"></i>Error interno</h3>
         <p>
             Ha ocurrido un error, lo arreglaremos a la brevedad !<br>
-            <a href='../../index.html'>Volver a la pagina de inicio</a>
+            <a href='<%= base_url %>'>Volver a la pagina de inicio</a>
         </p>
     </div><!-- /.error-content -->
 </div><!-- /.error-page -->

@@ -11,10 +11,12 @@ class Ability
       
     if user and user.rol
       if user.rol == User::ADMINISTRADOR
-        can :manage, :all
+        can :manage, Basico
+        can :manage, Compuesto
+        can :manage, Ingrediente
         can :manage, User
       elsif user.rol == User::VENDEDOR
-        can :read, :all
+        can :manage, Venta
       elsif user.rol == User::COCINERO
         can :manage, :preparar
         #can :read, :preparar

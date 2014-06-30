@@ -2430,6 +2430,9 @@ Component: timeline
   background: rgba(0, 0, 0, 0.1);
   color: #f6f6f6;
 }
+.skin-blue .navbar:hover{
+  background-color: #3498db;
+}
 .skin-blue .navbar .navbar-right > .nav {
   margin-right: 10px;
 }

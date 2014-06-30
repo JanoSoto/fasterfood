@@ -1,4 +1,5 @@
 en:
+  invalid_rut: invalido
   date:
     abbr_day_names:
     - dom
