@@ -3809,3 +3809,377 @@ Processing by PrepararController#index as JSON
   [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6[0m
   Rendered preparar/index.json.jbuilder (71.4ms)
 Completed 200 OK in 93ms (Views: 81.8ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:04:56 -0400
+Processing by PrepararController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mVenta Load (0.3ms)[0m  [1mSELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mCompuesto Load (1.8ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6
+  Rendered preparar/index.json.jbuilder (50.5ms)
+Completed 200 OK in 68ms (Views: 59.0ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:05:06 -0400
+Processing by PrepararController#index as JSON
+  [1m[36mUser Load (4.8ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mVenta Load (0.3ms)[0m  SELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6[0m
+  Rendered preparar/index.json.jbuilder (52.3ms)
+Completed 200 OK in 85ms (Views: 69.2ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:05:16 -0400
+Processing by PrepararController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mVenta Load (0.3ms)[0m  [1mSELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mCompuesto Load (3.7ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mCompuesto Load (0.2ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mDetalle Load (0.8ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mCompuesto Load (0.4ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6
+  Rendered preparar/index.json.jbuilder (78.5ms)
+Completed 200 OK in 100ms (Views: 88.2ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:05:26 -0400
+Processing by PrepararController#index as JSON
+  [1m[36mUser Load (4.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mVenta Load (6.3ms)[0m  SELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)
+  [1m[36mDetalle Load (3.6ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mBasico Load (3.5ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mDetalle Load (2.1ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5
+  [1m[36mBasico Load (4.7ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mCompuesto Load (3.7ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mBasico Load (8.4ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6
+  [1m[36mCompuesto Load (6.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6[0m
+  Rendered preparar/index.json.jbuilder (104.9ms)
+Completed 200 OK in 148ms (Views: 101.1ms | ActiveRecord: 43.4ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:05:36 -0400
+Processing by PrepararController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mVenta Load (7.1ms)[0m  [1mSELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3
+  [1m[36mBasico Load (2.9ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mCompuesto Load (6.2ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mBasico Load (6.1ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mCompuesto Load (2.2ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6
+  [1m[36mBasico Load (5.5ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6
+  Rendered preparar/index.json.jbuilder (112.8ms)
+Completed 200 OK in 149ms (Views: 112.9ms | ActiveRecord: 31.5ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:05:46 -0400
+Processing by PrepararController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mVenta Load (0.3ms)[0m  SELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6[0m
+  Rendered preparar/index.json.jbuilder (59.7ms)
+Completed 200 OK in 77ms (Views: 70.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:05:56 -0400
+Processing by PrepararController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mVenta Load (0.3ms)[0m  [1mSELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3
+  [1m[36mBasico Load (1.8ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6
+  Rendered preparar/index.json.jbuilder (57.3ms)
+Completed 200 OK in 75ms (Views: 66.9ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:06:06 -0400
+Processing by PrepararController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mVenta Load (6.3ms)[0m  SELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)
+  [1m[36mDetalle Load (7.0ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mCompuesto Load (2.9ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mDetalle Load (4.8ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5
+  [1m[36mBasico Load (3.6ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mDetalle Load (5.1ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6
+  [1m[36mCompuesto Load (2.4ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6[0m
+  Rendered preparar/index.json.jbuilder (90.9ms)
+Completed 200 OK in 121ms (Views: 82.2ms | ActiveRecord: 33.2ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:06:16 -0400
+Processing by PrepararController#index as JSON
+  [1m[35mUser Load (2.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mVenta Load (2.4ms)[0m  [1mSELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)[0m
+  [1m[35mDetalle Load (4.9ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3
+  [1m[36mBasico Load (4.5ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mBasico Load (3.7ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mCompuesto Load (1.7ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6
+  Rendered preparar/index.json.jbuilder (89.7ms)
+Completed 200 OK in 125ms (Views: 100.0ms | ActiveRecord: 20.9ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:06:26 -0400
+Processing by PrepararController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mVenta Load (0.3ms)[0m  SELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)
+  [1m[36mDetalle Load (8.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mBasico Load (4.5ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5
+  [1m[36mBasico Load (5.2ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mCompuesto Load (6.6ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6
+  [1m[36mCompuesto Load (2.9ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6[0m
+  Rendered preparar/index.json.jbuilder (89.1ms)
+Completed 200 OK in 109ms (Views: 74.8ms | ActiveRecord: 29.4ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:06:36 -0400
+Processing by PrepararController#index as JSON
+  [1m[35mUser Load (1.5ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mVenta Load (4.2ms)[0m  [1mSELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)[0m
+  [1m[35mDetalle Load (4.6ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mCompuesto Load (4.5ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mCompuesto Load (7.4ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6
+  [1m[36mBasico Load (3.9ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mCompuesto Load (4.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6
+  Rendered preparar/index.json.jbuilder (117.1ms)
+Completed 200 OK in 145ms (Views: 110.0ms | ActiveRecord: 31.5ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:06:46 -0400
+Processing by PrepararController#index as JSON
+  [1m[36mUser Load (4.6ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mVenta Load (2.9ms)[0m  SELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)
+  [1m[36mDetalle Load (0.4ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mCompuesto Load (3.5ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mDetalle Load (4.6ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5
+  [1m[36mBasico Load (2.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mCompuesto Load (1.2ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mDetalle Load (3.1ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mBasico Load (2.9ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6
+  [1m[36mCompuesto Load (3.6ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6[0m
+  Rendered preparar/index.json.jbuilder (93.7ms)
+Completed 200 OK in 131ms (Views: 97.9ms | ActiveRecord: 29.4ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:06:56 -0400
+Processing by PrepararController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mVenta Load (0.3ms)[0m  [1mSELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3
+  [1m[36mBasico Load (1.7ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6
+  Rendered preparar/index.json.jbuilder (55.0ms)
+Completed 200 OK in 74ms (Views: 65.7ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:07:06 -0400
+Processing by PrepararController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mVenta Load (0.3ms)[0m  SELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)
+  [1m[36mDetalle Load (0.5ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6[0m
+  Rendered preparar/index.json.jbuilder (49.3ms)
+Completed 200 OK in 69ms (Views: 61.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:07:16 -0400
+Processing by PrepararController#index as JSON
+  [1m[35mUser Load (2.2ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mVenta Load (3.7ms)[0m  [1mSELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3
+  [1m[36mBasico Load (5.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mCompuesto Load (5.5ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mDetalle Load (0.8ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6
+  Rendered preparar/index.json.jbuilder (80.2ms)
+Completed 200 OK in 114ms (Views: 90.6ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:07:26 -0400
+Processing by PrepararController#index as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mVenta Load (0.3ms)[0m  SELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)
+  [1m[36mDetalle Load (0.6ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mDetalle Load (1.7ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5
+  [1m[36mBasico Load (1.1ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mCompuesto Load (1.7ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6[0m
+  Rendered preparar/index.json.jbuilder (60.6ms)
+Completed 200 OK in 87ms (Views: 70.7ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:07:36 -0400
+Processing by PrepararController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mVenta Load (0.4ms)[0m  [1mSELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6
+  [1m[36mBasico Load (3.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mCompuesto Load (4.6ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6
+  Rendered preparar/index.json.jbuilder (77.0ms)
+Completed 200 OK in 95ms (Views: 79.3ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:07:46 -0400
+Processing by PrepararController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mVenta Load (0.3ms)[0m  SELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mCompuesto Load (1.7ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mBasico Load (1.0ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6
+  [1m[36mCompuesto Load (0.4ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6[0m
+  Rendered preparar/index.json.jbuilder (49.9ms)
+Completed 200 OK in 68ms (Views: 58.7ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:07:56 -0400
+Processing by PrepararController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mVenta Load (0.3ms)[0m  [1mSELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)[0m
+  [1m[35mDetalle Load (0.4ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6
+  Rendered preparar/index.json.jbuilder (52.0ms)
+Completed 200 OK in 71ms (Views: 63.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:08:06 -0400
+Processing by PrepararController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mVenta Load (0.3ms)[0m  SELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)
+  [1m[36mDetalle Load (0.4ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mCompuesto Load (0.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mBasico Load (0.5ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6
+  [1m[36mCompuesto Load (0.2ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6[0m
+  Rendered preparar/index.json.jbuilder (53.4ms)
+Completed 200 OK in 72ms (Views: 64.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:08:16 -0400
+Processing by PrepararController#index as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mVenta Load (0.3ms)[0m  [1mSELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mCompuesto Load (3.3ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mDetalle Load (1.7ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6
+  [1m[36mBasico Load (5.5ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mCompuesto Load (1.8ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6
+  Rendered preparar/index.json.jbuilder (64.7ms)
+Completed 200 OK in 87ms (Views: 67.4ms | ActiveRecord: 14.3ms)
+
+
+Started GET "/preparar.json" for 127.0.0.1 at 2014-06-30 07:08:26 -0400
+Processing by PrepararController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`id` = 8  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mVenta Load (0.3ms)[0m  SELECT `venta`.* FROM `venta`  WHERE `venta`.`estado_venta` IN (1, 2)
+  [1m[36mDetalle Load (0.4ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 3
+  [1m[36mCompuesto Load (1.7ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 3[0m
+  [1m[35mDetalle Load (0.3ms)[0m  SELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 5
+  [1m[36mBasico Load (0.3ms)[0m  [1mSELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 5[0m
+  [1m[35mCompuesto Load (0.3ms)[0m  SELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 5
+  [1m[36mDetalle Load (0.3ms)[0m  [1mSELECT `detalles`.* FROM `detalles`  WHERE `detalles`.`venta_id` = 6[0m
+  [1m[35mBasico Load (0.3ms)[0m  SELECT DISTINCT `basicos`.* FROM `basicos` INNER JOIN `detalles` ON `basicos`.`id` = `detalles`.`basico_id` WHERE `detalles`.`venta_id` = 6
+  [1m[36mCompuesto Load (0.5ms)[0m  [1mSELECT DISTINCT `compuestos`.* FROM `compuestos` INNER JOIN `detalles` ON `compuestos`.`id` = `detalles`.`compuesto_id` WHERE `detalles`.`venta_id` = 6[0m
+  Rendered preparar/index.json.jbuilder (48.1ms)
+Completed 200 OK in 68ms (Views: 58.7ms | ActiveRecord: 4.8ms)
