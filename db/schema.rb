@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20140630041117) do
-=======
 ActiveRecord::Schema.define(version: 20140630072213) do
->>>>>>> b66a53313a3a1861015b64eca8b4afddf96232b5
 
   create_table "alerta_obsolescencia", force: true do |t|
     t.string   "tiempo_emision"
