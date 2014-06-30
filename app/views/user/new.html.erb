@@ -19,6 +19,10 @@
   <% end %>
 
   <div class="form-inputs">
+	<div class="form-group" class="field">
+		<!-- <%= f.label :rut, autofocus: true, :html => {:class => "col-sm-2 control-label"} %> -->
+	    <%= f.text_field :rut, :class => "form-control", :placeholder => "Rut" %>
+	</div>
   	<div class="form-group" class="field">
 		<!-- <%= f.label :email, autofocus: true, :html => {:class => "col-sm-2 control-label"} %> -->
 	    <%= f.text_field :email, :class => "form-control", :placeholder => "Email", autocomplete: 'off', value: '' %>
@@ -30,10 +34,6 @@
 	<div class="form-group" class="field">
 		<!-- <%= f.label :password_confirmation, autofocus: true, :html => {:class => "col-sm-2 control-label"} %> -->
 	    <%= f.password_field :password_confirmation, :class => "form-control", :placeholder => "Confirmar contraseña" %>
-	</div>
-	<div class="form-group" class="field">
-		<!-- <%= f.label :rut, autofocus: true, :html => {:class => "col-sm-2 control-label"} %> -->
-	    <%= f.text_field :rut, :class => "form-control", :placeholder => "Rut" %>
 	</div>
 	<div class="form-group" class="field">
 		<!-- <%= f.label :nombre, autofocus: true, :html => {:class => "col-sm-2 control-label"} %> -->
