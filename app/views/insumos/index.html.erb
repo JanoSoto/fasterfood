@@ -1,5 +1,5 @@
 <%= page_title "Insumos" %>
-<a href="<%= url_for new_insumo_path %>" class="pull-right"><button type="button" class="btn btn-success">Añadir Ingrediente</button></a>
+<a href="<%= url_for new_insumo_path %>" class="pull-right"><button type="button" class="btn btn-success">Añadir Insumo</button></a>
 <div class="row">
     <div class="col-xs-12">
         <div class="box-body table-responsive no-padding">
@@ -22,7 +22,7 @@
                 <td><%= insumo.stock_actual %></td>
                 <td><%= insumo.stock_critico %></td>
                 <td><%= insumo.stock_ideal %></td>
-                <td><%= link_to 'Editar', edit_ingrediente_path(insumo) %></td>
+                <td><%= link_to 'Editar', edit_insumo_path(insumo) %></td>
               </tr>
             <% end %>
           </table>

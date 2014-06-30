@@ -31,7 +31,7 @@ class InsumosController < ApplicationController
 
     respond_to do |format|
       if @insumo.save
-        format.html { redirect_to @insumo, notice: 'Insumo was successfully created.' }
+        format.html { redirect_to '/insumos', notice: 'Insumo creado correctamente.' }
         format.json { render :show, status: :created, location: @insumo }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class InsumosController < ApplicationController
     @edit = true
     respond_to do |format|
       if @insumo.update(insumo_params)
-        format.html { redirect_to @insumo, notice: 'Insumo was successfully updated.' }
+        format.html { redirect_to '/insumos', notice: 'Insumo editado correctamente.' }
         format.json { render :show, status: :ok, location: @insumo }
       else
         format.html { render :edit }
