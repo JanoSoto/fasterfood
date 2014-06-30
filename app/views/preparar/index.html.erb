@@ -1,3 +1,4 @@
+<%= page_title "Pedidos" %>
 <%
     base_url = request.url
     if request.path != '/'
@@ -134,8 +135,8 @@ jQuery(document).ready(function($) {
 		color: #ddd;
 	}
 </style>
+<h3 id="hay_ventas_pendientes" <%= if !@ventas.any? then 'style="display: none;"'.html_safe end %>>¡ No hay ventas pendientes !</h3>
 <div class="row">
-<h1 id="hay_ventas_pendientes" <%= if !@ventas.any? then 'style="display: none;"'.html_safe end %>>¡ No hay ventas pendientes !</h1>
 <% i = 0 %>
 <div id="ventas">
 <% @ventas.each do | venta | %>

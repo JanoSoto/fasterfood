@@ -1,29 +1,38 @@
-<h1>Listing basicos</h1>
+<%= page_title "Productos Basicos" %>
+<a href="<%= url_for new_basico_path %>" class="pull-right"><button type="button" class="btn btn-success">Añadir Producto Basico</button></a>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box-body table-responsive no-padding">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Precio</th>
+                <th>Nombre producto</th>
+                <th>En venta</th>
+                <th colspan="3"></th>
+              </tr>
+            </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Precio</th>
-      <th>Nombre producto</th>
-      <th>En venta</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @basicos.each do |basico| %>
-      <tr>
-        <td><%= basico.precio %></td>
-        <td><%= basico.nombre_producto %></td>
-        <td><%= basico.en_venta %></td>
-        <td><%= link_to 'Show', basico %></td>
-        <td><%= link_to 'Edit', edit_basico_path(basico) %></td>
-        <td><%= link_to 'Destroy', basico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Basico', new_basico_path %>
+            <tbody>
+              <% @basicos.each do |basico| %>
+                <tr>
+                  <td><%= basico.precio %></td>
+                  <td><%= basico.nombre_producto %></td>
+                  <td>
+                      <span class="label <%= if basico.en_venta then "label-success" else "label-warning" end %>">
+                          <%= if basico.en_venta then "Si&nbsp;".html_safe else "No" end %>
+                      </span>
+                      &nbsp;
+                      <%= link_to '<i class="fa fa-undo"></i>'.html_safe, basico, method: :delete, data: { confirm: '¿Está seguro?' } %>
+                      <%= basico.en_venta %>
+                  </td>
+                  <td><%= link_to 'Show', basico %></td>
+                  <td><%= link_to 'Edit', edit_basico_path(basico) %></td>
+                  <td><%= link_to 'Destroy', basico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div><!-- /.box-body -->
+    </div>
+</div>

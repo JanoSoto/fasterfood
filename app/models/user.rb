@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  #attr_accessible :rut
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
@@ -33,7 +34,6 @@ class User < ActiveRecord::Base
 	validates :nombre, presence: true
 	validates :apellido_paterno, presence: true
 	validates :apellido_materno, presence: true
-	validates :telefono, presence: true
 	validates :rol, inclusion: { in: [User::COCINERO, User::VENDEDOR, User::ADMINISTRADOR], message: "%{value} invalido" }
 
 end

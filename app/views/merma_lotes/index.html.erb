@@ -1,0 +1,29 @@
+<h1>Listado de mermas de lotes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cantidad</th>
+      <th>Fecha merma</th>
+      <th>Comentario</th>
+      <th>Lote</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @merma_lotes.each do |merma_lote| %>
+      <tr>
+        <td><%= merma_lote.cantidad %></td>
+        <td><%= merma_lote.fecha_merma %></td>
+        <td><%= merma_lote.comentario %></td>
+        <td><%= merma_lote.lote %></td>
+        <td><%= link_to 'Editar', edit_merma_lote_path(merma_lote) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Ingresar nueva merma', new_merma_lote_path %>

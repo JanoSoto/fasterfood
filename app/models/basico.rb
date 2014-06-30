@@ -5,6 +5,7 @@ class Basico < ActiveRecord::Base
 	has_many :detalles_basicos
 	has_many :ingredientes, :through => :detalles_basicos
 	accepts_nested_attributes_for :detalles_basicos
+	accepts_nested_attributes_for :ingredientes
 
 
 	has_many :detalle
@@ -16,9 +17,4 @@ class Basico < ActiveRecord::Base
 	validates_uniqueness_of :nombre_producto, :message => "Un producto con el mismo nombre ya está registrado"
 	validates :precio, :numericality => { :greater_than_or_equal_to => 0}
 	validates :nombre_producto, :precio, presence: true
-
-	after_initialize :set_defaults
-	def set_defaults
-		self.en_venta = true
-	end
 end

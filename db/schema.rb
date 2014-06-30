@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140629232913) do
+ActiveRecord::Schema.define(version: 20140630041117) do
 
   create_table "alerta_obsolescencia", force: true do |t|
     t.string   "tiempo_emision"
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 20140629232913) do
 
   create_table "ingredientes", force: true do |t|
     t.boolean  "refrigerado"
-    t.string   "nombre",        limit: 20
+    t.string   "nombre",        limit: 50
     t.string   "categoria",     limit: 20
     t.integer  "stock_actual"
     t.integer  "stock_critico"
@@ -158,6 +158,27 @@ ActiveRecord::Schema.define(version: 20140629232913) do
   end
 
   add_index "merma_insumos", ["insumo_id"], name: "index_merma_insumos_on_insumo_id", using: :btree
+
+  create_table "merma_lotes", force: true do |t|
+    t.integer  "cantidad"
+    t.date     "fecha_merma"
+    t.integer  "comentario"
+    t.integer  "lote_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "merma_lotes", ["lote_id"], name: "index_merma_lotes_on_lote_id", using: :btree
+
+  create_table "merma_vencimientos", force: true do |t|
+    t.integer  "cantidad"
+    t.date     "fecha_merma"
+    t.integer  "lote_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "merma_vencimientos", ["lote_id"], name: "index_merma_vencimientos_on_lote_id", using: :btree
 
   create_table "proveedors", force: true do |t|
     t.string   "rut_proveedor"

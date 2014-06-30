@@ -1,2 +1,20 @@
-<h1>RecepcionMateriales#insumos</h1>
-<p>Find me in app/views/recepcion_materiales/insumos.html.erb</p>
+<h1>Recepci&oacuten de insumos</h1>
+
+<p>
+	<% if @insumo %>
+		<%= @insumo['id'] %>
+	<% end %>
+</p>
+<p> <%= @cantidad %> </p>
+
+<%= form_tag("/recepcion_materiales/insumos", method: "post") do %>
+	
+	<%= label_tag(:ins, "Insumo") %>
+	<%= collection_select(:ins, :id, Insumo.all, :id, :nombre_insumo) %> <br>
+	<%= label_tag(:cantidad, "Cantidad") %>
+	<%= text_field_tag(:cantidad) %> <br>
+
+	<%= submit_tag("Ingresar") %>
+	<!--% redirect_to ingredientes_url %-->
+
+<% end %>

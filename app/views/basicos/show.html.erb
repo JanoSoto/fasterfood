@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<a href="<%= edit_basico_path(@basico) %>" class="pull-right"><button type="button" class="btn btn-success">Modificar</button></a>
 
 <p>
   <strong>Precio:</strong>
@@ -12,8 +12,37 @@
 
 <p>
   <strong>En venta:</strong>
-  <%= @basico.en_venta %>
+  <span class="label <%= if @basico.en_venta then "label-success" else "label-warning" end %>">
+      <%= if @basico.en_venta then "Si&nbsp;".html_safe else "No" end %>
+  </span>
 </p>
 
-<%= link_to 'Edit', edit_basico_path(@basico) %> |
-<%= link_to 'Back', basicos_path %>
+<!--%= link_to 'Edit', edit_venta_path(@venta) %> |
+<%= link_to 'Back', venta_path %>-->
+
+<div class="box-header">
+  <h3 class="box-title">Ingredientes</h3>
+</div>
+<table class="table table-hover" id="tabla_basicos">
+    <tr>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Stock Actual</th>
+        <th>Stock Crítico</th>
+        <th>Stock Ideal</th>
+    </tr>
+    <% if @basico.ingredientes.any? %>
+        <% i = 0 %>
+        <% @basico.ingredientes.each do | ingrediente | %>
+            <tr>
+                <td><%= ingrediente.nombre %></td>
+                <td><%= @basico.detalles_basicos[i].cantidad %></td>
+                <td><%= ingrediente.categoria %></td>
+                <td><%= ingrediente.stock_actual %></td>
+                <td><%= ingrediente.stock_critico %></td>
+                <td><%= ingrediente.stock_ideal %></td>
+            </tr>
+            <% i = i + 1 %>
+        <% end %>
+    <% end %>
+</table>

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :merma_lotes
+
+  resources :merma_vencimientos
+
   resources :detalle_entrega_insumos
 
   resources :detalles_basicos
