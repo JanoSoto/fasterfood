@@ -109,6 +109,11 @@
                                     <li><a href="<%= url_for controller: 'merma_materials', action: 'index' %>"><i class="fa fa-angle-double-right"></i>Material</a></li>
                                 </ul>
                             </li>
+                            <li>
+                                <a href="<%= url_for :controller => 'proveedors', action: 'index' %>">
+                                    <i class="fa fa-building-o"></i> <span>Proveedores</span>
+                                </a>
+                            </li>
                             <% if can? :manage, User %>
                                 <li>
                                     <a href="<%= url_for :controller => 'user', action: 'index' %>">

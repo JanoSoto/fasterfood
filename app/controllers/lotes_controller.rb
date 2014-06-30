@@ -1,29 +1,45 @@
 class LotesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_lote, only: [:show, :edit, :update, :destroy]
 
   # GET /lotes
   # GET /lotes.json
   def index
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
     @lotes = Lote.all
   end
 
   # GET /lotes/1
   # GET /lotes/1.json 
   def show
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
   end
 
   # GET /lotes/new
   def new
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
     @lote = Lote.new
   end
 
   # GET /lotes/1/edit
   def edit
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
   end
 
   # POST /lotes
   # POST /lotes.json
   def create
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
     @lote = Lote.new(lote_params)
 
     respond_to do |format|
@@ -40,6 +56,9 @@ class LotesController < ApplicationController
   # PATCH/PUT /lotes/1
   # PATCH/PUT /lotes/1.json
   def update
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
     respond_to do |format|
       if @lote.update(lote_params)
         format.html { redirect_to @lote, notice: 'Lote was successfully updated.' }
@@ -54,6 +73,9 @@ class LotesController < ApplicationController
   # DELETE /lotes/1
   # DELETE /lotes/1.json
   def destroy
+    if current_user.rol != User::ADMINISTRADOR
+      raise CanCan::AccessDenied
+    end
     @lote.destroy
     respond_to do |format|
       format.html { redirect_to lotes_url, notice: 'Lote was successfully destroyed.' }

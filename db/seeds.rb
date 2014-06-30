@@ -221,3 +221,19 @@ Compuesto.delete_all
 	end
 	compuesto.save
 end
+
+
+Proveedor.delete_all
+
+[
+	{ :rut_proveedor => '584765461' , :nombre_proveedor => 'IDEAL', :telefono_proveedor => '24571684'},
+	{ :rut_proveedor => '756468138' , :nombre_proveedor => 'CCU', :telefono_proveedor => '12348574'},
+	{ :rut_proveedor => '798465465' , :nombre_proveedor => 'SUPER CERDO', :telefono_proveedor => '12341871'},
+	{ :rut_proveedor => '79845465K' , :nombre_proveedor => 'JB', :telefono_proveedor => '12867492'},
+	{ :rut_proveedor => '713135488' , :nombre_proveedor => 'HELLMANS', :telefono_proveedor => '27685947'},
+	{ :rut_proveedor => '754654651' , :nombre_proveedor => 'MONTINA', :telefono_proveedor => '26574869'},
+
+
+].each do | ingrediente |
+	Proveedor.find_or_create_by(ingrediente)
+end
